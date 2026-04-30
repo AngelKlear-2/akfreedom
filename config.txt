@@ -11,12 +11,6 @@ vless://393c5724-856b-41e3-a45c-e7c9e02b7584@fi.vz-or.com:443?security=reality&e
 
 vless://none@0.0.0.0:67?security=&encryption=none&headerType=none&type=tcp#%F0%9F%91%87%20%D0%92%D0%BD%D0%B8%D0%B7%D1%83%20%D0%B1%D0%B5%D0%BB%D1%8B%D0%B5%20%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%20%F0%9F%91%87
 
-
-
-vless://1375ec84-e554-4014-9ff0-ad939b7209c7@213.171.26.10:3443?mode=auto&path=%2F&security=reality&encryption=none&pbk=XqH-gNEL9eJfr1pglaI8WU3OvE654_5duXYBS35UXlM&fp=firefox&type=xhttp&sni=max.ru&sid=abcdef0123456789#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%5B*CIDR%5D
-
-vless://5ca6d2d2-0b1f-461f-907c-26d1e702898c@de2.gsupport.support:443?security=reality&encryption=none&pbk=JxwG7rAbNCd_C82p9K69AZDWh51fri2nm3wLHHrfyiw&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=video.intfreed.ru&sid=7755e972daf8eec8#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%5B*CIDR%5D
-
 vless://1375ec84-e554-4014-9ff0-ad939b7209c7@213.171.26.10:3443?mode=auto&path=%2F&security=reality&encryption=none&pbk=XqH-gNEL9eJfr1pglaI8WU3OvE654_5duXYBS35UXlM&fp=firefox&type=xhttp&sni=max.ru&sid=abcdef0123456789#%F0%9F%87%A9%F0%9F%87%AA%D0%91%D0%B5%D0%BB%D1%8B%D0%B9%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%E2%84%961
 
 vless://5ca6d2d2-0b1f-461f-907c-26d1e702898c@de2.gsupport.support:443?security=reality&encryption=none&pbk=JxwG7rAbNCd_C82p9K69AZDWh51fri2nm3wLHHrfyiw&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=video.intfreed.ru&sid=7755e972daf8eec8#%F0%9F%87%A9%F0%9F%87%AA%D0%91%D0%B5%D0%BB%D1%8B%D0%B9%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%E2%84%962
