@@ -1,5 +1,8 @@
 #profile-title: AKfreedom
-#profile-update-interval: 12
+#profile-update-interval: 1
+#support-url: https://t.me/StealthNetVPN
+#announce: 
+#subscription-userinfo: upload=0; download=0; total=0; expire=3093513600
 
 vless://none@0.0.0.0:67?security=&encryption=none&pbk=HnPEhCDTcZnDejsAiidoOSx2-h0EvJMILj4bv3X1mBc&headerType=none&type=tcp&sni=excoino.com&sid=916e8258c4a01b02#%F0%9F%91%87%20%D0%92%D0%BD%D0%B8%D0%B7%D1%83%20%D0%92%D0%9F%D0%9D%20%F0%9F%91%87
 
