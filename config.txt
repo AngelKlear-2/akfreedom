@@ -1,7 +1,7 @@
-#profile-title: 🇷🇺 AKfreedom
+#profile-title: AKfreedom
 #profile-update-interval: 12
 #support-url: https://t.me/@litiru
-#announce: '🏳️ AKfreedom V2, чувствуй себя свободным! 🏳️'
+#announce: 🏳️ AKfreedom V2, чувствуй себя свободным! 🏳️
 
 # ----------
 # Авто обход 1
