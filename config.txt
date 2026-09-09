@@ -4,7 +4,15 @@
 #announce: 🏳️ AKfreedom V2, чувствуй себя свободным! 🏳️
 
 # ----------
-# Авто обход 1
+# White Lists
+# ----------
+vless://test@shvurgceo.online:11?encryption=none&flow=xtls-rprx-vision&security=reality&sni=vk.com&fp=chrome&pbk=1&sid=ab12cd34&spx=%2F#-----------
+
+vless://test@shvurgceo.online:11?encryption=none&flow=xtls-rprx-vision&security=reality&sni=vk.com&fp=chrome&pbk=1&sid=ab12cd34&spx=%2F#%F0%9F%91%87%20%D0%91%D0%95%D0%9B%D0%AB%D0%95%20%D0%A1%D0%9F%D0%98%D0%A1%D0%9A%D0%98%20%F0%9F%91%87
+
+vless://test@shvurgceo.online:11?encryption=none&flow=xtls-rprx-vision&security=reality&sni=vk.com&fp=chrome&pbk=1&sid=ab12cd34&spx=%2F#-----------
+# ----------
+# White Lists
 # ----------
 
 vless://ba1df575-79a9-4159-ba6e-c9233595c753@193.233.231.30:443?type=tcp&headerType=none&security=tls&encryption=none&sni=rus21.roscomsosal.de&flow=xtls-rprx-vision&fp=android#%F0%9F%87%B7%F0%9F%87%BA%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%20%7C%20CIDR%20-%20%D0%A0%D0%BE%D1%81%D0%BA%D0%BE%D0%BC  
@@ -39,3 +47,15 @@ hysteria2://f317b5d6-d399-4d3d-a051-89d674ae953c@msk.frkn.org:443?insecure=false
 hysteria2://f317b5d6-d399-4d3d-a051-89d674ae953c@msk.frkn.org:443?insecure=false&up-mbps=0&sni=msk.frkn.org#%F0%9F%87%B7%F0%9F%87%BA%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%20%7C%20CIDR  
 vmess://eyJ2IjoiMiIsInBzIjoi8J+HqfCfh6og0JPQtdGA0LzQsNC90LjRjyB8IENJRFIiLCJhZGQiOiJyZW5kZXJlci1zdHJlYW0tMi02Mi5taXJyYS5ub3ciLCJwb3J0IjoiNDQzIiwiaWQiOiJkYjUwYTIwZS03ZmY1LTRlNzAtOTQ4Zi0xN2NjOWNhN2MxNTQiLCJhaWQiOiIwIiwic2N5IjoiYXV0byIsIm5ldCI6IndzIiwidHlwZSI6Im5vbmUiLCJob3N0IjoiIiwicGF0aCI6Ii9hcGkvdjEvZ3B1LXN0cmVhbS9zb2NrZXQiLCJ0bHMiOiJ0bHMiLCJzbmkiOiIiLCJhbHBuIjoiIiwiZnAiOiIifQ==  
 vmess://eyJhZGQiOiJyZW5kZXJlci1zdHJlYW0tMi02Mi5taXJyYS5ub3ciLCJhaWQiOiIwIiwiYWxwbiI6ImgyLGh0dHAvMS4xIiwiZnAiOiJjaHJvbWUiLCJob3N0IjoicmVuZGVyZXItc3RyZWFtLTItNjIubWlycmEubm93IiwiaWQiOiJkYjUwYTIwZS03ZmY1LTRlNzAtOTQ4Zi0xN2NjOWNhN2MxNTQiLCJuZXQiOiJ3cyIsInBhdGgiOiIvYXBpL3YxL2dwdS1zdHJlYW0vc29ja2V0IiwicG9ydCI6IjQ0MyIsInBzIjoi8J+HqfCfh6og0JPQtdGA0LzQsNC90LjRjyB8IENJRFIiLCJzY3kiOiJhdXRvIiwic25pIjoicmVuZGVyZXItc3RyZWFtLTItNjIubWlycmEubm93IiwidGxzIjoidGxzIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9
+
+# ----------
+# Black Lists
+# ----------
+vless://test@shvurgceo.online:11?encryption=none&flow=xtls-rprx-vision&security=reality&sni=vk.com&fp=chrome&pbk=1&sid=ab12cd34&spx=%2F#-----------
+
+vless://test@shvurgceo.online:11?encryption=none&flow=xtls-rprx-vision&security=reality&sni=vk.com&fp=chrome&pbk=1&sid=ab12cd34&spx=%2F#%F0%9F%91%87%20%D0%A7%D0%95%D0%A0%D0%9D%D0%AB%D0%95%20%D0%A1%D0%9F%D0%98%D0%A1%D0%9A%D0%98%20%F0%9F%91%87
+
+vless://test@shvurgceo.online:11?encryption=none&flow=xtls-rprx-vision&security=reality&sni=vk.com&fp=chrome&pbk=1&sid=ab12cd34&spx=%2F#-----------
+# ----------
+# Black Lists
+# ----------
