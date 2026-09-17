@@ -1,30 +1,35 @@
 #!/usr/bin/env python3
 """
-VPN Config Checker + Auto-Push to GitHub
-Проверяет конфиги на TCP-доступность + latency, оставляет рабочие,
-пушит в AngelKlear-2/akfreedom
+МАРУСЯ VPN Checker — авто-проверка + пуш в GitHub
+Работает 24/7: бесконечный цикл (для локального теста)
+Или один раз (для Vercel / GitHub Actions)
 
-Требования:
-  pip install requests PyGithub
-
-Запуск:
-  export GITHUB_TOKEN=ghp_xxxxxxxx
+Использование:
+  # Windows PowerShell:
+  $env:GITHUB_TOKEN = "ghp_xxxx"
   python checker.py
 
-Или в cron / GitHub Actions / Vercel Cron каждые 1-5 мин.
+  # или с интервалом (минуты):
+  python checker.py --loop 15
 """
 
 import os
 import re
+import sys
 import socket
 import time
 import concurrent.futures
+import argparse
 from datetime import datetime, timezone
 
-import requests
-from github import Github
+try:
+    import requests
+    from github import Github
+except ImportError:
+    print("Установи зависимости:")
+    print("  pip install requests PyGithub")
+    sys.exit(1)
 
-# ================== НАСТРОЙКИ ==================
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
 REPO_NAME = "AngelKlear-2/akfreedom"
 BRANCH = "main"
@@ -33,25 +38,35 @@ SOURCES = {
     "blacklist": [
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS.txt",
+        "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/protocols/vless.txt",
+        "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/protocols/hysteria2.txt",
+        "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/top100.txt",
+        "https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Splitted-By-Protocol/vless.txt",
+        "https://raw.githubusercontent.com/3inker/v2ray-subscription/main/all_not_ru.txt",
+        "https://raw.githubusercontent.com/aviamastersgh/vpn-free-russia/main/verified_configs.txt",
+        "https://raw.githubusercontent.com/nikita29a/FreeProxyList/main/mirror/1.txt",
+        "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/splitted/vless",
     ],
     "whitelist": [
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-all.txt",
+        "https://raw.githubusercontent.com/Subzio/subzio/main/WHITE_LIST_PROXY_COLLECTION.txt",
+        "https://raw.githubusercontent.com/Subzio/subzio/main/HYSTERIA2.txt",
     ],
 }
 
-TIMEOUT = 3.0
-MAX_WORKERS = 40
-MAX_LATENCY_MS = 8000
-KEEP_TOP_N = {"blacklist": 80, "whitelist": 40, "vpn": 100}
+TIMEOUT = 2.8
+MAX_WORKERS = 50
+MAX_LATENCY_MS = 7000
+KEEP_TOP = {"blacklist": 100, "whitelist": 50}
 
 def extract_host_port(uri: str):
     try:
-        m = re.search(r"@([^:/?]+):(\d+)", uri)
+        m = re.search(r"@([^:/?#]+):(\d+)", uri)
         if m:
             return m.group(1), int(m.group(2))
-        m = re.search(r"//(?:[^@]+@)?([^:/?]+):(\d+)", uri)
+        m = re.search(r"//(?:[^@/\s]+@)?([^:/?#]+):(\d+)", uri)
         if m:
             return m.group(1), int(m.group(2))
     except Exception:
@@ -62,23 +77,29 @@ def tcp_ping(host: str, port: int, timeout: float = TIMEOUT):
     try:
         start = time.perf_counter()
         with socket.create_connection((host, port), timeout=timeout):
-            latency = (time.perf_counter() - start) * 1000
-            return round(latency, 1)
+            return round((time.perf_counter() - start) * 1000, 1)
     except Exception:
         return None
 
 def fetch_source(url: str) -> list:
     try:
-        r = requests.get(url, timeout=15)
+        r = requests.get(url, timeout=18, headers={"User-Agent": "Mozilla/5.0"})
         r.raise_for_status()
+        text = r.text
+        if not any(p in text[:300] for p in ("vless://", "vmess://", "trojan://", "ss://", "hysteria2://", "hy2://")):
+            import base64
+            try:
+                text = base64.b64decode(text + "==").decode("utf-8", errors="ignore")
+            except Exception:
+                pass
         lines = []
-        for line in r.text.splitlines():
+        for line in text.splitlines():
             line = line.strip()
             if line.startswith(("vless://", "vmess://", "trojan://", "ss://", "hysteria2://", "hy2://")):
                 lines.append(line)
         return lines
     except Exception as e:
-        print(f"[!] Failed {url}: {e}")
+        print(f"  [!] {url.split('/')[-1]} → {e}")
         return []
 
 def check_uri(uri: str):
@@ -91,74 +112,111 @@ def check_uri(uri: str):
     return (uri, lat)
 
 def process_list(name: str, urls: list) -> list:
-    print(f"\n=== Processing {name} ===")
+    print(f"\n=== {name.upper()} ===")
     all_uris = []
     for u in urls:
-        all_uris.extend(fetch_source(u))
+        fetched = fetch_source(u)
+        all_uris.extend(fetched)
+        print(f"  +{len(fetched):4d}  {u.split('/')[-1]}")
     all_uris = list(dict.fromkeys(all_uris))
-    print(f"Fetched {len(all_uris)} unique URIs")
+    print(f"Уникальных: {len(all_uris)}")
 
     working = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
-        futures = {ex.submit(check_uri, uri): uri for uri in all_uris}
-        for fut in concurrent.futures.as_completed(futures):
+        futs = [ex.submit(check_uri, uri) for uri in all_uris]
+        for fut in concurrent.futures.as_completed(futs):
             res = fut.result()
             if res:
                 working.append(res)
 
     working.sort(key=lambda x: x[1])
-    top_n = KEEP_TOP_N.get(name, 50)
-    working = working[:top_n]
-    print(f"Working: {len(working)} (kept top {top_n})")
-    for uri, lat in working[:5]:
-        print(f"  {lat:6.1f} ms  {uri[:80]}...")
+    top = KEEP_TOP.get(name, 60)
+    working = working[:top]
+    print(f"Рабочих (топ {top}): {len(working)}")
+    for uri, lat in working[:3]:
+        print(f"  {lat:6.1f} ms  {uri[:70]}...")
 
     result = []
     for uri, lat in working:
         if "#" in uri:
             base, remark = uri.rsplit("#", 1)
-            new_uri = f"{base}#{remark} | {lat}ms"
+            result.append(f"{base}#{remark} | {lat}ms")
         else:
-            new_uri = f"{uri}#{lat}ms"
-        result.append(new_uri)
+            result.append(f"{uri}#{lat}ms")
     return result
 
 def push_to_github(files: dict):
     if not GITHUB_TOKEN:
-        print("[!] No GITHUB_TOKEN, skip push. Saving locally only.")
+        print("\n[!] Нет GITHUB_TOKEN — сохраняю локально")
         for name, content in files.items():
             with open(name, "w", encoding="utf-8") as f:
                 f.write(content)
-            print(f"Saved {name}")
+            print(f"  saved {name}")
         return
 
     g = Github(GITHUB_TOKEN)
     repo = g.get_repo(REPO_NAME)
+    now = datetime.now(timezone.utc).isoformat()
 
     for path, content in files.items():
         try:
             contents = repo.get_contents(path, ref=BRANCH)
-            repo.update_file(path, f"auto-update {path} {datetime.now(timezone.utc).isoformat()}", content, contents.sha, branch=BRANCH)
-            print(f"[+] Updated {path}")
+            repo.update_file(path, f"auto {path} {now}", content, contents.sha, branch=BRANCH)
+            print(f"[+] updated {path}")
         except Exception:
             repo.create_file(path, f"create {path}", content, branch=BRANCH)
-            print(f"[+] Created {path}")
+            print(f"[+] created {path}")
 
-def main():
-    print(f"Starting checker at {datetime.now(timezone.utc).isoformat()}")
+def run_once():
+    print(f"\n{'='*50}")
+    print(f"Старт: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}")
+    print(f"{'='*50}")
+
     black = process_list("blacklist", SOURCES["blacklist"])
     white = process_list("whitelist", SOURCES["whitelist"])
-    mixed = black[:60] + ["", "# ========== WHITE LISTS ==========", ""] + white
+
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     files = {
         "blacklist.txt": f"# blacklist.txt\n# BLACK LISTS\n# updated: {now}\n# working: {len(black)}\n\n" + "\n".join(black),
-        "whitelist.txt": f"# whitelist.txt\n# WHITE LISTS / CIDR\n# updated: {now}\n# working: {len(white)}\n\n" + "\n".join(white),
-        "vpn.txt": f"# vpn.txt\n# Mixed\n# updated: {now}\n\n" + "\n".join(mixed),
-        "config.txt": f"# ---\n#profile-title: МАРУСЯ VPN (AKfreedom)\n#profile-update-interval: 5\n#support-url: https://t.me/@litiru\n#announce: 🏳️ Auto-updated | {now} 🏳️\n\n# ========== ОБЫЧНЫЕ ВПН ==========\n" + "\n".join(black[:40]) + "\n\n# ========== ОБХОД БЕЛЫХ СПИСКОВ ==========\n" + "\n".join(white) + "\n",
+        "whitelist.txt": f"# whitelist.txt\n# WHITE LISTS / CIDR / Обход БС\n# updated: {now}\n# working: {len(white)}\n\n" + "\n".join(white),
+        "vpn.txt": f"# vpn.txt Mixed\n# updated: {now}\n\n" + "\n".join(black[:70] + ["", "# === WHITE ===", ""] + white),
+        "config.txt": (
+            f"# ---\n#profile-title: МАРУСЯ VPN (AKfreedom)\n"
+            f"#profile-update-interval: 15\n"
+            f"#support-url: https://t.me/@litiru\n"
+            f"#announce: 🏳️ Auto {now} | МТС+Ростелеком 🏳️\n\n"
+            f"# ========== ОБЫЧНЫЕ ВПН ==========\n"
+            + "\n".join(black[:50])
+            + "\n\n# ========== ОБХОД БЕЛЫХ СПИСКОВ ==========\n"
+            + "\n".join(white)
+            + "\n"
+        ),
     }
     push_to_github(files)
-    print("Done.")
+    print(f"\nГотово. Black: {len(black)} | White: {len(white)}")
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--loop", type=int, default=0, help="Интервал в минутах (0 = один раз)")
+    args = parser.parse_args()
+
+    if args.loop <= 0:
+        run_once()
+        return
+
+    print(f"Бесконечный режим: каждые {args.loop} минут")
+    print("Ctrl+C чтобы остановить\n")
+    while True:
+        try:
+            run_once()
+        except KeyboardInterrupt:
+            print("\nОстановлено пользователем")
+            break
+        except Exception as e:
+            print(f"[ERROR] {e}")
+        print(f"\nСпим {args.loop} мин...")
+        time.sleep(args.loop * 60)
 
 if __name__ == "__main__":
     main()
