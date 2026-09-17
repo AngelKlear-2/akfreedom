@@ -1,0 +1,6 @@
+# vpn.txt - Mixed (Black + White)
+# profile-title: МАРУСЯ VPN Mixed
+# updated: 2026-09-17
+# Запусти checker.py чтобы наполнить
+
+# Пока смотри config.txt и whitelist.txt

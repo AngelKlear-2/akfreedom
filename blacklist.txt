@@ -1,0 +1,7 @@
+# blacklist.txt - BLACK LISTS (обычные VPN)
+# profile-title: BLACK LISTS
+# updated: 2026-09-17
+# Запусти checker.py чтобы наполнить рабочими конфигами
+
+# Пример (будет перезаписан скриптом):
+vless://57e2a48b-0cc2-4b60-aacd-b36358fcba96@2.27.205.218:443?encryption=none&fp=firefox&pbk=DiJo9V7cQ2_dIPXjFjAEFMeLUemQmWpcbTs6ARNh7gg&security=reality&serviceName=grpc&sid=9f3a1c7b&sni=4pda.to&type=grpc#🇩🇪 Германия
