@@ -9,23 +9,26 @@
 - **White lists** (обход БС / CIDR): https://raw.githubusercontent.com/AngelKlear-2/akfreedom/main/whitelist.txt
 - **config.txt** (для клиентов): https://raw.githubusercontent.com/AngelKlear-2/akfreedom/main/config.txt
 
-## Скрипт проверки
+## Авто-обновление 24/7
 
-`checker.py` — каждые N минут:
-1. Качает свежие списки с Igareck и др.
+**GitHub Actions** крутится каждые **30 минут**:
+1. Качает свежие списки с Igareck и кучи других источников
 2. Проверяет TCP + latency
 3. Оставляет только рабочие
-4. Пушит обратно в этот репозиторий
+4. Пушит в `blacklist.txt`, `whitelist.txt`, `vpn.txt`, `config.txt`
 
-### Как запустить
+Workflow: `.github/workflows/update-configs.yml`
+
+Можно запустить вручную: Actions → Update VPN Configs → Run workflow
+
+## Локальный запуск
 
 ```bash
 pip install requests PyGithub
 export GITHUB_TOKEN=ghp_ваш_токен
-python checker.py
+python checker.py          # один раз
+python checker.py --loop 30  # каждые 30 мин
 ```
-
-Можно повесить на cron, GitHub Actions или Vercel Cron.
 
 ## Шаблон
 
