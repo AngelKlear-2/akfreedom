@@ -41,11 +41,3 @@ hy2://14f7504c-bd01-4d88-bd42-80dc6bf6b202@samurai.h4ck.me:443/#FI 🇫🇮
 
 hy2://f317b5d6-d399-4d3d-a051-89d674ae953c@msk.frkn.org:443/#RU 🇷🇺
 
-# ----------
-# White Lists (заглушки)
-# ----------
-vless://test@shvurgceo.online:11?encryption=none&flow=xtls-rprx-vision&security=reality&sni=vk.com&fp=chrome&pbk=1&sid=ab12cd34&spx=%2F#-----------
-
-vless://test@shvurgceo.online:11?encryption=none&flow=xtls-rprx-vision&security=reality&sni=vk.com&fp=chrome&pbk=1&sid=ab12cd34&spx=%2F#%F0%9F%91%87%20%D0%91%D0%95%D0%9B%D0%AB%D0%95%20%D0%A1%D0%9F%D0%98%D0%A1%D0%9A%D0%98%20%F0%9F%91%87
-
-vless://test@shvurgceo.online:11?encryption=none&flow=xtls-rprx-vision&security=reality&sni=vk.com&fp=chrome&pbk=1&sid=ab12cd34&spx=%2F#-----------
