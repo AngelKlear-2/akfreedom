@@ -1,0 +1,43 @@
+name: Update VPN Configs
+
+on:
+  schedule:
+    # каждые 30 минут
+    - cron: '*/30 * * * *'
+  workflow_dispatch:  # ручной запуск
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install requests PyGithub
+
+      - name: Run checker
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python checker.py
+
+      - name: Summary
+        run: |
+          echo "### Configs updated" >> $GITHUB_STEP_SUMMARY
+          echo "Blacklist lines: $(wc -l < blacklist.txt || echo 0)" >> $GITHUB_STEP_SUMMARY
+          echo "Whitelist lines: $(wc -l < whitelist.txt || echo 0)" >> $GITHUB_STEP_SUMMARY
+          echo "Config lines: $(wc -l < config.txt || echo 0)" >> $GITHUB_STEP_SUMMARY
