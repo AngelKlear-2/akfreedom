@@ -40,12 +40,15 @@ SOURCES = {
         "https://raw.githubusercontent.com/Subzio/subzio/main/WHITE_LIST_PROXY_COLLECTION.txt",
         "https://raw.githubusercontent.com/Subzio/subzio/main/HYSTERIA2.txt",
     ],
+    "vpnserver": [
+        "https://raw.githubusercontent.com/AngelKlear-2/akfreedom/refs/heads/main/ubw",
+    ],
 }
 
 TIMEOUT = 2.3
 MAX_WORKERS = 35
 MAX_LATENCY_MS = 4500
-KEEP_TOP = {"blacklist": 16, "whitelist": 14}   # сильно меньше
+KEEP_TOP = {"vpnserver": 15, "whitelist": 6," "blacklist": 5}   # сильно меньше
 
 def extract_host_port(uri: str):
     try:
