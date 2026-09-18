@@ -20,7 +20,7 @@ import socket
 import time
 import concurrent.futures
 import argparse
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 try:
     import requests
@@ -33,6 +33,9 @@ except ImportError:
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
 REPO_NAME = "AngelKlear-2/akfreedom"
 BRANCH = "main"
+
+# Екатеринбург = UTC+5
+EKB = timezone(timedelta(hours=5))
 
 SOURCES = {
     "blacklist": [
@@ -169,13 +172,13 @@ def push_to_github(files: dict):
 
 def run_once():
     print(f"\n{'='*50}")
-    print(f"Старт: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}")
+    print(f"Старт: {datetime.now(EKB).strftime('%Y-%m-%d %H:%M:%S ЕКБ')}")
     print(f"{'='*50}")
 
     black = process_list("blacklist", SOURCES["blacklist"])
     white = process_list("whitelist", SOURCES["whitelist"])
 
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    now = datetime.now(EKB).strftime("%Y-%m-%d %H:%M ЕКБ")
 
     files = {
         "blacklist.txt": f"# blacklist.txt\n# BLACK LISTS\n# updated: {now}\n# working: {len(black)}\n\n" + "\n".join(black),
