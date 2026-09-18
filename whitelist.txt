@@ -1,11 +1,11 @@
 # whitelist.txt
 # Обход белых списков / CIDR
-# updated: 2026-09-18 19:28 ЕКБ
+# updated: 2026-09-18 22:52 ЕКБ
 # working: 6
 
-vless://67ec1b7a-737e-419c-bfd9-6a402ed9f56a@151.101.213.142:443?type=xhttp&headerType=none&security=tls&encryption=none&sni=accounts.fastly.com&alpn=h3&path=%2F&host=ovd12.global.ssl.fastly.net&fp=firefox#🇫🇷 Франция ⚡ | 4.5ms
-vless://8ddedcc7-6c4e-4df3-a190-ac40926f6694@188.114.97.6:443?security=tls&type=ws&path=/pyip&host=late-boat-fbd7.152-de6.workers.dev&packetEncoding=xudp&sni=late-boat-fbd7.152-de6.workers.dev&fp=unsafe&encryption=none#🌐 Сервер ⚡ | 4.6ms
-vless://3cb4c775-bf08-4158-a0e3-cbae9ac452d7@188.114.97.6:2053?security=tls&type=ws&path=/sync&host=orange-darkness-749f.phantomnettest1-65d.workers.dev&packetEncoding=xudp&sni=orange-darkness-749f.phantomnettest1-65d.workers.dev&fp=chrome&encryption=none#🌐 Сервер ⚡ | 4.6ms
-trojan://humanity@188.114.97.7:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 4.6ms
-vless://67ec1b7a-737e-419c-bfd9-6a402ed9f56a@151.101.213.142:443?type=xhttp&headerType=none&security=tls&encryption=none&sni=accounts.fastly.com&alpn=h3&path=%2F&host=ovd12.global.ssl.fastly.net&fp=qq#🇫🇷 Франция ⚡ | 4.7ms
-trojan://humanity@104.16.174.143:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 4.7ms
+vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.53.215:2087?&security=tls&fp=chrome&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&type=ws&headerType=none&host=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&path=%2F#🌐 Сервер ⚡ | 6.2ms
+vless://44eae030-290b-4083-8102-6f8bab05701b@104.16.10.233:443?&security=tls&fp=unsafe&sni=cfvvv-ev1.pages.dev&type=ws&headerType=none&host=cfvvv-ev1.pages.dev&path=%2F#🌐 Сервер ⚡ | 6.2ms
+vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@104.18.38.47:443?encryption=none&security=tls&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&type=ws&path=%2F#🌐 Сервер ⚡ | 6.3ms
+vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@104.16.150.246:2087?path=%2F&security=tls&encryption=none&insecure=0&host=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&fp=chrome&type=ws&allowInsecure=0&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc#🇺🇸 США ⚡ | 6.7ms
+trojan://humanity@86.38.214.205:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 6.8ms
+vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.53.194:2087?&security=tls&fp=chrome&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&type=ws&headerType=none&host=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&path=%2F#🌐 Сервер ⚡ | 7.5ms
