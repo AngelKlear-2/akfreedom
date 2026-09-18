@@ -45,7 +45,7 @@ SOURCES = {
 TIMEOUT = 2.3
 MAX_WORKERS = 35
 MAX_LATENCY_MS = 4500
-KEEP_TOP = {"blacklist": 12, "whitelist": 18}   # сильно меньше
+KEEP_TOP = {"blacklist": 16, "whitelist": 14}   # сильно меньше
 
 def extract_host_port(uri: str):
     try:
