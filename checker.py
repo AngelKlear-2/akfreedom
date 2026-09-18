@@ -1,16 +1,7 @@
 #!/usr/bin/env python3
 """
 МАРУСЯ VPN Checker — авто-проверка + пуш в GitHub
-Работает 24/7: бесконечный цикл (для локального теста)
-Или один раз (для Vercel / GitHub Actions)
-
-Использование:
-  # Windows PowerShell:
-  $env:GITHUB_TOKEN = "ghp_xxxx"
-  python checker.py
-
-  # или с интервалом (минуты):
-  python checker.py --loop 15
+Жёсткий фильтр: только качественные источники для РФ (МТС + Ростелеком)
 """
 
 import os
@@ -37,32 +28,31 @@ BRANCH = "main"
 # Екатеринбург = UTC+5
 EKB = timezone(timedelta(hours=5))
 
+# Только самые рабочие источники для России
 SOURCES = {
     "blacklist": [
+        # Основные от igareck (проверенные)
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS.txt",
-        "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/protocols/vless.txt",
-        "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/protocols/hysteria2.txt",
-        "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/top100.txt",
-        "https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Splitted-By-Protocol/vless.txt",
-        "https://raw.githubusercontent.com/3inker/v2ray-subscription/main/all_not_ru.txt",
+        # Ещё пару относительно чистых
         "https://raw.githubusercontent.com/aviamastersgh/vpn-free-russia/main/verified_configs.txt",
-        "https://raw.githubusercontent.com/nikita29a/FreeProxyList/main/mirror/1.txt",
-        "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/splitted/vless",
     ],
     "whitelist": [
+        # Самые важные — обход белых списков / CIDR
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-all.txt",
+        "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-SNI-RU-all.txt",
+        # Subzio (хорошие hy2 + white)
         "https://raw.githubusercontent.com/Subzio/subzio/main/WHITE_LIST_PROXY_COLLECTION.txt",
         "https://raw.githubusercontent.com/Subzio/subzio/main/HYSTERIA2.txt",
     ],
 }
 
-TIMEOUT = 2.8
-MAX_WORKERS = 50
-MAX_LATENCY_MS = 7000
-KEEP_TOP = {"blacklist": 100, "whitelist": 50}
+TIMEOUT = 2.5
+MAX_WORKERS = 40
+MAX_LATENCY_MS = 5500          # жёстче отсекаем медленные
+KEEP_TOP = {"blacklist": 40, "whitelist": 60}   # больше белых, меньше обычных
 
 def extract_host_port(uri: str):
     try:
@@ -133,7 +123,7 @@ def process_list(name: str, urls: list) -> list:
                 working.append(res)
 
     working.sort(key=lambda x: x[1])
-    top = KEEP_TOP.get(name, 60)
+    top = KEEP_TOP.get(name, 50)
     working = working[:top]
     print(f"Рабочих (топ {top}): {len(working)}")
     for uri, lat in working[:3]:
@@ -181,17 +171,17 @@ def run_once():
     now = datetime.now(EKB).strftime("%Y-%m-%d %H:%M ЕКБ")
 
     files = {
-        "blacklist.txt": f"# blacklist.txt\n# BLACK LISTS\n# updated: {now}\n# working: {len(black)}\n\n" + "\n".join(black),
+        "blacklist.txt": f"# blacklist.txt\n# BLACK LISTS (обычные)\n# updated: {now}\n# working: {len(black)}\n\n" + "\n".join(black),
         "whitelist.txt": f"# whitelist.txt\n# WHITE LISTS / CIDR / Обход БС\n# updated: {now}\n# working: {len(white)}\n\n" + "\n".join(white),
-        "vpn.txt": f"# vpn.txt Mixed\n# updated: {now}\n\n" + "\n".join(black[:70] + ["", "# === WHITE ===", ""] + white),
+        "vpn.txt": f"# vpn.txt Mixed\n# updated: {now}\n\n" + "\n".join(black[:30] + ["", "# === WHITE / ОБХОД БС ===", ""] + white),
         "config.txt": (
             f"# ---\n#profile-title: МАРУСЯ VPN (AKfreedom)\n"
             f"#profile-update-interval: 15\n"
             f"#support-url: https://t.me/@litiru\n"
             f"#announce: 🏳️ Auto {now} | МТС+Ростелеком 🏳️\n\n"
             f"# ========== ОБЫЧНЫЕ ВПН ==========\n"
-            + "\n".join(black[:50])
-            + "\n\n# ========== ОБХОД БЕЛЫХ СПИСКОВ ==========\n"
+            + "\n".join(black[:25])
+            + "\n\n# ========== ОБХОД БЕЛЫХ СПИСКОВ (главное) ==========\n"
             + "\n".join(white)
             + "\n"
         ),
