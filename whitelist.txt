@@ -1,11 +1,11 @@
 # whitelist.txt
 # Обход белых списков / CIDR
-# updated: 2026-09-18 15:04 ЕКБ
+# updated: 2026-09-18 19:28 ЕКБ
 # working: 6
 
-vless://4ff70740-8c80-48ae-985f-2afe4924e908@172.64.155.209:8443?&security=tls&fp=chrome&sni=pubb.clnahanpnln.workers.dev&type=ws&headerType=none&host=pubb.clnahanpnln.workers.dev&path=%2Fsync#🌐 Сервер ⚡ | 8.3ms
-vless://2b181a3a-c001-4145-845a-5d43a43837d5@104.17.112.90:2053?&security=tls&fp=chrome&sni=vpn-1fj.pages.dev&type=ws&headerType=none&host=vpn-1fj.pages.dev&path=%2F#🌐 Сервер ⚡ | 8.4ms
-vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@104.16.150.108:2096?security=tls&type=ws&path=/&host=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&packetEncoding=xudp&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&fp=chrome&encryption=none#🌐 Сервер ⚡ | 8.6ms
-vless://44eae030-290b-4083-8102-6f8bab05701b@104.18.242.3:443?&security=tls&fp=unsafe&sni=cfvvv-ev1.pages.dev&type=ws&headerType=none&host=cfvvv-ev1.pages.dev&path=%2F#🌐 Сервер ⚡ | 8.6ms
-vless://8102891d-7b37-4dc5-8261-9474b59b5c63@172.64.145.202:2096?type=ws&security=tls&fp=random&sni=vip.868068.xyz&host=vip.868068.xyz#🇷🇺 Россия ⚡ | 8.6ms
-vless://49c0ae46-767c-47d1-9703-8740e0c4b15a@104.18.1.1:443?&security=tls&fp=chrome&sni=flat-night-edd0.hosein9saleazhuongooyeh87.workers.dev&type=ws&headerType=none&host=flat-night-edd0.hosein9saleazhuongooyeh87.workers.dev&path=%2FeyJqdW5rIjoiZU1pQlVqNTBYVmpTeDlCIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19#🌐 Сервер ⚡ | 8.7ms
+vless://67ec1b7a-737e-419c-bfd9-6a402ed9f56a@151.101.213.142:443?type=xhttp&headerType=none&security=tls&encryption=none&sni=accounts.fastly.com&alpn=h3&path=%2F&host=ovd12.global.ssl.fastly.net&fp=firefox#🇫🇷 Франция ⚡ | 4.5ms
+vless://8ddedcc7-6c4e-4df3-a190-ac40926f6694@188.114.97.6:443?security=tls&type=ws&path=/pyip&host=late-boat-fbd7.152-de6.workers.dev&packetEncoding=xudp&sni=late-boat-fbd7.152-de6.workers.dev&fp=unsafe&encryption=none#🌐 Сервер ⚡ | 4.6ms
+vless://3cb4c775-bf08-4158-a0e3-cbae9ac452d7@188.114.97.6:2053?security=tls&type=ws&path=/sync&host=orange-darkness-749f.phantomnettest1-65d.workers.dev&packetEncoding=xudp&sni=orange-darkness-749f.phantomnettest1-65d.workers.dev&fp=chrome&encryption=none#🌐 Сервер ⚡ | 4.6ms
+trojan://humanity@188.114.97.7:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 4.6ms
+vless://67ec1b7a-737e-419c-bfd9-6a402ed9f56a@151.101.213.142:443?type=xhttp&headerType=none&security=tls&encryption=none&sni=accounts.fastly.com&alpn=h3&path=%2F&host=ovd12.global.ssl.fastly.net&fp=qq#🇫🇷 Франция ⚡ | 4.7ms
+trojan://humanity@104.16.174.143:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 4.7ms
