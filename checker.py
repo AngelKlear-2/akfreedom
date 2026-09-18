@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-МАРУСЯ VPN Checker — авто-проверка + пуш в GitHub
-Жёсткий фильтр: только качественные источники для РФ (МТС + Ростелеком)
+МАРУСЯ VPN Checker — жёсткий фильтр + чистые названия
+Только качественные источники + нормальные имена + эмодзи
 """
 
 import os
@@ -12,47 +12,40 @@ import time
 import concurrent.futures
 import argparse
 from datetime import datetime, timezone, timedelta
+from urllib.parse import unquote
 
 try:
     import requests
     from github import Github
 except ImportError:
-    print("Установи зависимости:")
-    print("  pip install requests PyGithub")
+    print("Установи зависимости: pip install requests PyGithub")
     sys.exit(1)
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
 REPO_NAME = "AngelKlear-2/akfreedom"
 BRANCH = "main"
-
-# Екатеринбург = UTC+5
 EKB = timezone(timedelta(hours=5))
 
-# Только самые рабочие источники для России
 SOURCES = {
     "blacklist": [
-        # Основные от igareck (проверенные)
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS.txt",
-        # Ещё пару относительно чистых
         "https://raw.githubusercontent.com/aviamastersgh/vpn-free-russia/main/verified_configs.txt",
     ],
     "whitelist": [
-        # Самые важные — обход белых списков / CIDR
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-all.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-SNI-RU-all.txt",
-        # Subzio (хорошие hy2 + white)
         "https://raw.githubusercontent.com/Subzio/subzio/main/WHITE_LIST_PROXY_COLLECTION.txt",
         "https://raw.githubusercontent.com/Subzio/subzio/main/HYSTERIA2.txt",
     ],
 }
 
-TIMEOUT = 2.5
-MAX_WORKERS = 40
-MAX_LATENCY_MS = 5500          # жёстче отсекаем медленные
-KEEP_TOP = {"blacklist": 40, "whitelist": 60}   # больше белых, меньше обычных
+TIMEOUT = 2.3
+MAX_WORKERS = 35
+MAX_LATENCY_MS = 4500
+KEEP_TOP = {"blacklist": 12, "whitelist": 18}   # сильно меньше
 
 def extract_host_port(uri: str):
     try:
@@ -76,10 +69,10 @@ def tcp_ping(host: str, port: int, timeout: float = TIMEOUT):
 
 def fetch_source(url: str) -> list:
     try:
-        r = requests.get(url, timeout=18, headers={"User-Agent": "Mozilla/5.0"})
+        r = requests.get(url, timeout=16, headers={"User-Agent": "Mozilla/5.0"})
         r.raise_for_status()
         text = r.text
-        if not any(p in text[:300] for p in ("vless://", "vmess://", "trojan://", "ss://", "hysteria2://", "hy2://")):
+        if not any(p in text[:400] for p in ("vless://", "vmess://", "trojan://", "ss://", "hysteria2://", "hy2://")):
             import base64
             try:
                 text = base64.b64decode(text + "==").decode("utf-8", errors="ignore")
@@ -104,6 +97,64 @@ def check_uri(uri: str):
         return None
     return (uri, lat)
 
+def clean_name(uri: str, lat: float) -> str:
+    """Делает нормальное русское название + эмодзи"""
+    # берём старый remark если есть
+    remark = ""
+    if "#" in uri:
+        remark = unquote(uri.rsplit("#", 1)[1]).strip()
+
+    # убираем мусор
+    remark = re.sub(r"t\.me/\S+", "", remark, flags=re.I)
+    remark = re.sub(r"CF[\u4e00-\u9fff\w_\-]*", "", remark)
+    remark = re.sub(r"[\u4e00-\u9fff]+", "", remark)  # китайские иероглифы
+    remark = re.sub(r"@\w+", "", remark)
+    remark = re.sub(r"\|\s*\d+ms.*", "", remark)
+    remark = re.sub(r"\s+", " ", remark).strip(" -_|#")
+
+    # определяем страну по ключевым словам
+    low = (remark + " " + uri).lower()
+    country = "Сервер"
+    flag = "🌐"
+
+    if any(x in low for x in ["russia", "россия", "ru ", "msk", "moscow", "frkn", "яя", "yandex"]):
+        country, flag = "Россия", "🇷🇺"
+    elif any(x in low for x in ["poland", "польша", "pl "]):
+        country, flag = "Польша", "🇵🇱"
+    elif any(x in low for x in ["netherlands", "нидерланды", "nl ", "amsterdam"]):
+        country, flag = "Нидерланды", "🇳🇱"
+    elif any(x in low for x in ["finland", "финляндия", "fi "]):
+        country, flag = "Финляндия", "🇫🇮"
+    elif any(x in low for x in ["germany", "германия", "de ", "frankfurt"]):
+        country, flag = "Германия", "🇩🇪"
+    elif any(x in low for x in ["sweden", "швеция", "se "]):
+        country, flag = "Швеция", "🇸🇪"
+    elif any(x in low for x in ["latvia", "латвия", "lv "]):
+        country, flag = "Латвия", "🇱🇻"
+    elif any(x in low for x in ["france", "франция", "fr "]):
+        country, flag = "Франция", "🇫🇷"
+    elif any(x in low for x in ["usa", "сша", "us ", "america"]):
+        country, flag = "США", "🇺🇸"
+    elif any(x in low for x in ["canada", "канада", "ca "]):
+        country, flag = "Канада", "🇨🇦"
+    elif "anycast" in low:
+        country, flag = "Anycast", "🌐"
+
+    # эмодзи по качеству
+    emoji = ""
+    if lat <= 80:
+        emoji = " ⚡"
+    elif lat <= 180:
+        emoji = " ⚡"
+    if "game" in low or "игр" in low or "gaming" in low:
+        emoji += " 🎮"
+    if "anycast" in low:
+        emoji += " 🌐"
+
+    # итоговый remark
+    final = f"{flag} {country}{emoji}"
+    return final
+
 def process_list(name: str, urls: list) -> list:
     print(f"\n=== {name.upper()} ===")
     all_uris = []
@@ -123,19 +174,15 @@ def process_list(name: str, urls: list) -> list:
                 working.append(res)
 
     working.sort(key=lambda x: x[1])
-    top = KEEP_TOP.get(name, 50)
+    top = KEEP_TOP.get(name, 15)
     working = working[:top]
     print(f"Рабочих (топ {top}): {len(working)}")
-    for uri, lat in working[:3]:
-        print(f"  {lat:6.1f} ms  {uri[:70]}...")
 
     result = []
     for uri, lat in working:
-        if "#" in uri:
-            base, remark = uri.rsplit("#", 1)
-            result.append(f"{base}#{remark} | {lat}ms")
-        else:
-            result.append(f"{uri}#{lat}ms")
+        base = uri.split("#")[0] if "#" in uri else uri
+        nice = clean_name(uri, lat)
+        result.append(f"{base}#{nice} | {lat}ms")
     return result
 
 def push_to_github(files: dict):
@@ -171,17 +218,17 @@ def run_once():
     now = datetime.now(EKB).strftime("%Y-%m-%d %H:%M ЕКБ")
 
     files = {
-        "blacklist.txt": f"# blacklist.txt\n# BLACK LISTS (обычные)\n# updated: {now}\n# working: {len(black)}\n\n" + "\n".join(black),
-        "whitelist.txt": f"# whitelist.txt\n# WHITE LISTS / CIDR / Обход БС\n# updated: {now}\n# working: {len(white)}\n\n" + "\n".join(white),
-        "vpn.txt": f"# vpn.txt Mixed\n# updated: {now}\n\n" + "\n".join(black[:30] + ["", "# === WHITE / ОБХОД БС ===", ""] + white),
+        "blacklist.txt": f"# blacklist.txt\n# Обычные VPN\n# updated: {now}\n# working: {len(black)}\n\n" + "\n".join(black),
+        "whitelist.txt": f"# whitelist.txt\n# Обход белых списков / CIDR\n# updated: {now}\n# working: {len(white)}\n\n" + "\n".join(white),
+        "vpn.txt": f"# vpn.txt Mixed\n# updated: {now}\n\n" + "\n".join(black + ["", "# === ОБХОД БС ===", ""] + white),
         "config.txt": (
-            f"# ---\n#profile-title: МАРУСЯ VPN (AKfreedom)\n"
+            f"# ---\n#profile-title: МАРУСЯ VPN\n"
             f"#profile-update-interval: 15\n"
             f"#support-url: https://t.me/@litiru\n"
             f"#announce: 🏳️ Auto {now} | МТС+Ростелеком 🏳️\n\n"
-            f"# ========== ОБЫЧНЫЕ ВПН ==========\n"
-            + "\n".join(black[:25])
-            + "\n\n# ========== ОБХОД БЕЛЫХ СПИСКОВ (главное) ==========\n"
+            f"# ========== ОБЫЧНЫЕ ==========\n"
+            + "\n".join(black)
+            + "\n\n# ========== ОБХОД БЕЛЫХ СПИСКОВ ==========\n"
             + "\n".join(white)
             + "\n"
         ),
@@ -191,24 +238,19 @@ def run_once():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--loop", type=int, default=0, help="Интервал в минутах (0 = один раз)")
+    parser.add_argument("--loop", type=int, default=0)
     args = parser.parse_args()
-
     if args.loop <= 0:
         run_once()
         return
-
-    print(f"Бесконечный режим: каждые {args.loop} минут")
-    print("Ctrl+C чтобы остановить\n")
+    print(f"Бесконечный режим: каждые {args.loop} мин")
     while True:
         try:
             run_once()
         except KeyboardInterrupt:
-            print("\nОстановлено пользователем")
             break
         except Exception as e:
             print(f"[ERROR] {e}")
-        print(f"\nСпим {args.loop} мин...")
         time.sleep(args.loop * 60)
 
 if __name__ == "__main__":
