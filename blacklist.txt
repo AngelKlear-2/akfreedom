@@ -1,10 +1,10 @@
 # blacklist.txt
 # Обычные VPN
-# updated: 2026-09-19 01:45 ЕКБ
+# updated: 2026-09-19 04:12 ЕКБ
 # working: 5
 
-vless://e31085f9-7f55-4a7d-b00e-ce94149477cb@104.18.32.47:80?path=/?ed&security=none&encryption=none&host=PrICKLy-AdverTisEMEnt6OaD5Z64MK.onEEaT.cO.&type=ws&note=@FreeOnlineVPN#🇳🇱 Нидерланды ⚡ | 5.8ms
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@89.116.180.40:8880?encryption=none&security=none&type=ws&host=vms.lifetime09.workers.dev&path=/?ed=2560#🌐 Сервер ⚡ | 5.8ms
-vless://b09dfed1-90fa-4353-8bdf-de1edb2e2d79@91.209.253.229:443?security=tls&sni=nb.lovecf.ggff.net&type=ws&host=nb.lovecf.ggff.net&path=/proxyip=us.xiabibi.cf&fp=chrome#🌐 Сервер ⚡ | 5.9ms
-vless://2fad05d3-9fab-45a0-addc-3fc229673c5e@104.16.174.81:8443?mode=auto&path=/dawdawdqwrrtt&security=tls&encryption=none&extra={"mode":"auto","xPaddingBytes":"100-1000"}&insecure=0&host=dl1.rahetejarat.com&fp=chrome&type=xhttp&allowInsecure=0&sni=dl1.rahetejarat.com#🌐 Сервер ⚡ | 5.9ms
-vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@172.64.150.28:2082?path=/fp&security=none&encryption=none&host=hhlfy.twiladaphne.ndjp.net&type=ws#🌐 Сервер ⚡ | 5.9ms
+vless://bc84f5cb-05b5-48db-8143-f645dc5812df@199.232.78.160:443?mode=auto&path=/@UonVPN---/--@UonVPN---*-*----@UonVPN--*--*---*-@UonVPN-----------@UonVPN=+&security=tls&encryption=mlkem768x25519plus.native.0rtt.WijFgu6wZjd77pTGsqP67kJIPW1ZH5JYmJx9EI_nyRU&extra={"xPaddingBytes":"100-1000"}&insecure=0&host=uonshop.ir&fp=chrome&type=xhttp&allowInsecure=0&flow=xtls-rprx-vision&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.1ms
+vless://ef479938-b41d-4a73-bd64-1a96d1c42bac@199.232.78.159:443?path=/&security=tls&encryption=none&insecure=0&host=lsjaoijji.global.ssl.fastly.neT&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.2ms
+trojan://MiTiVPN@199.232.78.160:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e1i@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-44.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.2ms
+vless://198f3ee7-5fa3-2121-7d58-39c38c0feb59@69.46.46.106:443?path=/ws/198f3ee7-5fa3-2121-7d58-39c38c0feb59&security=tls&alpn=http/1.1&encryption=none&host=amber-orchard-567c-production.up.railway.app&fp=chrome&type=ws&sni=amber-orchard-567c-production.up.railway.app#🌐 Сервер ⚡ | 1.2ms
+vless://60a2998c-cd85-562e-a3fd-396e4925dd3a@199.232.237.79:443?pcs=cd6e838b9bfe31cab8b3d5c858b0d6223fe84ece236c1fdb281be93c302e1e6e&path=/&security=tls&encryption=none&insecure=0&host=turboo-server.com&type=ws&allowInsecure=0&sni=turboo-server.com#🌐 Сервер ⚡ | 1.2ms
