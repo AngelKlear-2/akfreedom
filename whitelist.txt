@@ -1,11 +1,11 @@
 # whitelist.txt
 # Обход белых списков / CIDR
-# updated: 2026-09-19 16:56 ЕКБ
+# updated: 2026-09-19 20:46 ЕКБ
 # working: 6
 
-trojan://mitivpn@151.101.56.56:443?type=ws&security=tls&path=%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2FNLSs---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN&host=mitivpn---ss--s---mitivpn-66e.global.ssl.fastly.net&sni=ssl.fastly.com&alpn=http%2F1.1&fp=chrome&insecure=0&allowInsecure=0#🇺🇸 США ⚡ | 0.7ms
-vless://32fcc966-3e0c-485e-a2c8-05ff3e5b3dd2@178.248.236.51:59443?type=raw&security=reality&sni=rutube.ru&fp=qq&flow=xtls-rprx-vision&pbk=FkJzoNcPZujRvlLC3NwdteMT1VsYfjzWcwRLQake80g&sid=b28b7606#🌐 Сервер ⚡ | 1.3ms
-vless://d4d2d3f3-9dec-4e8f-8daf-145ecac96e66@188.114.97.8:8443?&security=tls&fp=chrome&sni=crimson-leaf-7e45.hzhduuebfjdcb.workers.dev&type=ws&headerType=none&host=crimson-leaf-7e45.hzhduuebfjdcb.workers.dev&path=%2FeyJqdW5rIjoiODgwQ1AwWDV0MnFTRWE1cCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0%3D#🌐 Сервер ⚡ | 1.4ms
-vless://31aa0950-eb19-45ff-94a2-af416deb3b90@172.67.68.157:8443?security=tls&type=ws&path=/eyJqdW5rIjoiZm5INktPV0lGcHI1NjNSOSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0?ed=8443&host=square-salad-ebde.zdfgvccfguuyggg.workers.dev&packetEncoding=xudp&alpn=h3,h2,http/1.1&sni=SquarE-saLaD-EbDe.ZDFGVcCfgUUYgGG.wOrKeRS.DEV&fp=ios#🌐 Сервер ⚡ | 1.4ms
-vless://b9ede7a5-5b4b-4aee-ac37-2c307e587e47@188.114.97.6:443?security=tls&type=ws&path=/eyJqdW5rIjoidVkzQm1ROUg4dyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=&host=courses.mftplus.qzz.io&packetEncoding=xudp&sni=courses.mftplus.qzz.io&fp=unsafe&encryption=none#🌐 Сервер ⚡ | 1.4ms
-vless://f58a9d78-d4cc-c8bc-03d0-2810846a33d1@104.21.7.43:2053?&security=tls&fp=chrome&sni=hossein.shhrsbzhsyn.workers.dev&type=ws&headerType=none&host=hossein.shhrsbzhsyn.workers.dev&path=%2Fsync#🌐 Сервер ⚡ | 1.4ms
+vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@172.67.217.240:443?security=tls&type=ws&path=/ws&host=a.cwvps.eu.org&packetEncoding=xudp&sni=a.cwvps.eu.org&fp=unsafe#🌐 Сервер ⚡ | 8.4ms
+vless://d702b5e4-412d-4859-a528-3fc0b91f6fc0@188.114.97.6:443?encryption=none&security=tls&type=ws&host=wild-math-3ef2.439.workers.dev&path=/pyip=ProxyIP.SG.CMLiussss.net&sni=wild-math-3ef2.439.workers.dev&fp=unsafe&cs=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256:TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256&fm={"tcp":#🇸🇪 Швеция ⚡ | 8.5ms
+vless://50414e45-4c5f-5a45-5553-bb2d0bc74f3c@104.16.155.170:2083?security=tls&type=ws&path=/stream/PANEL_ZEUS/bb2d0bc74f3c&host=ez-e46ef3.ezaccess16b9d1f.workers.dev&packetEncoding=xudp&sni=ez-e46ef3.ezaccess16b9d1f.workers.dev&fp=chrome&encryption=none#🌐 Сервер ⚡ | 8.6ms
+trojan://humanity@104.18.152.155:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 8.9ms
+vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.53.227:8443?security=tls&type=ws&path=/&host=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&packetEncoding=xudp&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&fp=chrome&encryption=none#🌐 Сервер ⚡ | 8.9ms
+vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.53.227:2087?path=%2F&security=tls&encryption=none&insecure=0&host=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&fp=chrome&type=ws&allowInsecure=0&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc#🇺🇸 США ⚡ | 9.0ms
