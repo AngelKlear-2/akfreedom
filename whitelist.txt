@@ -1,11 +1,11 @@
 # whitelist.txt
 # Обход белых списков / CIDR
-# updated: 2026-09-20 04:29 ЕКБ
+# updated: 2026-09-20 06:33 ЕКБ
 # working: 6
 
-vless://10c3b62f-59da-55cb-b24f-2072ecb4348c@69.46.46.109:443?path=/ws/Default&security=tls&alpn=http/1.1&encryption=none&host=srv-59626b-f0a855-production.up.railway.app&fp=chrome&type=ws&sni=srv-59626b-f0a855-production.up.railway.app#🇳🇱 Нидерланды ⚡ | 1.1ms
-vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@172.67.217.240:443?fp=unsafe&path=%2Ftyxyws&security=tls&sni=jp3.yohototo.top&type=ws#🌐 Сервер ⚡ | 1.1ms
-trojan://humanity@104.16.7.70:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.2ms
-vless://10c3b62f-59da-55cb-b24f-2072ecb4348c@69.46.46.109:443?path=%2Fws%2FDefault&security=tls&alpn=http%2F1.1&encryption=none&host=srv-59626b-f0a855-production.up.railway.app&type=ws&sni=srv-59626b-f0a855-production.up.railway.app&fp=chrome#🇳🇱 Нидерланды ⚡ | 1.3ms
-vless://b8d8a5b0-867f-4491-b4e4-30edc04bb10e@104.17.117.137:443?security=tls&type=ws&path=/&host=u.srilankangrill.online&packetEncoding=xudp&sni=u.srilankangrill.online&fp=chrome#🌐 Сервер ⚡ | 1.3ms
-vless://10c3b62f-59da-55cb-b24f-2072ecb4348c@69.46.46.110:443?encryption=none&host=core-1d94b4-5a2002-production.up.railway.app&path=%2Fws%2FDefault&security=tls&sni=core-1d94b4-5a2002-production.up.railway.app&type=ws&fp=android#🇳🇱 Нидерланды ⚡ | 1.4ms
+vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@188.114.97.6:443?path=%2Fws&security=tls&sni=a.cwvps.eu.org&type=ws#🌐 Сервер ⚡ | 1.4ms
+vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.149.209:2087?ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&fp=chrome&host=fx3l5i2wdfxln0.fx6hsv0.ccwu.cc&path=%2F&security=tls&sni=fx3l5i2wdfxln0.fx6hsv0.ccwu.cc&type=ws#🌐 Сервер ⚡ | 1.5ms
+trojan://humanity@104.21.8.107:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.5ms
+trojan://humanity@104.16.174.121:443?host=www.ignitelimit.com&path=%2F%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.5ms
+trojan://humanity@104.16.174.34:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.5ms
+trojan://humanity@104.17.148.22:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.5ms
