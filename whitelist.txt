@@ -1,11 +1,11 @@
 # whitelist.txt
 # Обход белых списков / CIDR
-# updated: 2026-09-20 06:33 ЕКБ
+# updated: 2026-09-20 11:59 ЕКБ
 # working: 6
 
-vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@188.114.97.6:443?path=%2Fws&security=tls&sni=a.cwvps.eu.org&type=ws#🌐 Сервер ⚡ | 1.4ms
-vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.149.209:2087?ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&fp=chrome&host=fx3l5i2wdfxln0.fx6hsv0.ccwu.cc&path=%2F&security=tls&sni=fx3l5i2wdfxln0.fx6hsv0.ccwu.cc&type=ws#🌐 Сервер ⚡ | 1.5ms
-trojan://humanity@104.21.8.107:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.5ms
-trojan://humanity@104.16.174.121:443?host=www.ignitelimit.com&path=%2F%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.5ms
-trojan://humanity@104.16.174.34:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.5ms
-trojan://humanity@104.17.148.22:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.5ms
+vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@172.67.217.240:443?security=tls&type=ws&path=/ws&host=a.cwvps.eu.org&packetEncoding=xudp&sni=a.cwvps.eu.org&fp=unsafe#🌐 Сервер ⚡ | 17.4ms
+vless://7a2df38b-2d8b-486b-9b43-641c81e11f40@104.21.70.21:443?encryption=none&fp=unsafe&host=shiny-mud-d9fa.466.workers.dev&path=/pyip%3DProxyIP.KR.CMLiussss.net&security=tls&sni=shiny-mud-d9fa.466.workers.dev&type=ws#🇸🇪 Швеция ⚡ | 17.4ms
+vless://518de0d4-6ce8-4404-80db-23c4a8806128@104.21.70.21:443?security=tls&type=ws&path=/eyJqdW5rIjoiQkFLTnhqM2tZTSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=&host=ez-5faafb.esmaoi.workers.dev&ed=2560&packetEncoding=xudp&alpn=http/1.1&sni=ez-5faafb.esmaoi.workers.dev&fp=unsafe&encryption=none#🌐 Сервер ⚡ | 17.5ms
+vless://81b3fa7e-12b0-4c2b-9866-324edd26ef7f@104.21.70.21:443?encryption=none&fp=unsafe&host=falling-lake-0b5a.192-3e2.workers.dev&path=/pyip%3DProxyIP.US.CMLiussss.net&security=tls&sni=falling-lake-0b5a.192-3e2.workers.dev&type=ws#🇸🇪 Швеция ⚡ | 17.5ms
+vless://0779dc74-2464-461f-90ef-874e4cae7fae@188.114.96.3:2053?&security=tls&sni=weathered-math-1f8b.amiralighasempor010.workers.dev&type=ws&headerType=none&host=weathered-math-1f8b.amiralighasempor010.workers.dev&path=%2FeyJqdW5rIjoiUHQ4YzBma3IxczlPIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OjExOjY0OjpdIl19%3Fed#🌐 Сервер ⚡ | 17.6ms
+vless://52450a53-ac49-42ff-be36-0899178d34b9@172.67.213.26:2053?&security=tls&sni=little-violet-8ade.vpnstoregod.workers.dev&type=ws&headerType=none&host=little-violet-8ade.vpnstoregod.workers.dev&path=%2FeyJqdW5rIjoiOHBjT0w3NmxvazAiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iXX0#🌐 Сервер ⚡ | 17.7ms
