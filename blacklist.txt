@@ -1,10 +1,10 @@
 # blacklist.txt
 # Обычные VPN
-# updated: 2026-09-21 02:33 ЕКБ
+# updated: 2026-09-21 04:32 ЕКБ
 # working: 5
 
-vless://9ccd06a2-5616-47e3-9763-f9696959d7ad@104.18.32.47:443?security=tls&sni=rAyAn-cOnFiG-de-1.pAriSa.dPdNs.oRg&allowInsecure=1&fp=chrome&type=ws&path=/ws&host=rAyAn-cOnFiG-de-1.pAriSa.dPdNs.oRg&encryption=none#🌐 Сервер ⚡ | 5.7ms
-trojan://humanity@188.42.145.180:443?path=/assignment&security=tls&alpn=http/1.1&insecure=0&host=www.volumeroot.com&fp=chrome&type=ws&allowInsecure=0&sni=www.volumeroot.com#🌐 Сервер ⚡ | 5.9ms
-vless://b2593749-691c-428c-9481-14979cba3446@162.159.192.125:443?encryption=none&security=tls&sni=xi.tbv.ccwu.cc&fm={"tcp":[{"type":"fragment","settings":{"packets":"tlshello","lengths":["0","104","1"],"delays":["0"],"maxSplit":"0"}},{"type":"fragment","settings":{"packets":"1-1","lengths":["114","1"],"delays":["1"],"maxSplit":"11"}}]}&type=ws&host=xi.tbv.ccwu.cc&path=/proxyip=us.xiabibi.cf#🌐 Сервер ⚡ | 5.9ms
-vless://774d0ea8-0e45-4078-ab22-14e4f5fff10f@172.67.137.74:2053?path=/eyJqdW5rIjoiaWtrbUhXQmMwN0xFOVUiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6MTE6NjQ6Ol0iXX0&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=broad-hill-c0ae.anz-rahii23.workers.dev&fp=chrome&type=ws&allowInsecure=0&sni=broad-HIlL-c0ae.anz-rAHII23.wORkers.dev#🌐 Сервер ⚡ | 6.0ms
-vless://234c52f2-0d7b-dc4a-0d6b-b0b30000001c@104.21.66.198:80?path=/sync&security=none&encryption=none&host=billowing-surf-d251.netizo06.workers.dev&fp=chrome&type=ws&sni=billowing-surf-d251.netizo06.workers.dev#🌐 Сервер ⚡ | 6.0ms
+vless://d837030f-c6ce-4c25-b411-dc66098695cf@146.75.59.20:443?encryption=none&fp=firefox&host=lunex.store&path=/Lunex&security=tls&sni=accounts.fastly.com&type=xhttp#🇩🇪 Германия ⚡ | 1.5ms
+vless://turboo-server@199.232.237.79:443?encryption=none&security=tls&sni=turboo-server-telegram.com&fp=chrome&alpn=h3,h2,http/1.1&pcs=cd6e838b9bfe31cab8b3d5c858b0d6223fe84ece236c1fdb281be93c302e1e6e&type=ws&host=turboo-server-telegram.com&path=/#🌐 Сервер ⚡ | 1.5ms
+vless://e0454af2-6fe9-4983-a55d-05e1da202602@199.232.78.159:443?path=/&security=tls&encryption=none&insecure=0&host=lsjaoijji.global.ssl.fastly.neT.&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.5ms
+vless://56eb043d-5683-4d48-94b2-688097c87854@146.75.59.20:443?encryption=none&security=tls&sni=accounts.fastly.com&alpn=h3&fp=chrome&type=xhttp&mode=packet-up&host=lunex.store&path=%2FLunex&extra=%7B%22scMaxEachPostBytes%22%3A1000000%2C%22scMaxConcurrentPosts%22%3A100%2C%22scMinPostsIntervalMs%22%3A30%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22noGRPCHeader%22%3Afalse%7D#🇩🇪 Германия ⚡ | 1.6ms
+vless://5e6ee068-5a29-4098-a14f-52d70167b8b1@199.232.78.159:443?encryption=none&security=tls&type=ws&headerType=none&path=/&host=FastSvn.global.ssl.fastly.net&sni=ssl.fastly.com&fp=chrome#🌐 Сервер ⚡ | 1.6ms
