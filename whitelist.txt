@@ -1,11 +1,11 @@
 # whitelist.txt
 # Обход белых списков / CIDR
-# updated: 2026-09-21 04:32 ЕКБ
+# updated: 2026-09-21 06:36 ЕКБ
 # working: 6
 
-vless://d837030f-c6ce-4c25-b411-dc66098695cf@146.75.59.20:443?encryption=none&fp=firefox&host=lunex.store&path=/Lunex&security=tls&sni=accounts.fastly.com&type=xhttp#🇩🇪 Германия ⚡ | 1.5ms
-vless://d837030f-c6ce-4c25-b411-dc66098695cf@146.75.59.20:443?allowInsecure=0&alpn=h3&encryption=none&host=lunex.store&mode=packet-up&path=%2FLunex&security=tls&sni=accounts.fastly.com&type=xhttp#🇩🇪 Германия ⚡ | 1.7ms
-vless://b09dfed1-90fa-4353-8bdf-de1edb2e2d79@139.64.235.23:443?&security=tls&sni=nb.lovecf.ggff.net&type=ws&headerType=none&host=nb.lovecf.ggff.net&path=%2Fproxyip%3Dus.xiabibi.cf#🌐 Сервер ⚡ | 1.7ms
-vless://8102891d-7b37-4dc5-8261-9474b59b5c63@104.16.10.2:443?fp=chrome&host=vip.868068.xyz&path=%2Fproxyip%3Dus.xiabibi.cf&security=tls&sni=vip.868068.xyz&type=ws#🌐 Сервер ⚡ | 1.7ms
-vless://b09dfed1-90fa-4353-8bdf-de1edb2e2d79@195.85.23.29:443?host=nb.lovecf.ggff.net&path=%2F&security=tls&sni=nb.lovecf.ggff.net&type=ws#🌐 Сервер ⚡ | 1.7ms
-trojan://humanity@104.16.174.109:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.7ms
+vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.146.211:2083?&security=tls&fp=chrome&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&type=ws&headerType=none&host=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&path=%2F#🌐 Сервер ⚡ | 5.9ms
+vless://b09dfed1-90fa-4353-8bdf-de1edb2e2d79@91.209.253.216:443?path=/proxyip=us.xiabibi.cf&security=tls&encryption=none&insecure=0&host=nb.lovecf.ggff.net&fp=chrome&type=ws&allowInsecure=0&sni=nb.lovecf.ggff.net#🌐 Сервер ⚡ | 6.0ms
+vless://e85ca8bc-21a5-418d-a639-00236f0c3d81@172.64.153.3:443?&security=tls&fp=chrome&alpn=http%2F1.1&sni=d9a9ecdf.69lover.site&type=ws&headerType=none&host=d9a9ecdf.69lover.site&path=%2Fapi%2Fv2%2Fc17245904dc7e388%2Fstream#🌐 Сервер ⚡ | 6.1ms
+vless://b2593749-691c-428c-9481-14979cba3446@195.26.229.86:443?security=tls&type=ws&path=/proxyip=us.xiabibi.cf&host=xi.tbv.ccwu.cc&packetEncoding=xudp&sni=xi.tbv.ccwu.cc&fp=chrome#🌐 Сервер ⚡ | 6.2ms
+vless://b2593749-691c-428c-9481-14979cba3446@172.64.145.202:443?security=tls&type=ws&path=/proxyip=us.xiabibi.cf&host=xi.tbv.ccwu.cc&packetEncoding=xudp&sni=xi.tbv.ccwu.cc&fp=chrome#🌐 Сервер ⚡ | 6.2ms
+vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.52.30:2087?path=%2F&security=tls&encryption=none&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc#🌐 Сервер ⚡ | 6.2ms
