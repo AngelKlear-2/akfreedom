@@ -1,11 +1,11 @@
 # whitelist.txt
 # Обход белых списков / CIDR
-# updated: 2026-09-21 06:36 ЕКБ
+# updated: 2026-09-21 12:53 ЕКБ
 # working: 6
 
-vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.146.211:2083?&security=tls&fp=chrome&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&type=ws&headerType=none&host=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&path=%2F#🌐 Сервер ⚡ | 5.9ms
-vless://b09dfed1-90fa-4353-8bdf-de1edb2e2d79@91.209.253.216:443?path=/proxyip=us.xiabibi.cf&security=tls&encryption=none&insecure=0&host=nb.lovecf.ggff.net&fp=chrome&type=ws&allowInsecure=0&sni=nb.lovecf.ggff.net#🌐 Сервер ⚡ | 6.0ms
-vless://e85ca8bc-21a5-418d-a639-00236f0c3d81@172.64.153.3:443?&security=tls&fp=chrome&alpn=http%2F1.1&sni=d9a9ecdf.69lover.site&type=ws&headerType=none&host=d9a9ecdf.69lover.site&path=%2Fapi%2Fv2%2Fc17245904dc7e388%2Fstream#🌐 Сервер ⚡ | 6.1ms
-vless://b2593749-691c-428c-9481-14979cba3446@195.26.229.86:443?security=tls&type=ws&path=/proxyip=us.xiabibi.cf&host=xi.tbv.ccwu.cc&packetEncoding=xudp&sni=xi.tbv.ccwu.cc&fp=chrome#🌐 Сервер ⚡ | 6.2ms
-vless://b2593749-691c-428c-9481-14979cba3446@172.64.145.202:443?security=tls&type=ws&path=/proxyip=us.xiabibi.cf&host=xi.tbv.ccwu.cc&packetEncoding=xudp&sni=xi.tbv.ccwu.cc&fp=chrome#🌐 Сервер ⚡ | 6.2ms
-vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.52.30:2087?path=%2F&security=tls&encryption=none&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc#🌐 Сервер ⚡ | 6.2ms
+vless://d837030f-c6ce-4c25-b411-dc66098695cf@146.75.59.20:443?allowInsecure=0&alpn=h3&encryption=none&host=lunex.store&mode=packet-up&path=%2FLunex&security=tls&sni=accounts.fastly.com&type=xhttp&fp=safari#🇩🇪 Германия ⚡ | 1.5ms
+vless://d837030f-c6ce-4c25-b411-dc66098695cf@146.75.59.20:443?encryption=none&fp=firefox&host=lunex.store&path=/Lunex&security=tls&sni=accounts.fastly.com&type=xhttp#🇩🇪 Германия ⚡ | 1.5ms
+vless://ef23616d-8a9d-4b22-b2f5-9bda864de179@104.21.94.81:2053?security=tls&type=ws&path=/assets&host=index.arcane509.workers.dev&ed=2560&packetEncoding=xudp&alpn=http/1.1&sni=INDEX.Arcane509.Workers.DEV&fp=chrome&encryption=none#🌐 Сервер ⚡ | 1.6ms
+vless://d9abc6e3-83bf-4c28-ae68-72465e2abe39@188.114.97.6:443?encryption=none&security=tls&type=ws&host=ikt-kkc25f27k-3tehr8mc.ade-1007.workers.dev&path=/vl/xQhNe7rLrdM0emZlaW5LMsNwcoIgnT?ed=2560&sni=ikt-kkc25f27k-3tehr8mc.ade-1007.workers.dev&alpn=http/1.1&fp=unsafe&cs=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256:TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256&fm={"tcp":#🇸🇪 Швеция ⚡ | 1.6ms
+vless://5934b979-e128-4c90-a600-744b97bffc8c@172.67.152.98:443?encryption=none&fp=chrome&host=5dktcuajb2a1jxix7csnrmeucg.mahrademami.workers.dev&path=/vl/Fi3kP8cNjBoo8UPv%3Fed%3D2560&security=tls&sni=5dktcuajb2a1jxix7csnrmeucg.mahrademami.workers.dev&type=ws#🇸🇪 Швеция ⚡ | 1.6ms
+vless://bf9f5e8f-0777-4ee2-b509-efff28f6298a@188.114.97.6:443?security=tls&type=ws&path=/nl-tw&host=support.zoom.us.r3xxe.eu.cc&packetEncoding=xudp&sni=support.zoom.us.r3xxe.eu.cc&fp=chrome&encryption=none#🌐 Сервер ⚡ | 1.7ms
