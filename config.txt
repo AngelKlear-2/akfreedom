@@ -2,19 +2,19 @@
 #profile-title: МАРУСЯ VPN
 #profile-update-interval: 15
 #support-url: https://t.me/@litiru
-#announce: 🏳️ Auto 2026-09-21 20:03 ЕКБ | МТС+Ростелеком 🏳️
+#announce: 🏳️ Auto 2026-09-22 01:01 ЕКБ | МТС+Ростелеком 🏳️
 
 # ========== ОБЫЧНЫЕ ==========
-vless://e0454af2-6fe9-4983-a55d-05e1da202602@199.232.78.159:443?path=/&security=tls&encryption=none&insecure=0&host=towndtime.global.ssl.fastly.neT.&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.5ms
-vless://0bbdcf21-02bc-4e6a-b87a-1ca2842655f5@199.232.78.160:443?mode=auto&path=/@UonVPN--/--@UonVPN---*-*----@UonVPN--*--*---*-@UonVPN-----------@UonVPN=+&security=tls&encryption=mlkem768x25519plus.native.0rtt.WijFgu6wZjd77pTGsqP67kJIPW1ZH5JYmJx9EI_nyRU&extra={"xPaddingBytes":"100-1000"}&insecure=0&host=uonshop.ir&fp=chrome&type=xhttp&allowInsecure=0&flow=xtls-rprx-vision&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.5ms
-trojan://MiTiVPN@140.248.185.253:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/s-w@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&insecure=0&host=4x-mitivpn--mitivpn------mitivpn.global.ssl.fastly.net&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.5ms
-vless://d837030f-c6ce-4c25-b411-dc66098695cf@146.75.59.20:443?encryption=none&host=lunex.store&path=%2FLunex&security=tls&sni=accounts.fastly.com&type=xhttp&fp=android#🇩🇪 Германия ⚡ | 1.6ms
-vless://b742d8e7-ed7d-4f7d-bb16-bf49bdb4cb44@23.235.33.98:80?mode=auto&path=/fast&security=none&encryption=none&extra={"xPaddingBytes":"100-1000"}&host=g-sgood-wopd-butnorwa-butter.global.ssl.fastly.net&type=xhttp#🌐 Сервер ⚡ | 1.6ms
+trojan://MITIVPN@199.232.78.160:443?path=@mehrosabora&security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-55s.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
+vless://Default@69.46.46.43:443?path=/ws/vless/Default?ed=2048&security=tls&alpn=http/1.1&encryption=none&host=ezaccess1-slv-ezaccess1-4681.up.railway.app&fp=chrome&type=ws&sni=ezaccess1-slv-ezaccess1-4681.up.railway.app#🌐 Сервер ⚡ | 1.4ms
+vless://a3558ef4-b843-4b05-8456-495815234c95@199.232.78.159:80?path=/&security=&encryption=none&host=7wwwspeedtestnet.global.ssl.fastly.net&type=ws#🌐 Сервер ⚡ | 1.4ms
+trojan://MiTiVPN@199.232.78.160:443?path=@mehrosaboran&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-44.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.4ms
+vless://9efec5b9-f7c0-439b-a9e8-4e0f5a93a1f6@151.101.213.151:443?encryption=none&security=tls&type=xhttp&headerType=none&path=%2F&host=fretranxrabet.net&mode=packet-up&extra=%7B%22scMaxEachPostBytes%22%3A%221000000%22%2C%22scMinPostsIntervalMs%22%3A%2230%22%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22xmux%22%3A%7B%22maxConcurrency%22%3A%22100%22%7D%7D&sni=accounts.fastly.com&alpn=h3&fragment=1-3%2C10-20%2Ctlshello&fp=ios#🇩🇪 Германия ⚡ | 1.5ms
 
 # ========== ОБХОД БЕЛЫХ СПИСКОВ ==========
-vless://b09dfed1-90fa-4353-8bdf-de1edb2e2d79@139.64.235.23:443?security=tls&type=ws&path=/proxyip=us.xiabibi.cf&host=nb.lovecf.ggff.net&packetEncoding=xudp&sni=nb.lovecf.ggff.net&fp=chrome#🌐 Сервер ⚡ | 1.8ms
-vless://3ccba794-1c6d-48a8-acf2-f5caf0e69d86@104.18.0.1:443?security=tls&type=ws&path=/&host=all.speedtest03.ccwu.cc&packetEncoding=xudp&sni=all.speedtest03.ccwu.cc&fp=chrome&encryption=none#🌐 Сервер ⚡ | 1.8ms
-trojan://humanity@104.19.229.21:443?host=www.calmlunch.com&path=%2F%2Fassignment&security=tls&sni=www.calmlunch.com&type=ws#🇨🇦 Канада ⚡ | 2.0ms
-trojan://humanity@104.18.152.233:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 2.0ms
-vless://44eae030-290b-4083-8102-6f8bab05701b@104.16.10.117:443?security=tls&type=ws&path=%2F&host=cfvvv-ev1.pages.dev&sni=cfvvv-ev1.pages.dev&fp=unsafe&encryption=none#🇩🇪 Германия ⚡ | 2.0ms
-vless://d9c13e62-b227-4bc7-9bc2-5af179c630d7@104.21.70.228:2096?encryption=none&type=ws&host=old-mouse-3fe4.alirezaid207.workers.dev&path=%2FeyJqdW5rIjoiNU83bGx4TU5QNG9uIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19%3Fed&security=tls&sni=old-mouse-3fe4.alirezaid207.workers.dev#🇵🇱 Польша ⚡ | 2.0ms
+trojan://humanity@104.18.152.159:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.5ms
+trojan://humanity@104.18.152.108:443?type=ws&path=%2Fassignment%23US%E7%BE%8E%E5%9B%BD%28ProxyGo%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9%E5%88%86%E4%BA%AB%29&security=tls&sni=www.ignitelimit.com#🇨🇦 Канада ⚡ | 1.6ms
+vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.53.240:2096?security=tls&type=ws&path=/&host=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&packetEncoding=xudp&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&fp=chrome#🌐 Сервер ⚡ | 1.6ms
+vless://b09dfed1-90fa-4353-8bdf-de1edb2e2d79@195.85.23.217:443?encryption=none&type=ws&host=nb.lovecf.ggff.net&path=%2Fproxyip%3Dus.xiabibi.cf&security=tls&sni=nb.lovecf.ggff.net#🌐 Сервер ⚡ | 1.7ms
+trojan://humanity@104.16.174.34:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.7ms
+trojan://humanity@104.16.174.121:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.8ms
