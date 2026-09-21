@@ -1,11 +1,11 @@
 # whitelist.txt
 # Обход белых списков / CIDR
-# updated: 2026-09-21 20:03 ЕКБ
+# updated: 2026-09-22 01:01 ЕКБ
 # working: 6
 
-vless://b09dfed1-90fa-4353-8bdf-de1edb2e2d79@139.64.235.23:443?security=tls&type=ws&path=/proxyip=us.xiabibi.cf&host=nb.lovecf.ggff.net&packetEncoding=xudp&sni=nb.lovecf.ggff.net&fp=chrome#🌐 Сервер ⚡ | 1.8ms
-vless://3ccba794-1c6d-48a8-acf2-f5caf0e69d86@104.18.0.1:443?security=tls&type=ws&path=/&host=all.speedtest03.ccwu.cc&packetEncoding=xudp&sni=all.speedtest03.ccwu.cc&fp=chrome&encryption=none#🌐 Сервер ⚡ | 1.8ms
-trojan://humanity@104.19.229.21:443?host=www.calmlunch.com&path=%2F%2Fassignment&security=tls&sni=www.calmlunch.com&type=ws#🇨🇦 Канада ⚡ | 2.0ms
-trojan://humanity@104.18.152.233:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 2.0ms
-vless://44eae030-290b-4083-8102-6f8bab05701b@104.16.10.117:443?security=tls&type=ws&path=%2F&host=cfvvv-ev1.pages.dev&sni=cfvvv-ev1.pages.dev&fp=unsafe&encryption=none#🇩🇪 Германия ⚡ | 2.0ms
-vless://d9c13e62-b227-4bc7-9bc2-5af179c630d7@104.21.70.228:2096?encryption=none&type=ws&host=old-mouse-3fe4.alirezaid207.workers.dev&path=%2FeyJqdW5rIjoiNU83bGx4TU5QNG9uIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19%3Fed&security=tls&sni=old-mouse-3fe4.alirezaid207.workers.dev#🇵🇱 Польша ⚡ | 2.0ms
+trojan://humanity@104.18.152.159:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.5ms
+trojan://humanity@104.18.152.108:443?type=ws&path=%2Fassignment%23US%E7%BE%8E%E5%9B%BD%28ProxyGo%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9%E5%88%86%E4%BA%AB%29&security=tls&sni=www.ignitelimit.com#🇨🇦 Канада ⚡ | 1.6ms
+vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.53.240:2096?security=tls&type=ws&path=/&host=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&packetEncoding=xudp&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&fp=chrome#🌐 Сервер ⚡ | 1.6ms
+vless://b09dfed1-90fa-4353-8bdf-de1edb2e2d79@195.85.23.217:443?encryption=none&type=ws&host=nb.lovecf.ggff.net&path=%2Fproxyip%3Dus.xiabibi.cf&security=tls&sni=nb.lovecf.ggff.net#🌐 Сервер ⚡ | 1.7ms
+trojan://humanity@104.16.174.34:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.7ms
+trojan://humanity@104.16.174.121:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.8ms
