@@ -1,10 +1,10 @@
 # blacklist.txt
 # Обычные VPN
-# updated: 2026-09-22 18:19 ЕКБ
+# updated: 2026-09-22 22:47 ЕКБ
 # working: 5
 
-vless://XpnTeam-17@199.232.78.170:443?encryption=none&security=tls&sni=ssl.fastly.com&alpn=http/1.1&fp=chrome&type=ws&host=Appxdn.global.ssl.fastly.net&path=/&packetEncoding=xudp#🌐 Сервер ⚡ | 5.1ms
-trojan://MiTIVPN@151.101.56.7:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#🌐 Сервер ⚡ | 5.1ms
-vless://3e89df69-7619-4788-9eee-c49c02a69705@199.232.77.215:443?mode=auto&path=/?@MARAMBASHI_MARAMBASHI?ed=2048&security=tls&encryption=none&extra={"mode":"auto","xPaddingBytes":"100-1000"}&insecure=0&host=Vistitrohamfastvipnexttt.net&fp=chrome&type=xhttp&allowInsecure=0&sni=global.fastly.com#🌐 Сервер ⚡ | 5.1ms
-vless://399f9850-428a-b00a-6688-01d24438f959@69.46.46.93:443?path=/ws/399f9850-428a-b00a-6688-01d24438f959&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=solipanelwodi-production-0e0c.up.railway.app&fp=chrome&type=ws&allowInsecure=0&sni=solipanelwodi-production-0e0c.up.railway.app#🌐 Сервер ⚡ | 5.1ms
-vless://9503e890-3702-4847-af0a-2bceac2f0da0@151.101.56.6:443?path=/?TELEGRAM--KANAL--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray&security=tls&alpn=h2&encryption=none&insecure=0&host=c12.com&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 5.1ms
+trojan://MITIVPN@199.232.78.101:443?path=@mehrosaboran&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.4ms
+vless://XpnTeam-1@199.232.78.170:443?path=/&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=Appxdn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.5ms
+trojan://MiTIVPN@199.232.78.101:443?alpn=http/1.1&host=mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net&path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSus---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&sni=ssl.fastly.com&type=ws#🌐 Сервер ⚡ | 1.5ms
+vless://XpnTeam-16@199.232.78.160:443?path=/&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=Appxdn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.5ms
+vless://128a9c0f-6ea3-4eab-8ff1-9afe223534ab@199.232.79.166:443?mode=auto&path=/@UonVPN--@UonVPN-*-@UonVPN--*-@UonVPN--**-@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN-*--@UonVPN&security=tls&encryption=mlkem768x25519plus.native.0rtt.EvqGmJhHfNsRhxENFhkBpY3TDQZfpIeaet93vsXSaUU&extra={"xPaddingBytes":"100-1000"}&insecure=0&host=telegram-uonvpn.global.ssl.fastly.net&fp=chrome&type=xhttp&allowInsecure=0&flow=xtls-rprx-vision&sni=cdn.fastly.com#🌐 Сервер ⚡ | 1.5ms
