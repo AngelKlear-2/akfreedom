@@ -1,10 +1,10 @@
 # blacklist.txt
 # Обычные VPN
-# updated: 2026-09-22 22:47 ЕКБ
+# updated: 2026-09-23 02:10 ЕКБ
 # working: 5
 
-trojan://MITIVPN@199.232.78.101:443?path=@mehrosaboran&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.4ms
-vless://XpnTeam-1@199.232.78.170:443?path=/&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=Appxdn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.5ms
-trojan://MiTIVPN@199.232.78.101:443?alpn=http/1.1&host=mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net&path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSus---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&sni=ssl.fastly.com&type=ws#🌐 Сервер ⚡ | 1.5ms
-vless://XpnTeam-16@199.232.78.160:443?path=/&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=Appxdn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.5ms
-vless://128a9c0f-6ea3-4eab-8ff1-9afe223534ab@199.232.79.166:443?mode=auto&path=/@UonVPN--@UonVPN-*-@UonVPN--*-@UonVPN--**-@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN---@UonVPN-*--@UonVPN&security=tls&encryption=mlkem768x25519plus.native.0rtt.EvqGmJhHfNsRhxENFhkBpY3TDQZfpIeaet93vsXSaUU&extra={"xPaddingBytes":"100-1000"}&insecure=0&host=telegram-uonvpn.global.ssl.fastly.net&fp=chrome&type=xhttp&allowInsecure=0&flow=xtls-rprx-vision&sni=cdn.fastly.com#🌐 Сервер ⚡ | 1.5ms
+vless://XpnTeam-16@199.232.78.160:443?path=/&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=Appxdn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 4.5ms
+vless://cdf5205e-897f-46a7-8d7f-21a61a80b466@104.16.60.10:443?path=/api/v2/e2fe4e52a165854d/stream&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=hk1.69lover.my&fp=chrome&type=ws&allowInsecure=0&sni=hk1.69lover.my#🌐 Сервер ⚡ | 4.5ms
+vless://7327168e-4da6-4104-82ab-d52dd7128c47@104.17.161.24:2087?path=/?u=ommkkobot&security=tls&encryption=none&insecure=0&host=nova-mango-cloud-c883.nova-5dd64d.workers.dev&fp=chrome&type=ws&allowInsecure=0&sni=nova-mango-cloud-c883.nova-5dd64d.workers.dev#🌐 Сервер ⚡ | 4.5ms
+vless://20cf8a2b-e301-4240-9c03-20883249a287@104.24.198.111:80?encryption=none&security=none&type=ws&host=divine-hall-8adb-ppal03.niyabi6636.workers.dev&path=/?ed=2560#🌐 Сервер ⚡ | 4.6ms
+vless://00864d0f-3c82-419a-a65e-52534d023242@199.232.78.159:443?path=/TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER?ed=2053&security=tls&encryption=none&insecure=0&host=fancii.global.ssl.fastly.net&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 4.6ms
