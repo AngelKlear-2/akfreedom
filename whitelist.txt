@@ -1,11 +1,11 @@
 # whitelist.txt
 # Обход белых списков / CIDR
-# updated: 2026-09-23 09:15 ЕКБ
+# updated: 2026-09-23 14:32 ЕКБ
 # working: 6
 
-vless://b2593749-691c-428c-9481-14979cba3446@212.104.128.27:443?security=tls&type=ws&path=/proxyip=us.xiabibi.cf&host=xi.tbv.ccwu.cc&packetEncoding=xudp&sni=xi.tbv.ccwu.cc&fp=chrome#🌐 Сервер ⚡ | 1.5ms
-vless://b2593749-691c-428c-9481-14979cba3446@31.43.179.137:443?security=tls&type=ws&path=/proxyip=us.xiabibi.cf&host=xi.tbv.ccwu.cc&packetEncoding=xudp&sni=xi.tbv.ccwu.cc&fp=chrome&encryption=none#🌐 Сервер ⚡ | 1.6ms
-trojan://humanity@104.18.152.159:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.6ms
-trojan://humanity@104.18.152.187:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.6ms
-trojan://humanity@104.18.23.63:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.6ms
-vless://bdc5e450-3e2d-4001-928e-e3bc6cecb249@172.67.130.159:2096?&security=tls&fp=chrome&sni=cdn.skyvora.app&type=ws&headerType=none&host=cdn.skyvora.app&path=%2Fhux9duzm54#🌐 Сервер ⚡ | 1.7ms
+vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.53.60:2083?security=tls&type=ws&path=/&host=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&packetEncoding=xudp&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&fp=chrome&encryption=none#🌐 Сервер ⚡ | 5.1ms
+vless://a8c23fe7-d2bb-46ba-a14e-8847f1944642@104.21.70.21:443?encryption=none&fp=unsafe&host=billowing-fire-a10b.301-d6c.workers.dev&path=/pyip%3DProxyIP.SG.CMLiussss.net&security=tls&sni=billowing-fire-a10b.301-d6c.workers.dev&type=ws#🇸🇪 Швеция ⚡ | 5.1ms
+vless://8525fe74-67e6-4a55-8a26-95f227bd1384@104.21.70.21:443?&security=tls&fp=unsafe&sni=damp-dawn-3a96.alvlirm123.workers.dev&type=ws&headerType=none&host=damp-dawn-3a96.alvlirm123.workers.dev&path=%2F#🌐 Сервер ⚡ | 5.2ms
+vless://0779dc74-2464-461f-90ef-874e4cae7fae@188.114.97.6:443?security=tls&type=ws&path=/eyJqdW5rIjoiUHQ4YzBma3IxczlPIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OjExOjY0OjpdIl19&host=weathered-math-1f8b.amiralighasempor010.workers.dev&ed=2560&packetEncoding=xudp&alpn=http/1.1&sni=weathered-math-1f8b.amiralighasempor010.workers.dev&fp=chrome&encryption=none#🌐 Сервер ⚡ | 5.2ms
+vless://50414e45-4c5f-5a45-5553-6f51879c0594@104.21.74.214:2096?encryption=none&fp=chrome&host=levikoconfig.levikogjgfdd.ir&path=/&security=tls&sni=levikoconfig.levikogjgfdd.ir&type=ws#🇸🇪 Швеция ⚡ | 5.2ms
+vless://54502a61-2af6-40e7-8331-2c9fc40e5903@172.67.68.157:2053?security=tls&type=ws&path=/&host=old-cloud-a96a.rohamsahh90.workers.dev&packetEncoding=xudp&alpn=h3,h2,http/1.1&sni=old-cloud-a96a.rohamsahh90.workers.dev&fp=ios&encryption=none#🌐 Сервер ⚡ | 5.2ms
