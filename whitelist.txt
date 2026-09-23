@@ -1,11 +1,11 @@
 # whitelist.txt
 # Обход белых списков / CIDR
-# updated: 2026-09-23 04:48 ЕКБ
+# updated: 2026-09-23 09:15 ЕКБ
 # working: 6
 
-vless://36788cf4-fcb4-49c5-a563-5f888849b1cc@104.21.8.201:2096?path=/vqyps6kf3&security=tls&encryption=none&insecure=0&host=cdn-jp.skyvora.app&fp=chrome&type=ws&allowInsecure=0&sni=cdn-jp.skyvora.app#🌐 Сервер ⚡ | 1.5ms
-vless://214bf4c5-045a-4ddb-944b-e2eef9b33338@172.67.130.159:2096?&security=tls&fp=chrome&sni=cdn-fr.skyvora.app&type=ws&headerType=none&host=cdn-fr.skyvora.app&path=%2F9hf8a67dhf#🌐 Сервер ⚡ | 1.6ms
-vless://bdc5e450-3e2d-4001-928e-e3bc6cecb249@172.67.130.159:2096?encryption=none&type=ws&host=cdn.skyvora.app&path=%2Fhux9duzm54&security=tls&fp=chrome&sni=cdn.skyvora.app#🌐 Сервер ⚡ | 1.6ms
-vless://832c8f42-7fe1-4aa4-9171-eb9dddbf6fef@104.21.8.201:2096?&security=tls&fp=chrome&sni=cdn-sg.skyvora.app&type=ws&headerType=none&host=cdn-sg.skyvora.app&path=%2F78bc8#🌐 Сервер ⚡ | 1.6ms
-vless://ecb9ab47-31aa-4dd9-92eb-191047b353bd@172.67.130.159:2096?fp=chrome&host=cdn-hk.skyvora.app&path=%2Ff7i3lo6xbs&security=tls&sni=cdn-hk.skyvora.app&type=ws#🌐 Сервер ⚡ | 1.7ms
-vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.64.145.166:2087?&security=tls&fp=chrome&sni=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&type=ws&headerType=none&host=faxf32gkfzoxqv.fx6hsv0.ccwu.cc&path=%2F#🌐 Сервер ⚡ | 1.7ms
+vless://b2593749-691c-428c-9481-14979cba3446@212.104.128.27:443?security=tls&type=ws&path=/proxyip=us.xiabibi.cf&host=xi.tbv.ccwu.cc&packetEncoding=xudp&sni=xi.tbv.ccwu.cc&fp=chrome#🌐 Сервер ⚡ | 1.5ms
+vless://b2593749-691c-428c-9481-14979cba3446@31.43.179.137:443?security=tls&type=ws&path=/proxyip=us.xiabibi.cf&host=xi.tbv.ccwu.cc&packetEncoding=xudp&sni=xi.tbv.ccwu.cc&fp=chrome&encryption=none#🌐 Сервер ⚡ | 1.6ms
+trojan://humanity@104.18.152.159:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.6ms
+trojan://humanity@104.18.152.187:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.6ms
+trojan://humanity@104.18.23.63:443?host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#🌐 Сервер ⚡ | 1.6ms
+vless://bdc5e450-3e2d-4001-928e-e3bc6cecb249@172.67.130.159:2096?&security=tls&fp=chrome&sni=cdn.skyvora.app&type=ws&headerType=none&host=cdn.skyvora.app&path=%2Fhux9duzm54#🌐 Сервер ⚡ | 1.7ms
