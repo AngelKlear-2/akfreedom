@@ -1,11 +1,11 @@
 # whitelist.txt
 # Обход белых списков / CIDR
-# updated: 2026-09-24 05:50 ЕКБ
+# updated: 2026-09-24 11:02 ЕКБ
 # working: 6
 
-vless://43e60b75-9920-450a-94ee-8762758ca49c@172.64.159.190:443?&security=tls&fp=chrome&alpn=http%2F1.1&sni=a860d725.69lover.site&type=ws&headerType=none&host=a860d725.69lover.site&path=%2Fapi%2Fv2%2F288cd04559d84d1d%2Fstream#🌐 Сервер ⚡ | 1.3ms
-vless://735b8344-0b95-464c-b687-1c5616138908@172.67.130.159:2096?path=/3cagtz3&security=tls&encryption=none&insecure=0&host=cdn-de.skyvora.app&fp=chrome&type=ws&allowInsecure=0&sni=cdn-de.skyvora.app#🇩🇪 Германия ⚡ | 1.4ms
-trojan://humanity@104.18.12.149:443?security=tls&type=ws&path=%2Fassignment&sni=www.ignitelimit.com#🌐 Сервер ⚡ | 1.4ms
-vless://bdc5e450-3e2d-4001-928e-e3bc6cecb249@104.21.8.201:2096?security=tls&type=ws&path=/hux9duzm54&host=cdn.skyvora.app&packetEncoding=xudp&sni=cdn.skyvora.app&fp=chrome&encryption=none#🌐 Сервер ⚡ | 1.4ms
-trojan://humanity@104.18.152.233:443?path=%2Fassignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#🇨🇦 Канада ⚡ | 1.5ms
-trojan://humanity@104.16.174.101:443?security=tls&type=ws&path=%2Fassignment&sni=www.ignitelimit.com#🌐 Сервер ⚡ | 1.5ms
+vless://89b3cbba-e6ac-4850-94af-061316b04020@172.67.195.227:2087?&security=tls&fp=chrome&sni=late-frost-9da7.shoameni5.workers.dev&type=ws&headerType=none&host=late-frost-9da7.shoameni5.workers.dev&path=%2Fvl%2FE3eI46wtKMBcpTzObh3meVYDVl%3Fed%3D2560#🌐 Сервер ⚡ | 1.6ms
+trojan://humanity@104.17.177.143:443?security=tls&type=ws&host=www.ignitelimit.com&path=%2Fassignment&sni=www.ignitelimit.com#🌐 Сервер ⚡ | 1.7ms
+vless://d9abc6e3-83bf-4c28-ae68-72465e2abe39@188.114.97.6:443?security=tls&type=ws&path=/vl/xQhNe7rLrdM0emZlaW5LMsNwcoIgnT?ed=2560&host=ikt-kkc25f27k-3tehr8mc.ade-1007.workers.dev&packetEncoding=xudp&alpn=http/1.1&sni=ikt-kkc25f27k-3tehr8mc.ade-1007.workers.dev&fp=unsafe&encryption=none#🌐 Сервер ⚡ | 1.7ms
+vless://2bcfbfba-b446-4ad5-93ad-72af9e008f61@172.64.146.116:443?security=tls&type=ws&path=/44.209.52.7-443&host=support.zoom.us.blackshadow.dpdns.org&packetEncoding=xudp&sni=support.zoom.us.blackshadow.dpdns.org&fp=chrome#🌐 Сервер ⚡ | 1.7ms
+vless://fc60147e-76b8-4bc5-b691-90b2da79e3d2@104.21.70.21:443?security=tls&type=ws&path=/138.2.74.219-28616&host=nautica-cff.kloningstrife002.workers.dev&packetEncoding=xudp&sni=nautica-cff.kloningstrife002.workers.dev&fp=unsafe&encryption=none#🌐 Сервер ⚡ | 1.7ms
+vless://566c0473-382e-aabb-c62a-f5bb00000000@172.67.202.235:443?security=tls&type=ws&path=/sync&host=ez-4b5fd4.appelidmymat.workers.dev&packetEncoding=xudp&sni=ez-4b5fd4.appelidmymat.workers.dev&fp=chrome&encryption=none#🌐 Сервер ⚡ | 1.7ms
