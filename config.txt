@@ -2,19 +2,19 @@
 #profile-title: МАРУСЯ VPN
 #profile-update-interval: 15
 #support-url: https://t.me/@litiru
-#announce: 🏳️ Auto 2026-09-24 16:40 ЕКБ | МТС+Ростелеком 🏳️
+#announce: 🏳️ Auto 2026-09-24 21:56 ЕКБ | МТС+Ростелеком 🏳️
 
 # ========== ОБЫЧНЫЕ ==========
-trojan://MiTiVPN@151.101.56.7:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-2.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.2ms
-vless://73f8aad3-9f94-4264-a6ad-3238c3662d74@199.232.78.159:443?path=/&security=tls&encryption=none&insecure=0&host=lsjaoijji.global.ssl.fastly.neT&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
-vless://f54c98ce-ac44-4984-db61-ccca1fdbbf72@151.101.56.6:443?path=/?TELEGRAM--KANAL--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray&security=tls&alpn=h2&encryption=none&insecure=0&host=c12.com&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
-trojan://mitivpn@151.101.56.7:443?security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
-vless://XpnTeam-20@199.232.78.160:443?path=/&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=Appxdn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.4ms
+trojan://mitivpn@151.101.56.7:443?path=/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/des---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.2ms
+trojan://MiTIVPN@167.82.76.7:443?security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-33e.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.2ms
+vless://turboo-server@199.232.237.79:443?pcs=cd6e838b9bfe31cab8b3d5c858b0d6223fe84ece236c1fdb281be93c302e1e6e&path=/&security=tls&alpn=h3,h2,http/1.1&encryption=none&insecure=0&host=turboo-server-telegram.com&fp=chrome&type=ws&allowInsecure=0&sni=turboo-server-telegram.com#🌐 Сервер ⚡ | 1.2ms
+trojan://MiTiVPN@151.101.56.101:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/des---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-5.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
+vless://622cd467-ae00-4afe-b7ee-15dca6b9649a@151.101.56.6:443?path=/?RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS--@RK_VPS&security=tls&alpn=h2&encryption=none&insecure=0&host=c12.com&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
 
 # ========== ОБХОД БЕЛЫХ СПИСКОВ ==========
-vless://ecb9ab47-31aa-4dd9-92eb-191047b353bd@104.21.8.201:2096?&security=tls&fp=chrome&sni=cdn-hk.skyvora.app&type=ws&headerType=none&host=cdn-hk.skyvora.app&path=%2Ff7i3lo6xbs#🌐 Сервер ⚡ | 1.4ms
-vless://bdc5e450-3e2d-4001-928e-e3bc6cecb249@172.67.130.159:2096?&security=tls&fp=chrome&sni=cdn.skyvora.app&type=ws&headerType=none&host=cdn.skyvora.app&path=%2Fhux9duzm54#🌐 Сервер ⚡ | 1.4ms
-vless://7493883f-6047-46a7-8d95-f59e137ffaec@190.93.245.176:443?&security=tls&fp=chrome&sni=auto-749388.rohawmk.workers.dev&type=ws&headerType=none&host=auto-749388.rohawmk.workers.dev&path=%2F%3FTELEGRAM--MARAMBASHI--MARAMBASHI%3Fed%3D512#🌐 Сервер ⚡ | 1.5ms
-vless://fd5d3c04-9a43-7702-e70d-a3c53ff216f4@104.17.197.138:443?security=tls&type=ws&path=/sync&host=ezpanslll.samankarami0686.workers.dev&packetEncoding=xudp&sni=ezpanslll.samankarami0686.workers.dev&fp=chrome#🌐 Сервер ⚡ | 1.5ms
-vless://7b102311-43fd-4e8f-877e-8090623c101d@104.17.158.218:2087?security=tls&type=ws&path=/&host=round-art-52ee.eadfgv.workers.dev&packetEncoding=xudp&sni=round-art-52ee.eadfgv.workers.dev&fp=chrome#🌐 Сервер ⚡ | 1.5ms
-vless://bfa3aaaf-41d3-4ec4-8453-e9827d7e7b30@104.21.70.21:443?security=tls&type=ws&path=/pyip=ProxyIP.US.CMLiussss.net&host=crimson-mode-f8de.432-9e1.workers.dev&packetEncoding=xudp&sni=crimson-mode-f8de.432-9e1.workers.dev&fp=unsafe&encryption=none#🌐 Сервер ⚡ | 1.5ms
+trojan://humanity@104.16.174.37:443?security=tls&type=ws&host=www.ignitelimit.com&path=%2Fassignment&sni=www.ignitelimit.com#🌐 Сервер ⚡ | 8.4ms
+vless://d9c13e62-b227-4bc7-9bc2-5af179c630d7@104.21.70.228:2096?&security=tls&sni=old-mouse-3fe4.alirezaid207.workers.dev&type=ws&headerType=none&host=old-mouse-3fe4.alirezaid207.workers.dev&path=%2FeyJqdW5rIjoiNU83bGx4TU5QNG9uIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19%3Fed#🌐 Сервер ⚡ | 8.5ms
+trojan://humanity@104.18.152.233:443?path=%2Fassignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#🇨🇦 Канада ⚡ | 8.5ms
+vless://832c8f42-7fe1-4aa4-9171-eb9dddbf6fef@172.67.130.159:2096?&security=tls&fp=chrome&sni=cdn-sg.skyvora.app&type=ws&headerType=none&host=cdn-sg.skyvora.app&path=%2F78bc8#🌐 Сервер ⚡ | 8.5ms
+vless://ecb9ab47-31aa-4dd9-92eb-191047b353bd@104.21.8.201:2096?&security=tls&fp=chrome&sni=cdn-hk.skyvora.app&type=ws&headerType=none&host=cdn-hk.skyvora.app&path=%2Ff7i3lo6xbs#🌐 Сервер ⚡ | 8.5ms
+vless://550d6eb0-1775-44a4-a464-9176e3d74b50@172.67.130.159:2096?path=/0i027asku&security=tls&encryption=none&insecure=0&host=cdn-us.skyvora.app&fp=chrome&type=ws&allowInsecure=0&sni=cdn-us.skyvora.app#🌐 Сервер ⚡ | 8.5ms
