@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 МАРУСЯ VPN Checker
-+ vpnserver (happ-keys) → 🇩🇪 Германия
++ vpnserver (happ-keys) → 🇩🇪 Германия / Германия #2
 + whitelist → 🇪🇺 Обход LTE
-+ рандом, ipinfo country
++ 15 vpn + 10 обход, рандом, ipinfo + эмодзи из remark
 """
 
 import os
@@ -16,6 +16,7 @@ import concurrent.futures
 import argparse
 from datetime import datetime, timezone, timedelta
 from urllib.parse import unquote
+from collections import defaultdict
 
 try:
     import requests
@@ -44,7 +45,7 @@ SOURCES = {
 TIMEOUT = 2.3
 MAX_WORKERS = 35
 MAX_LATENCY_MS = 4500
-KEEP_TOP = {"vpnserver": 10, "whitelist": 6}
+KEEP_TOP = {"vpnserver": 15, "whitelist": 10}
 
 _country_cache = {}
 
@@ -103,6 +104,63 @@ COUNTRY_MAP = {
     "ID": ("Индонезия", "🇮🇩"),
     "MY": ("Малайзия", "🇲🇾"),
     "PH": ("Филиппины", "🇵🇭"),
+}
+
+# эмодзи флагов → (название, флаг)
+EMOJI_TO_COUNTRY = {
+    "🇳🇱": ("Нидерланды", "🇳🇱"),
+    "🇷🇺": ("Россия", "🇷🇺"),
+    "🇩🇪": ("Германия", "🇩🇪"),
+    "🇺🇸": ("США", "🇺🇸"),
+    "🇵🇱": ("Польша", "🇵🇱"),
+    "🇫🇮": ("Финляндия", "🇫🇮"),
+    "🇸🇪": ("Швеция", "🇸🇪"),
+    "🇱🇻": ("Латвия", "🇱🇻"),
+    "🇫🇷": ("Франция", "🇫🇷"),
+    "🇨🇦": ("Канада", "🇨🇦"),
+    "🇬🇧": ("Великобритания", "🇬🇧"),
+    "🇹🇷": ("Турция", "🇹🇷"),
+    "🇸🇬": ("Сингапур", "🇸🇬"),
+    "🇯🇵": ("Япония", "🇯🇵"),
+    "🇰🇷": ("Корея", "🇰🇷"),
+    "🇭🇰": ("Гонконг", "🇭🇰"),
+    "🇺🇦": ("Украина", "🇺🇦"),
+    "🇰🇿": ("Казахстан", "🇰🇿"),
+    "🇪🇪": ("Эстония", "🇪🇪"),
+    "🇱🇹": ("Литва", "🇱🇹"),
+    "🇨🇿": ("Чехия", "🇨🇿"),
+    "🇦🇹": ("Австрия", "🇦🇹"),
+    "🇨🇭": ("Швейцария", "🇨🇭"),
+    "🇮🇹": ("Италия", "🇮🇹"),
+    "🇪🇸": ("Испания", "🇪🇸"),
+    "🇧🇪": ("Бельгия", "🇧🇪"),
+    "🇳🇴": ("Норвегия", "🇳🇴"),
+    "🇩🇰": ("Дания", "🇩🇰"),
+    "🇮🇪": ("Ирландия", "🇮🇪"),
+    "🇵🇹": ("Португалия", "🇵🇹"),
+    "🇷🇴": ("Румыния", "🇷🇴"),
+    "🇧🇬": ("Болгария", "🇧🇬"),
+    "🇲🇩": ("Молдова", "🇲🇩"),
+    "🇧🇾": ("Беларусь", "🇧🇾"),
+    "🇬🇪": ("Грузия", "🇬🇪"),
+    "🇦🇲": ("Армения", "🇦🇲"),
+    "🇦🇿": ("Азербайджан", "🇦🇿"),
+    "🇮🇳": ("Индия", "🇮🇳"),
+    "🇨🇳": ("Китай", "🇨🇳"),
+    "🇹🇼": ("Тайвань", "🇹🇼"),
+    "🇦🇺": ("Австралия", "🇦🇺"),
+    "🇧🇷": ("Бразилия", "🇧🇷"),
+    "🇲🇽": ("Мексика", "🇲🇽"),
+    "🇦🇷": ("Аргентина", "🇦🇷"),
+    "🇿🇦": ("ЮАР", "🇿🇦"),
+    "🇮🇱": ("Израиль", "🇮🇱"),
+    "🇦🇪": ("ОАЭ", "🇦🇪"),
+    "🇸🇦": ("Саудовская Аравия", "🇸🇦"),
+    "🇹🇭": ("Таиланд", "🇹🇭"),
+    "🇻🇳": ("Вьетнам", "🇻🇳"),
+    "🇮🇩": ("Индонезия", "🇮🇩"),
+    "🇲🇾": ("Малайзия", "🇲🇾"),
+    "🇵🇭": ("Филиппины", "🇵🇭"),
 }
 
 def extract_host_port(uri: str):
@@ -177,10 +235,11 @@ def check_uri(uri: str):
     return (uri, lat, host)
 
 def get_country_info(uri: str, host: str = None):
-    """Возвращает (название, флаг)"""
+    """Возвращает (название, флаг). Сначала ipinfo, потом эмодзи/слова из remark."""
     name = "Сервер"
     flag = "🌐"
 
+    # 1) ipinfo
     if host:
         code = get_country_code(host)
         if code and code in COUNTRY_MAP:
@@ -188,6 +247,17 @@ def get_country_info(uri: str, host: str = None):
         elif code:
             name, flag = code, "🌐"
 
+    # 2) если не определилось — ищем эмодзи флага в оригинальном remark
+    if name == "Сервер":
+        remark = ""
+        if "#" in uri:
+            remark = unquote(uri.rsplit("#", 1)[1])
+        for emo, (n, f) in EMOJI_TO_COUNTRY.items():
+            if emo in remark:
+                name, flag = n, f
+                break
+
+    # 3) fallback по ключевым словам
     if name == "Сервер":
         remark = ""
         if "#" in uri:
@@ -213,6 +283,8 @@ def get_country_info(uri: str, host: str = None):
             name, flag = "США", "🇺🇸"
         elif any(x in low for x in ["canada", "канада", "ca "]):
             name, flag = "Канада", "🇨🇦"
+        elif any(x in low for x in ["turkey", "турция", "tr "]):
+            name, flag = "Турция", "🇹🇷"
 
     return name, flag
 
@@ -235,21 +307,26 @@ def process_list(name: str, urls: list) -> list:
                 working.append(res)
 
     random.shuffle(working)
-    top = KEEP_TOP.get(name, 8)
+    top = KEEP_TOP.get(name, 10)
     working = working[:top]
     print(f"Рабочих (рандом топ {top}): {len(working)}")
 
+    # считаем сколько раз уже встречалась страна, чтобы ставить #2, #3...
+    country_count = defaultdict(int)
     result = []
     for uri, lat, host in working:
         base = uri.split("#")[0] if "#" in uri else uri
         country_name, flag = get_country_info(uri, host)
 
         if name == "whitelist":
-            # только 🇪🇺 Обход LTE  (без | и без флага страны)
             nice = "🇪🇺 Обход LTE"
         else:
-            # vpnserver → 🇩🇪 Германия
-            nice = f"{flag} {country_name}"
+            country_count[country_name] += 1
+            cnt = country_count[country_name]
+            if cnt == 1:
+                nice = f"{flag} {country_name}"
+            else:
+                nice = f"{flag} {country_name} #{cnt}"
 
         result.append(f"{base}#{nice}")
     return result
