@@ -1,10 +1,10 @@
 # blacklist.txt
 # Обычные VPN
-# updated: 2026-09-25 06:48 ЕКБ
+# updated: 2026-09-25 12:28 ЕКБ
 # working: 5
 
-ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.170:443#🌐 Сервер ⚡ | 16.9ms
-vless://1fac5e18-2ca8-4626-c299-1f3f21c6b55e@151.101.56.6:443?path=/?TELEGRAM-TOOTFFARANGI&security=tls&alpn=h2&encryption=none&insecure=0&host=c12.com&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 16.9ms
-vless://d3ea408c-3536-44d3-b54f-5887818a1721@151.101.213.164:443?encryption=none&security=tls&type=xhttp&headerType=none&path=%2F&host=fretranxrabet.net&mode=packet-up&extra=%7B%22scMaxEachPostBytes%22%3A%221000000%22%2C%22scMinPostsIntervalMs%22%3A%2230%22%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22xmux%22%3A%7B%22maxConcurrency%22%3A%22100%22%7D%7D&sni=accounts.fastly.com&alpn=h3&fragment=1-3%2C10-20%2Ctlshello&fp=firefox#🇩🇪 Германия ⚡ | 17.0ms
-vless://d072677e-98c2-4ff0-a38f-4853af740ee1@151.101.1.242:443?cs=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256:TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256&path=/ws&security=tls&alpn=http/1.1&encryption=none&fm={"tcp": [{"type": "fragment", "settings": {"packets": "tlshello", "lengths": ["0", "104", "1"], "delays": ["0"], "maxSplit": "0"}},{"type": "fragment", "settings": {"packets": "1-1", "lengths": ["114", "1"], "delays": ["1"], "maxSplit": "11"}}]}&insecure=0&host=minimize-evenness.cdn-content.com&fp=unsafe&type=ws&allowInsecure=0&sni=minimize-evenness.cdn-content.com#🇺🇸 США ⚡ | 17.0ms
-trojan://MITIVpN@151.101.56.7:443?host=mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net&fp=chrome&path=/&alpn=http/1.1&type=ws&sni=ssl.fastly.com&security=tls#🌐 Сервер ⚡ | 17.0ms
+trojan://mitivpn@151.101.56.7:443?security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.2ms
+trojan://MITIVpN@199.232.78.101:443?path=/&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
+vless://XpnTeam-4@199.232.78.160:443?path=/&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=Appxdn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
+vless://XpnTeam-25@199.232.78.170:443?path=/&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=Appxdn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
+trojan://MiTIVPN@199.232.78.101:443?security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
