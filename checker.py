@@ -2,6 +2,7 @@
 """
 МАРУСЯ VPN Checker — жёсткий фильтр + чистые названия
 Только качественные источники + нормальные имена + эмодзи
++ определение страны через ipinfo.io/{ip}/country
 """
 
 import os
@@ -50,6 +51,66 @@ MAX_WORKERS = 35
 MAX_LATENCY_MS = 4500
 KEEP_TOP = {"vpnserver": 15, "whitelist": 6, "blacklist": 5}   # сильно меньше
 
+# кэш стран, чтобы не долбить ipinfo по сто раз
+_country_cache = {}
+
+COUNTRY_MAP = {
+    "NL": ("Нидерланды", "🇳🇱"),
+    "RU": ("Россия", "🇷🇺"),
+    "DE": ("Германия", "🇩🇪"),
+    "US": ("США", "🇺🇸"),
+    "PL": ("Польша", "🇵🇱"),
+    "FI": ("Финляндия", "🇫🇮"),
+    "SE": ("Швеция", "🇸🇪"),
+    "LV": ("Латвия", "🇱🇻"),
+    "FR": ("Франция", "🇫🇷"),
+    "CA": ("Канада", "🇨🇦"),
+    "GB": ("Великобритания", "🇬🇧"),
+    "UK": ("Великобритания", "🇬🇧"),
+    "TR": ("Турция", "🇹🇷"),
+    "SG": ("Сингапур", "🇸🇬"),
+    "JP": ("Япония", "🇯🇵"),
+    "KR": ("Корея", "🇰🇷"),
+    "HK": ("Гонконг", "🇭🇰"),
+    "UA": ("Украина", "🇺🇦"),
+    "KZ": ("Казахстан", "🇰🇿"),
+    "EE": ("Эстония", "🇪🇪"),
+    "LT": ("Литва", "🇱🇹"),
+    "CZ": ("Чехия", "🇨🇿"),
+    "AT": ("Австрия", "🇦🇹"),
+    "CH": ("Швейцария", "🇨🇭"),
+    "IT": ("Италия", "🇮🇹"),
+    "ES": ("Испания", "🇪🇸"),
+    "BE": ("Бельгия", "🇧🇪"),
+    "NO": ("Норвегия", "🇳🇴"),
+    "DK": ("Дания", "🇩🇰"),
+    "IE": ("Ирландия", "🇮🇪"),
+    "PT": ("Португалия", "🇵🇹"),
+    "RO": ("Румыния", "🇷🇴"),
+    "BG": ("Болгария", "🇧🇬"),
+    "MD": ("Молдова", "🇲🇩"),
+    "BY": ("Беларусь", "🇧🇾"),
+    "GE": ("Грузия", "🇬🇪"),
+    "AM": ("Армения", "🇦🇲"),
+    "AZ": ("Азербайджан", "🇦🇿"),
+    "IN": ("Индия", "🇮🇳"),
+    "CN": ("Китай", "🇨🇳"),
+    "TW": ("Тайвань", "🇹🇼"),
+    "AU": ("Австралия", "🇦🇺"),
+    "BR": ("Бразилия", "🇧🇷"),
+    "MX": ("Мексика", "🇲🇽"),
+    "AR": ("Аргентина", "🇦🇷"),
+    "ZA": ("ЮАР", "🇿🇦"),
+    "IL": ("Израиль", "🇮🇱"),
+    "AE": ("ОАЭ", "🇦🇪"),
+    "SA": ("Саудовская Аравия", "🇸🇦"),
+    "TH": ("Таиланд", "🇹🇭"),
+    "VN": ("Вьетнам", "🇻🇳"),
+    "ID": ("Индонезия", "🇮🇩"),
+    "MY": ("Малайзия", "🇲🇾"),
+    "PH": ("Филиппины", "🇵🇭"),
+}
+
 def extract_host_port(uri: str):
     try:
         m = re.search(r"@([^:/?#]+):(\d+)", uri)
@@ -69,6 +130,28 @@ def tcp_ping(host: str, port: int, timeout: float = TIMEOUT):
             return round((time.perf_counter() - start) * 1000, 1)
     except Exception:
         return None
+
+def get_country_code(host: str) -> str:
+    """Тянет код страны через ipinfo.io/{host}/country (как curl)"""
+    if not host:
+        return ""
+    if host in _country_cache:
+        return _country_cache[host]
+    try:
+        r = requests.get(
+            f"https://ipinfo.io/{host}/country",
+            timeout=6,
+            headers={"User-Agent": "Mozilla/5.0"},
+        )
+        if r.status_code == 200:
+            code = r.text.strip().upper()
+            if code and len(code) == 2 and code.isalpha():
+                _country_cache[host] = code
+                return code
+    except Exception:
+        pass
+    _country_cache[host] = ""
+    return ""
 
 def fetch_source(url: str) -> list:
     try:
@@ -98,11 +181,11 @@ def check_uri(uri: str):
     lat = tcp_ping(host, port)
     if lat is None or lat > MAX_LATENCY_MS:
         return None
-    return (uri, lat)
+    return (uri, lat, host)
 
-def clean_name(uri: str, lat: float) -> str:
-    """Делает нормальное русское название + эмодзи"""
-    # берём старый remark если есть
+def clean_name(uri: str, lat: float, host: str = None) -> str:
+    """Делает нормальное русское название + эмодзи. Страну берём из ipinfo по IP."""
+    # берём старый remark если есть (на всякий)
     remark = ""
     if "#" in uri:
         remark = unquote(uri.rsplit("#", 1)[1]).strip()
@@ -115,33 +198,43 @@ def clean_name(uri: str, lat: float) -> str:
     remark = re.sub(r"\|\s*\d+ms.*", "", remark)
     remark = re.sub(r"\s+", " ", remark).strip(" -_|#")
 
-    # определяем страну по ключевым словам
-    low = (remark + " " + uri).lower()
     country = "Сервер"
     flag = "🌐"
 
-    if any(x in low for x in ["russia", "россия", "ru ", "msk", "moscow", "frkn", "яя", "yandex"]):
-        country, flag = "Россия", "🇷🇺"
-    elif any(x in low for x in ["poland", "польша", "pl "]):
-        country, flag = "Польша", "🇵🇱"
-    elif any(x in low for x in ["netherlands", "нидерланды", "nl ", "amsterdam"]):
-        country, flag = "Нидерланды", "🇳🇱"
-    elif any(x in low for x in ["finland", "финляндия", "fi "]):
-        country, flag = "Финляндия", "🇫🇮"
-    elif any(x in low for x in ["germany", "германия", "de ", "frankfurt"]):
-        country, flag = "Германия", "🇩🇪"
-    elif any(x in low for x in ["sweden", "швеция", "se "]):
-        country, flag = "Швеция", "🇸🇪"
-    elif any(x in low for x in ["latvia", "латвия", "lv "]):
-        country, flag = "Латвия", "🇱🇻"
-    elif any(x in low for x in ["france", "франция", "fr "]):
-        country, flag = "Франция", "🇫🇷"
-    elif any(x in low for x in ["usa", "сша", "us ", "america"]):
-        country, flag = "США", "🇺🇸"
-    elif any(x in low for x in ["canada", "канада", "ca "]):
-        country, flag = "Канада", "🇨🇦"
-    elif "anycast" in low:
-        country, flag = "Anycast", "🌐"
+    # 1) главное — ipinfo по IP/host
+    if host:
+        code = get_country_code(host)
+        if code and code in COUNTRY_MAP:
+            country, flag = COUNTRY_MAP[code]
+        elif code:
+            # неизвестный код — просто код
+            country, flag = code, "🌐"
+
+    # 2) fallback по ключевым словам (если ipinfo не дал)
+    if country == "Сервер":
+        low = (remark + " " + uri).lower()
+        if any(x in low for x in ["russia", "россия", "ru ", "msk", "moscow", "frkn", "яя", "yandex"]):
+            country, flag = "Россия", "🇷🇺"
+        elif any(x in low for x in ["poland", "польша", "pl "]):
+            country, flag = "Польша", "🇵🇱"
+        elif any(x in low for x in ["netherlands", "нидерланды", "nl ", "amsterdam"]):
+            country, flag = "Нидерланды", "🇳🇱"
+        elif any(x in low for x in ["finland", "финляндия", "fi "]):
+            country, flag = "Финляндия", "🇫🇮"
+        elif any(x in low for x in ["germany", "германия", "de ", "frankfurt"]):
+            country, flag = "Германия", "🇩🇪"
+        elif any(x in low for x in ["sweden", "швеция", "se "]):
+            country, flag = "Швеция", "🇸🇪"
+        elif any(x in low for x in ["latvia", "латвия", "lv "]):
+            country, flag = "Латвия", "🇱🇻"
+        elif any(x in low for x in ["france", "франция", "fr "]):
+            country, flag = "Франция", "🇫🇷"
+        elif any(x in low for x in ["usa", "сша", "us ", "america"]):
+            country, flag = "США", "🇺🇸"
+        elif any(x in low for x in ["canada", "канада", "ca "]):
+            country, flag = "Канада", "🇨🇦"
+        elif "anycast" in low:
+            country, flag = "Anycast", "🌐"
 
     # эмодзи по качеству
     emoji = ""
@@ -149,12 +242,13 @@ def clean_name(uri: str, lat: float) -> str:
         emoji = " ⚡"
     elif lat <= 180:
         emoji = " ⚡"
+    low = (remark + " " + uri).lower()
     if "game" in low or "игр" in low or "gaming" in low:
         emoji += " 🎮"
     if "anycast" in low:
         emoji += " 🌐"
 
-    # итоговый remark
+    # итоговый remark — ссылку не трогаем, только название
     final = f"{flag} {country}{emoji}"
     return final
 
@@ -176,15 +270,15 @@ def process_list(name: str, urls: list) -> list:
             if res:
                 working.append(res)
 
-    working.sort(key=lambda x: x[1])
+    working.sort(key=lambda x: x[1])  # самые быстрые сверху
     top = KEEP_TOP.get(name, 15)
     working = working[:top]
     print(f"Рабочих (топ {top}): {len(working)}")
 
     result = []
-    for uri, lat in working:
-        base = uri.split("#")[0] if "#" in uri else uri
-        nice = clean_name(uri, lat)
+    for uri, lat, host in working:
+        base = uri.split("#")[0] if "#" in uri else uri  # ссылку не меняем
+        nice = clean_name(uri, lat, host)
         result.append(f"{base}#{nice} | {lat}ms")
     return result
 

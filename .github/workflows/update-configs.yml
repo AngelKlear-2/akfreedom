@@ -1,9 +1,9 @@
 name: Update VPN Configs
 
 on:
-  schedule:
-    # каждые 30 минут
-    - cron: '*/30 * * * *'
+  # schedule отключён пока (по просьбе)
+  # schedule:
+  #   - cron: '*/30 * * * *'
   workflow_dispatch:  # ручной запуск
 
 permissions:
