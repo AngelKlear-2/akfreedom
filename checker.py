@@ -322,7 +322,7 @@ def run_once():
             f"# ---\n#profile-title: МАРУСЯ VPN\n"
             f"#profile-update-interval: 15\n"
             f"#support-url: https://t.me/@litiru\n"
-            f"#announce: 🏳️ Auto {now} | МТС+Ростелеком 🏳️\n\n"
+            f"#announce: 🏳️ {now} | Первые - качественные 🏳️\n\n"
             f"# ========== ОБЫЧНЫЕ ==========\n"
             + "\n".join(black)
             + "\n\n# ========== ОБХОД БЕЛЫХ СПИСКОВ ==========\n"
