@@ -2,19 +2,19 @@
 #profile-title: МАРУСЯ VPN
 #profile-update-interval: 15
 #support-url: https://t.me/@litiru
-#announce: 🏳️ Auto 2026-09-25 12:28 ЕКБ | МТС+Ростелеком 🏳️
+#announce: 🏳️ Auto 2026-09-25 17:56 ЕКБ | МТС+Ростелеком 🏳️
 
 # ========== ОБЫЧНЫЕ ==========
-trojan://mitivpn@151.101.56.7:443?security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.2ms
-trojan://MITIVpN@199.232.78.101:443?path=/&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
-vless://XpnTeam-4@199.232.78.160:443?path=/&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=Appxdn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
-vless://XpnTeam-25@199.232.78.170:443?path=/&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=Appxdn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
-trojan://MiTIVPN@199.232.78.101:443?security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.3ms
+vless://df08fd27-d7c2-4cd2-8a79-a32287682a79@193.239.179.15:443?security=reality&encryption=none&pbk=6dc3iKXilOQpA_JFrKlk5-CsFjSmOm_5p0kSQcO9qi4&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=worldoftanks.asia&fp=chrome#🌐 Сервер ⚡ | 1.4ms
+trojan://MITIVpN@167.82.76.7:443?path=/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/des---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-33e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.4ms
+vless://XpnTeam-11@199.232.78.160:443?path=/&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=Appxdn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.4ms
+vless://XpnTeam-29@199.232.78.170:443?path=/&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=Appxdn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#🌐 Сервер ⚡ | 1.4ms
+vless://df08fd27-d7c2-4cd2-8a79-a32287682a79@193.239.179.15:443?security=reality&encryption=none&pbk=6dc3iKXilOQpA_JFrKlk5-CsFjSmOm_5p0kSQcO9qi4&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=worldoftanks.com&fp=android#🌐 Сервер ⚡ | 1.5ms
 
 # ========== ОБХОД БЕЛЫХ СПИСКОВ ==========
-trojan://humanity@104.18.152.219:443?security=tls&type=ws&path=%2Fassignment&sni=www.ignitelimit.com#🌐 Сервер ⚡ | 1.4ms
-vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@104.16.10.185:443?security=tls&type=ws&path=/ws&host=a.cwvps.eu.org&packetEncoding=xudp&sni=a.cwvps.eu.org&fp=unsafe&encryption=none#🌐 Сервер ⚡ | 1.4ms
-trojan://eabf1999fefbb7d2@172.67.205.222:2087?alpn=http/1.1&ed=2560&eh=Sec-WebSocket-Protocol&fp=ios&host=waysi.waysi6688.workers.dev&path=/tr/sMpzOZ0eWEt6jbZ1jjN3BaM7LLoQ&security=tls&sni=waysi.waysi6688.workers.dev&type=ws#🌐 Сервер ⚡ | 1.4ms
-vless://615d9f74-4d51-bad3-f240-2a8400000015@104.17.148.22:443?encryption=none&fp=firefox&host=main.packetloss-com.workers.dev&path=/silaber&security=tls&sni=main.packetloss-com.workers.dev&type=ws#🌐 Сервер ⚡ | 1.4ms
-vless://103744ce-0153-49b1-2eac-d293a6ddd7e2@104.18.95.7:443?encryption=none&fp=chrome&host=nahan-mouse-7749.amirsina2026.workers.dev&path=/sync&security=tls&sni=nahan-mouse-7749.amirsina2026.workers.dev&type=ws#🇸🇪 Швеция ⚡ | 1.4ms
-vless://a51d8a82-faec-44f4-8882-441a2e7f0ce4@104.21.70.21:443?encryption=none&fp=unsafe&host=spring-math-5c8c.434.workers.dev&path=/pyip%3DProxyIP.KR.CMLiussss.net&security=tls&sni=spring-math-5c8c.434.workers.dev&type=ws#🇸🇪 Швеция ⚡ | 1.4ms
+vless://75323b6f-184f-4d00-839d-323b8fc70221@188.114.97.6:443?security=tls&type=ws&path=/pyip=ProxyIP.US.CMLiussss.net&host=dry-sunset-f3c4.282.workers.dev&packetEncoding=xudp&sni=dry-sunset-f3c4.282.workers.dev&fp=unsafe&encryption=none#🌐 Сервер ⚡ | 1.8ms
+vless://2e305ebe-f6e6-4689-b32f-cd04ab5ff541@188.114.96.9:443?&security=tls&fp=chrome&sni=idb8onmvbntuyt5t7t6cejfw8vlrb.pages.dev&type=ws&headerType=none&host=idb8onmvbntuyt5t7t6cejfw8vlrb.pages.dev&path=%2Fvl%2F9yvcoLdzdOXLUYfH7r5gwJhu1CHrj#🌐 Сервер ⚡ | 1.8ms
+vless://07f9bc85-613f-4a33-8da1-191973c43c0a@104.21.88.201:443?security=tls&type=ws&path=/cmh&host=app-q0zc4t.user-4gfyh5.workers.dev&packetEncoding=xudp&alpn=h2,http/1.1&sni=app-q0zc4t.user-4gfyh5.workers.dev&fp=chrome&encryption=none#🌐 Сервер ⚡ | 1.8ms
+vless://1bc8fb2a-3bee-4ae0-aa12-957885e63e18@188.114.97.6:443?security=tls&type=ws&path=/pyip&host=super-mud-8b38.114-a90.workers.dev&packetEncoding=xudp&sni=super-mud-8b38.114-a90.workers.dev&fp=unsafe&encryption=none#🌐 Сервер ⚡ | 1.8ms
+vless://7967bf59-57e3-4cde-9898-527b0fe60022@5.10.244.7:8443?security=tls&type=ws&path=/dula?Telegram-WangCai2&host=speed.dulacloud.store&ed=2560&packetEncoding=xudp&sni=speed.dulacloud.store&fp=chrome&encryption=none#🌐 Сервер ⚡ | 1.8ms
+vless://a51d8a82-faec-44f4-8882-441a2e7f0ce4@188.114.97.6:443?encryption=none&security=tls&sni=spring-math-5c8c.434.workers.dev&fp=unsafe&type=ws&host=spring-math-5c8c.434.workers.dev&path=%2Fpyip%3DProxyIP.KR.CMLiussss.net#🇸🇪 Швеция ⚡ | 1.8ms
