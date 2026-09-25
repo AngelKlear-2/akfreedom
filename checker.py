@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
 МАРУСЯ VPN Checker — жёсткий фильтр + чистые названия
-Только качественные источники + нормальные имена + эмодзи
 + определение страны через ipinfo.io/{ip}/country
++ vpnserver (happ-keys) = Прямой LTE
++ whitelist = Обход LTE
++ рандом вместо сортировки по latency (GA не в РФ)
 """
 
 import os
@@ -10,6 +12,7 @@ import re
 import sys
 import socket
 import time
+import random
 import concurrent.futures
 import argparse
 from datetime import datetime, timezone, timedelta
@@ -28,9 +31,8 @@ BRANCH = "main"
 EKB = timezone(timedelta(hours=5))
 
 SOURCES = {
-    "blacklist": [
-        "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt",
-        "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS.txt",
+    "vpnserver": [
+        "https://raw.githubusercontent.com/sobolevcode/happ-keys/refs/heads/main/link",
     ],
     "whitelist": [
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
@@ -38,17 +40,14 @@ SOURCES = {
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-all.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-SNI-RU-all.txt",
     ],
-    "vpnserver": [
-        "https://raw.githubusercontent.com/sobolevcode/happ-keys/refs/heads/main/link",
-    ],
 }
 
 TIMEOUT = 2.3
 MAX_WORKERS = 35
 MAX_LATENCY_MS = 4500
-KEEP_TOP = {"vpnserver": 4, "whitelist": 5, "blacklist": 5}   # сильно меньше
+KEEP_TOP = {"vpnserver": 8, "whitelist": 6}   # сколько оставлять
 
-# кэш стран, чтобы не долбить ipinfo по сто раз
+# кэш стран
 _country_cache = {}
 
 COUNTRY_MAP = {
@@ -129,7 +128,6 @@ def tcp_ping(host: str, port: int, timeout: float = TIMEOUT):
         return None
 
 def get_country_code(host: str) -> str:
-    """Тянет код страны через ipinfo.io/{host}/country (как curl)"""
     if not host:
         return ""
     if host in _country_cache:
@@ -181,7 +179,6 @@ def check_uri(uri: str):
     return (uri, lat, host)
 
 def get_flag(uri: str, host: str = None) -> str:
-    """Возвращает только эмодзи страны"""
     flag = "🌐"
 
     if host:
@@ -192,7 +189,6 @@ def get_flag(uri: str, host: str = None) -> str:
             flag = "🌐"
 
     if flag == "🌐":
-        # fallback по ключевым словам
         remark = ""
         if "#" in uri:
             remark = unquote(uri.rsplit("#", 1)[1]).strip()
@@ -238,21 +234,21 @@ def process_list(name: str, urls: list) -> list:
             if res:
                 working.append(res)
 
-    working.sort(key=lambda x: x[1])  # самые быстрые сверху
-    top = KEEP_TOP.get(name, 15)
+    # рандом вместо сортировки по latency (GA не в России)
+    random.shuffle(working)
+    top = KEEP_TOP.get(name, 8)
     working = working[:top]
-    print(f"Рабочих (топ {top}): {len(working)}")
+    print(f"Рабочих (рандом топ {top}): {len(working)}")
 
     result = []
     for uri, lat, host in working:
-        base = uri.split("#")[0] if "#" in uri else uri  # ссылку не меняем
+        base = uri.split("#")[0] if "#" in uri else uri
         flag = get_flag(uri, host)
 
         if name == "whitelist":
-            # 🇪🇺 Обход LTE | 🇩🇪
             nice = f"🇪🇺 Обход LTE | {flag}"
         else:
-            # Прямой LTE | 🇩🇪  (без эмодзи в начале)
+            # vpnserver = Прямой LTE
             nice = f"Прямой LTE | {flag}"
 
         result.append(f"{base}#{nice}")
@@ -285,29 +281,29 @@ def run_once():
     print(f"Старт: {datetime.now(EKB).strftime('%Y-%m-%d %H:%M:%S ЕКБ')}")
     print(f"{'='*50}")
 
-    black = process_list("blacklist", SOURCES["blacklist"])
+    vpn = process_list("vpnserver", SOURCES["vpnserver"])
     white = process_list("whitelist", SOURCES["whitelist"])
 
     now = datetime.now(EKB).strftime("%Y-%m-%d %H:%M ЕКБ")
 
     files = {
-        "blacklist.txt": f"# blacklist.txt\n# Обычные VPN\n# updated: {now}\n# working: {len(black)}\n\n" + "\n".join(black),
-        "whitelist.txt": f"# whitelist.txt\n# Обход белых списков / CIDR\n# updated: {now}\n# working: {len(white)}\n\n" + "\n".join(white),
-        "vpn.txt": f"# vpn.txt Mixed\n# updated: {now}\n\n" + "\n".join(black + ["", "# === ОБХОД БС ===", ""] + white),
+        "vpn.txt": f"# vpn.txt Mixed\n# updated: {now}\n\n" + "\n".join(vpn + ["", "# === ОБХОД БС ===", ""] + white),
         "config.txt": (
             f"# ---\n#profile-title: МАРУСЯ VPN\n"
             f"#profile-update-interval: 15\n"
             f"#support-url: https://t.me/@litiru\n"
-            f"#announce: 🏳️ {now} | Первые - качественные 🏳️\n\n"
-            f"# ========== ОБЫЧНЫЕ ==========\n"
-            + "\n".join(black)
-            + "\n\n# ========== ОБХОД БЕЛЫХ СПИСКОВ ==========\n"
+            f"#announce: 🏳️ {now} | Рандом сервера 🏳️\n\n"
+            f"# ========== ПРЯМОЙ LTE ==========\n"
+            + "\n".join(vpn)
+            + "\n\n# ========== ОБХОД LTE ==========\n"
             + "\n".join(white)
             + "\n"
         ),
+        "whitelist.txt": f"# whitelist.txt\n# Обход LTE\n# updated: {now}\n# working: {len(white)}\n\n" + "\n".join(white),
     }
+    # blacklist больше не пишем
     push_to_github(files)
-    print(f"\nГотово. Black: {len(black)} | White: {len(white)}")
+    print(f"\nГотово. VPN (прямой): {len(vpn)} | White (обход): {len(white)}")
 
 def main():
     parser = argparse.ArgumentParser()
