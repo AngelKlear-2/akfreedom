@@ -46,7 +46,7 @@ SOURCES = {
 TIMEOUT = 2.3
 MAX_WORKERS = 35
 MAX_LATENCY_MS = 4500
-KEEP_TOP = {"vpnserver": 15, "whitelist": 6, "blacklist": 5}   # сильно меньше
+KEEP_TOP = {"vpnserver": 4, "whitelist": 5, "blacklist": 5}   # сильно меньше
 
 # кэш стран, чтобы не долбить ipinfo по сто раз
 _country_cache = {}
