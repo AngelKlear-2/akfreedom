@@ -180,74 +180,45 @@ def check_uri(uri: str):
         return None
     return (uri, lat, host)
 
-def clean_name(uri: str, lat: float, host: str = None) -> str:
-    """Делает нормальное русское название + эмодзи. Страну берём из ipinfo по IP."""
-    # берём старый remark если есть (на всякий)
-    remark = ""
-    if "#" in uri:
-        remark = unquote(uri.rsplit("#", 1)[1]).strip()
-
-    # убираем мусор
-    remark = re.sub(r"t\.me/\S+", "", remark, flags=re.I)
-    remark = re.sub(r"CF[\u4e00-\u9fff\w_\-]*", "", remark)
-    remark = re.sub(r"[\u4e00-\u9fff]+", "", remark)  # китайские иероглифы
-    remark = re.sub(r"@\w+", "", remark)
-    remark = re.sub(r"\|\s*\d+ms.*", "", remark)
-    remark = re.sub(r"\s+", " ", remark).strip(" -_|#")
-
-    country = "Сервер"
+def get_flag(uri: str, host: str = None) -> str:
+    """Возвращает только эмодзи страны"""
     flag = "🌐"
 
-    # 1) главное — ipinfo по IP/host
     if host:
         code = get_country_code(host)
         if code and code in COUNTRY_MAP:
-            country, flag = COUNTRY_MAP[code]
+            _, flag = COUNTRY_MAP[code]
         elif code:
-            # неизвестный код — просто код
-            country, flag = code, "🌐"
+            flag = "🌐"
 
-    # 2) fallback по ключевым словам (если ipinfo не дал)
-    if country == "Сервер":
+    if flag == "🌐":
+        # fallback по ключевым словам
+        remark = ""
+        if "#" in uri:
+            remark = unquote(uri.rsplit("#", 1)[1]).strip()
         low = (remark + " " + uri).lower()
         if any(x in low for x in ["russia", "россия", "ru ", "msk", "moscow", "frkn", "яя", "yandex"]):
-            country, flag = "Россия", "🇷🇺"
+            flag = "🇷🇺"
         elif any(x in low for x in ["poland", "польша", "pl "]):
-            country, flag = "Польша", "🇵🇱"
+            flag = "🇵🇱"
         elif any(x in low for x in ["netherlands", "нидерланды", "nl ", "amsterdam"]):
-            country, flag = "Нидерланды", "🇳🇱"
+            flag = "🇳🇱"
         elif any(x in low for x in ["finland", "финляндия", "fi "]):
-            country, flag = "Финляндия", "🇫🇮"
+            flag = "🇫🇮"
         elif any(x in low for x in ["germany", "германия", "de ", "frankfurt"]):
-            country, flag = "Германия", "🇩🇪"
+            flag = "🇩🇪"
         elif any(x in low for x in ["sweden", "швеция", "se "]):
-            country, flag = "Швеция", "🇸🇪"
+            flag = "🇸🇪"
         elif any(x in low for x in ["latvia", "латвия", "lv "]):
-            country, flag = "Латвия", "🇱🇻"
+            flag = "🇱🇻"
         elif any(x in low for x in ["france", "франция", "fr "]):
-            country, flag = "Франция", "🇫🇷"
+            flag = "🇫🇷"
         elif any(x in low for x in ["usa", "сша", "us ", "america"]):
-            country, flag = "США", "🇺🇸"
+            flag = "🇺🇸"
         elif any(x in low for x in ["canada", "канада", "ca "]):
-            country, flag = "Канада", "🇨🇦"
-        elif "anycast" in low:
-            country, flag = "Anycast", "🌐"
+            flag = "🇨🇦"
 
-    # эмодзи по качеству
-    emoji = ""
-    if lat <= 80:
-        emoji = " ⚡"
-    elif lat <= 180:
-        emoji = " ⚡"
-    low = (remark + " " + uri).lower()
-    if "game" in low or "игр" in low or "gaming" in low:
-        emoji += " 🎮"
-    if "anycast" in low:
-        emoji += " 🌐"
-
-    # итоговый remark — ссылку не трогаем, только название
-    final = f"{flag} {country}{emoji}"
-    return final
+    return flag
 
 def process_list(name: str, urls: list) -> list:
     print(f"\n=== {name.upper()} ===")
@@ -275,8 +246,16 @@ def process_list(name: str, urls: list) -> list:
     result = []
     for uri, lat, host in working:
         base = uri.split("#")[0] if "#" in uri else uri  # ссылку не меняем
-        nice = clean_name(uri, lat, host)
-        result.append(f"{base}#{nice} | {lat}ms")
+
+        if name == "whitelist":
+            # все обход LTE — всегда 🇪🇺
+            nice = "Обход LTE | 🇪🇺"
+        else:
+            # blacklist / прямой LTE — страна эмодзи
+            flag = get_flag(uri, host)
+            nice = f"Прямой LTE | {flag}"
+
+        result.append(f"{base}#{nice}")
     return result
 
 def push_to_github(files: dict):
