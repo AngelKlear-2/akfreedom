@@ -1,10 +1,10 @@
 # whitelist.txt
-# Обход белых списков / CIDR
-# updated: 2026-09-25 22:59 ЕКБ
+# Обход LTE
+# updated: 2026-09-25 23:30 ЕКБ
 # working: 5
 
-vless://9737cc16-7266-45ce-94d9-6e05a45e0b9c@84.38.181.249:443?encryption=none&type=xhttp&security=reality&path=%2F&sni=open.spotify.com&pbk=pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w&sid=6bc02f1c474260c3&allowInsecure=1&fp=edge#🇪🇺 Обход LTE | 🇷🇺
-vless://9737cc16-7266-45ce-94d9-6e05a45e0b9c@84.38.181.249:443?encryption=none&type=xhttp&security=reality&path=%2F&sni=open.spotify.com&pbk=pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w&sid=6bc02f1c474260c3&allowInsecure=1&fp=qq#🇪🇺 Обход LTE | 🇷🇺
-vless://9737cc16-7266-45ce-94d9-6e05a45e0b9c@84.38.181.249:443?encryption=none&type=xhttp&security=reality&path=%2F&sni=open.spotify.com&pbk=pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w&sid=6bc02f1c474260c3&allowInsecure=1&fp=ios#🇪🇺 Обход LTE | 🇷🇺
-vless://9737cc16-7266-45ce-94d9-6e05a45e0b9c@84.38.181.249:443?encryption=none&type=xhttp&security=reality&path=%2F&sni=open.spotify.com&pbk=pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w&sid=6bc02f1c474260c3&allowInsecure=1&fp=safari#🇪🇺 Обход LTE | 🇷🇺
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@176.123.167.90:9881?encryption=none&security=reality&sni=dl.google.com&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&sid=aabb&type=grpc&serviceName=grpc-tunnel&fp=chrome#🇪🇺 Обход LTE | 🇷🇺
+vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=chrome#🇪🇺 Обход LTE | 🇷🇺
+vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=ios#🇪🇺 Обход LTE | 🇷🇺
+vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=edge#🇪🇺 Обход LTE | 🇷🇺
+vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=android#🇪🇺 Обход LTE | 🇷🇺
+vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=qq#🇪🇺 Обход LTE | 🇷🇺
