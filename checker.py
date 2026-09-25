@@ -31,18 +31,15 @@ SOURCES = {
     "blacklist": [
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS.txt",
-        "https://raw.githubusercontent.com/aviamastersgh/vpn-free-russia/main/verified_configs.txt",
     ],
     "whitelist": [
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-all.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-SNI-RU-all.txt",
-        "https://raw.githubusercontent.com/Subzio/subzio/main/WHITE_LIST_PROXY_COLLECTION.txt",
-        "https://raw.githubusercontent.com/Subzio/subzio/main/HYSTERIA2.txt",
     ],
     "vpnserver": [
-        "https://raw.githubusercontent.com/AngelKlear-2/akfreedom/refs/heads/main/ubw",
+        "https://raw.githubusercontent.com/sobolevcode/happ-keys/refs/heads/main/link",
     ],
 }
 
