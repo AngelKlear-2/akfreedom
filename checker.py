@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 МАРУСЯ VPN Checker
-+ vpnserver (happ-keys) → 🇩🇪 Германия / Германия #2
++ vpnserver (happ-keys) → 🇩🇪 Германия / Германия #2 (лимит на страну, сортировка)
 + whitelist → 🇪🇺 Обход LTE
-+ 15 vpn + 10 обход, рандом, ipinfo + эмодзи из remark
++ 15 vpn (макс 3 на страну) + 10 обход
 """
 
 import os
@@ -42,10 +42,11 @@ SOURCES = {
     ],
 }
 
-TIMEOUT = 2.3
-MAX_WORKERS = 35
-MAX_LATENCY_MS = 4500
+TIMEOUT = 3.0
+MAX_WORKERS = 40
+MAX_LATENCY_MS = 6000
 KEEP_TOP = {"vpnserver": 15, "whitelist": 10}
+MAX_PER_COUNTRY = 3   # максимум одной страны в vpn
 
 _country_cache = {}
 
@@ -106,7 +107,6 @@ COUNTRY_MAP = {
     "PH": ("Филиппины", "🇵🇭"),
 }
 
-# эмодзи флагов → (название, флаг)
 EMOJI_TO_COUNTRY = {
     "🇳🇱": ("Нидерланды", "🇳🇱"),
     "🇷🇺": ("Россия", "🇷🇺"),
@@ -235,11 +235,9 @@ def check_uri(uri: str):
     return (uri, lat, host)
 
 def get_country_info(uri: str, host: str = None):
-    """Возвращает (название, флаг). Сначала ipinfo, потом эмодзи/слова из remark."""
     name = "Сервер"
     flag = "🌐"
 
-    # 1) ipinfo
     if host:
         code = get_country_code(host)
         if code and code in COUNTRY_MAP:
@@ -247,7 +245,6 @@ def get_country_info(uri: str, host: str = None):
         elif code:
             name, flag = code, "🌐"
 
-    # 2) если не определилось — ищем эмодзи флага в оригинальном remark
     if name == "Сервер":
         remark = ""
         if "#" in uri:
@@ -257,7 +254,6 @@ def get_country_info(uri: str, host: str = None):
                 name, flag = n, f
                 break
 
-    # 3) fallback по ключевым словам
     if name == "Сервер":
         remark = ""
         if "#" in uri:
@@ -307,19 +303,49 @@ def process_list(name: str, urls: list) -> list:
                 working.append(res)
 
     random.shuffle(working)
-    top = KEEP_TOP.get(name, 10)
-    working = working[:top]
-    print(f"Рабочих (рандом топ {top}): {len(working)}")
+    print(f"Живых: {len(working)}")
 
-    # считаем сколько раз уже встречалась страна, чтобы ставить #2, #3...
+    # для vpn — лимит на страну + приоритет не-России
+    if name == "vpnserver":
+        by_country = defaultdict(list)
+        for item in working:
+            uri, lat, host = item
+            cname, _ = get_country_info(uri, host)
+            by_country[cname].append(item)
+
+        # сначала не-Россия, потом Россия (с лимитом)
+        selected = []
+        # сначала все остальные страны (по  MAX_PER_COUNTRY)
+        for cname, items in by_country.items():
+            if cname == "Россия":
+                continue
+            random.shuffle(items)
+            selected.extend(items[:MAX_PER_COUNTRY])
+
+        # потом Россия, но максимум 3
+        if "Россия" in by_country:
+            ru_items = by_country["Россия"]
+            random.shuffle(ru_items)
+            selected.extend(ru_items[:MAX_PER_COUNTRY])
+
+        random.shuffle(selected)
+        working = selected[:KEEP_TOP["vpnserver"]]
+    else:
+        # whitelist — просто берём топ, без жёсткого лимита
+        working = working[:KEEP_TOP.get(name, 10)]
+
+    print(f"Выбрано: {len(working)}")
+
+    # нумерация + сортировка по названию страны
     country_count = defaultdict(int)
-    result = []
+    temp = []
     for uri, lat, host in working:
         base = uri.split("#")[0] if "#" in uri else uri
         country_name, flag = get_country_info(uri, host)
 
         if name == "whitelist":
             nice = "🇪🇺 Обход LTE"
+            sort_key = "Обход LTE"
         else:
             country_count[country_name] += 1
             cnt = country_count[country_name]
@@ -327,8 +353,13 @@ def process_list(name: str, urls: list) -> list:
                 nice = f"{flag} {country_name}"
             else:
                 nice = f"{flag} {country_name} #{cnt}"
+            sort_key = country_name
 
-        result.append(f"{base}#{nice}")
+        temp.append((sort_key, f"{base}#{nice}"))
+
+    # сортируем: Германия, Германия #2, Нидерланды...
+    temp.sort(key=lambda x: x[0])
+    result = [item[1] for item in temp]
     return result
 
 def push_to_github(files: dict):
@@ -369,7 +400,7 @@ def run_once():
             f"# ---\n#profile-title: МАРУСЯ VPN\n"
             f"#profile-update-interval: 15\n"
             f"#support-url: https://t.me/@litiru\n"
-            f"#announce: 🏳️ {now} | Рандом сервера 🏳️\n\n"
+            f"#announce: 🏳️ {now} | Разнообразные сервера 🏳️\n\n"
             f"# ========== VPN ==========\n"
             + "\n".join(vpn)
             + "\n\n# ========== ОБХОД LTE ==========\n"
