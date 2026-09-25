@@ -246,13 +246,13 @@ def process_list(name: str, urls: list) -> list:
     result = []
     for uri, lat, host in working:
         base = uri.split("#")[0] if "#" in uri else uri  # ссылку не меняем
+        flag = get_flag(uri, host)
 
         if name == "whitelist":
-            # все обход LTE — всегда 🇪🇺
-            nice = "Обход LTE | 🇪🇺"
+            # 🇪🇺 Обход LTE | 🇩🇪
+            nice = f"🇪🇺 Обход LTE | {flag}"
         else:
-            # blacklist / прямой LTE — страна эмодзи
-            flag = get_flag(uri, host)
+            # Прямой LTE | 🇩🇪  (без эмодзи в начале)
             nice = f"Прямой LTE | {flag}"
 
         result.append(f"{base}#{nice}")
