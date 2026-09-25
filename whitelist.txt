@@ -1,11 +1,10 @@
 # whitelist.txt
 # Обход белых списков / CIDR
-# updated: 2026-09-25 17:56 ЕКБ
-# working: 6
+# updated: 2026-09-25 22:59 ЕКБ
+# working: 5
 
-vless://75323b6f-184f-4d00-839d-323b8fc70221@188.114.97.6:443?security=tls&type=ws&path=/pyip=ProxyIP.US.CMLiussss.net&host=dry-sunset-f3c4.282.workers.dev&packetEncoding=xudp&sni=dry-sunset-f3c4.282.workers.dev&fp=unsafe&encryption=none#🌐 Сервер ⚡ | 1.8ms
-vless://2e305ebe-f6e6-4689-b32f-cd04ab5ff541@188.114.96.9:443?&security=tls&fp=chrome&sni=idb8onmvbntuyt5t7t6cejfw8vlrb.pages.dev&type=ws&headerType=none&host=idb8onmvbntuyt5t7t6cejfw8vlrb.pages.dev&path=%2Fvl%2F9yvcoLdzdOXLUYfH7r5gwJhu1CHrj#🌐 Сервер ⚡ | 1.8ms
-vless://07f9bc85-613f-4a33-8da1-191973c43c0a@104.21.88.201:443?security=tls&type=ws&path=/cmh&host=app-q0zc4t.user-4gfyh5.workers.dev&packetEncoding=xudp&alpn=h2,http/1.1&sni=app-q0zc4t.user-4gfyh5.workers.dev&fp=chrome&encryption=none#🌐 Сервер ⚡ | 1.8ms
-vless://1bc8fb2a-3bee-4ae0-aa12-957885e63e18@188.114.97.6:443?security=tls&type=ws&path=/pyip&host=super-mud-8b38.114-a90.workers.dev&packetEncoding=xudp&sni=super-mud-8b38.114-a90.workers.dev&fp=unsafe&encryption=none#🌐 Сервер ⚡ | 1.8ms
-vless://7967bf59-57e3-4cde-9898-527b0fe60022@5.10.244.7:8443?security=tls&type=ws&path=/dula?Telegram-WangCai2&host=speed.dulacloud.store&ed=2560&packetEncoding=xudp&sni=speed.dulacloud.store&fp=chrome&encryption=none#🌐 Сервер ⚡ | 1.8ms
-vless://a51d8a82-faec-44f4-8882-441a2e7f0ce4@188.114.97.6:443?encryption=none&security=tls&sni=spring-math-5c8c.434.workers.dev&fp=unsafe&type=ws&host=spring-math-5c8c.434.workers.dev&path=%2Fpyip%3DProxyIP.KR.CMLiussss.net#🇸🇪 Швеция ⚡ | 1.8ms
+vless://9737cc16-7266-45ce-94d9-6e05a45e0b9c@84.38.181.249:443?encryption=none&type=xhttp&security=reality&path=%2F&sni=open.spotify.com&pbk=pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w&sid=6bc02f1c474260c3&allowInsecure=1&fp=edge#🇪🇺 Обход LTE | 🇷🇺
+vless://9737cc16-7266-45ce-94d9-6e05a45e0b9c@84.38.181.249:443?encryption=none&type=xhttp&security=reality&path=%2F&sni=open.spotify.com&pbk=pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w&sid=6bc02f1c474260c3&allowInsecure=1&fp=qq#🇪🇺 Обход LTE | 🇷🇺
+vless://9737cc16-7266-45ce-94d9-6e05a45e0b9c@84.38.181.249:443?encryption=none&type=xhttp&security=reality&path=%2F&sni=open.spotify.com&pbk=pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w&sid=6bc02f1c474260c3&allowInsecure=1&fp=ios#🇪🇺 Обход LTE | 🇷🇺
+vless://9737cc16-7266-45ce-94d9-6e05a45e0b9c@84.38.181.249:443?encryption=none&type=xhttp&security=reality&path=%2F&sni=open.spotify.com&pbk=pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w&sid=6bc02f1c474260c3&allowInsecure=1&fp=safari#🇪🇺 Обход LTE | 🇷🇺
+vless://5d16ac22-6eea-426f-b778-6f4c2961faef@176.123.167.90:9881?encryption=none&security=reality&sni=dl.google.com&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&sid=aabb&type=grpc&serviceName=grpc-tunnel&fp=chrome#🇪🇺 Обход LTE | 🇷🇺
