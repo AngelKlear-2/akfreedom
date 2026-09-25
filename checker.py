@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """
-МАРУСЯ VPN Checker — жёсткий фильтр + чистые названия
-+ определение страны через ipinfo.io/{ip}/country
-+ vpnserver (happ-keys) = Прямой LTE
-+ whitelist = Обход LTE
-+ рандом вместо сортировки по latency (GA не в РФ)
+МАРУСЯ VPN Checker
++ vpnserver (happ-keys) → 🇩🇪 Германия
++ whitelist → 🇪🇺 Обход LTE
++ рандом, ipinfo country
 """
 
 import os
@@ -45,9 +44,8 @@ SOURCES = {
 TIMEOUT = 2.3
 MAX_WORKERS = 35
 MAX_LATENCY_MS = 4500
-KEEP_TOP = {"vpnserver": 8, "whitelist": 6}   # сколько оставлять
+KEEP_TOP = {"vpnserver": 10, "whitelist": 6}
 
-# кэш стран
 _country_cache = {}
 
 COUNTRY_MAP = {
@@ -178,43 +176,45 @@ def check_uri(uri: str):
         return None
     return (uri, lat, host)
 
-def get_flag(uri: str, host: str = None) -> str:
+def get_country_info(uri: str, host: str = None):
+    """Возвращает (название, флаг)"""
+    name = "Сервер"
     flag = "🌐"
 
     if host:
         code = get_country_code(host)
         if code and code in COUNTRY_MAP:
-            _, flag = COUNTRY_MAP[code]
+            name, flag = COUNTRY_MAP[code]
         elif code:
-            flag = "🌐"
+            name, flag = code, "🌐"
 
-    if flag == "🌐":
+    if name == "Сервер":
         remark = ""
         if "#" in uri:
             remark = unquote(uri.rsplit("#", 1)[1]).strip()
         low = (remark + " " + uri).lower()
         if any(x in low for x in ["russia", "россия", "ru ", "msk", "moscow", "frkn", "яя", "yandex"]):
-            flag = "🇷🇺"
+            name, flag = "Россия", "🇷🇺"
         elif any(x in low for x in ["poland", "польша", "pl "]):
-            flag = "🇵🇱"
+            name, flag = "Польша", "🇵🇱"
         elif any(x in low for x in ["netherlands", "нидерланды", "nl ", "amsterdam"]):
-            flag = "🇳🇱"
+            name, flag = "Нидерланды", "🇳🇱"
         elif any(x in low for x in ["finland", "финляндия", "fi "]):
-            flag = "🇫🇮"
+            name, flag = "Финляндия", "🇫🇮"
         elif any(x in low for x in ["germany", "германия", "de ", "frankfurt"]):
-            flag = "🇩🇪"
+            name, flag = "Германия", "🇩🇪"
         elif any(x in low for x in ["sweden", "швеция", "se "]):
-            flag = "🇸🇪"
+            name, flag = "Швеция", "🇸🇪"
         elif any(x in low for x in ["latvia", "латвия", "lv "]):
-            flag = "🇱🇻"
+            name, flag = "Латвия", "🇱🇻"
         elif any(x in low for x in ["france", "франция", "fr "]):
-            flag = "🇫🇷"
+            name, flag = "Франция", "🇫🇷"
         elif any(x in low for x in ["usa", "сша", "us ", "america"]):
-            flag = "🇺🇸"
+            name, flag = "США", "🇺🇸"
         elif any(x in low for x in ["canada", "канада", "ca "]):
-            flag = "🇨🇦"
+            name, flag = "Канада", "🇨🇦"
 
-    return flag
+    return name, flag
 
 def process_list(name: str, urls: list) -> list:
     print(f"\n=== {name.upper()} ===")
@@ -234,7 +234,6 @@ def process_list(name: str, urls: list) -> list:
             if res:
                 working.append(res)
 
-    # рандом вместо сортировки по latency (GA не в России)
     random.shuffle(working)
     top = KEEP_TOP.get(name, 8)
     working = working[:top]
@@ -243,13 +242,14 @@ def process_list(name: str, urls: list) -> list:
     result = []
     for uri, lat, host in working:
         base = uri.split("#")[0] if "#" in uri else uri
-        flag = get_flag(uri, host)
+        country_name, flag = get_country_info(uri, host)
 
         if name == "whitelist":
-            nice = f"🇪🇺 Обход LTE | {flag}"
+            # только 🇪🇺 Обход LTE  (без | и без флага страны)
+            nice = "🇪🇺 Обход LTE"
         else:
-            # vpnserver = Прямой LTE
-            nice = f"Прямой LTE | {flag}"
+            # vpnserver → 🇩🇪 Германия
+            nice = f"{flag} {country_name}"
 
         result.append(f"{base}#{nice}")
     return result
@@ -287,13 +287,13 @@ def run_once():
     now = datetime.now(EKB).strftime("%Y-%m-%d %H:%M ЕКБ")
 
     files = {
-        "vpn.txt": f"# vpn.txt Mixed\n# updated: {now}\n\n" + "\n".join(vpn + ["", "# === ОБХОД БС ===", ""] + white),
+        "vpn.txt": f"# vpn.txt Mixed\n# updated: {now}\n\n" + "\n".join(vpn + ["", "# === ОБХОД ===", ""] + white),
         "config.txt": (
             f"# ---\n#profile-title: МАРУСЯ VPN\n"
             f"#profile-update-interval: 15\n"
             f"#support-url: https://t.me/@litiru\n"
             f"#announce: 🏳️ {now} | Рандом сервера 🏳️\n\n"
-            f"# ========== ПРЯМОЙ LTE ==========\n"
+            f"# ========== VPN ==========\n"
             + "\n".join(vpn)
             + "\n\n# ========== ОБХОД LTE ==========\n"
             + "\n".join(white)
@@ -301,9 +301,8 @@ def run_once():
         ),
         "whitelist.txt": f"# whitelist.txt\n# Обход LTE\n# updated: {now}\n# working: {len(white)}\n\n" + "\n".join(white),
     }
-    # blacklist больше не пишем
     push_to_github(files)
-    print(f"\nГотово. VPN (прямой): {len(vpn)} | White (обход): {len(white)}")
+    print(f"\nГотово. VPN: {len(vpn)} | Обход: {len(white)}")
 
 def main():
     parser = argparse.ArgumentParser()
