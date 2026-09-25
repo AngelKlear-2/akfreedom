@@ -1,19 +1,21 @@
 # vpn.txt Mixed
-# updated: 2026-09-25 23:30 ЕКБ
+# updated: 2026-09-25 23:49 ЕКБ
 
-vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.25.142:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=prime.betust.net&fp=random&pbk=SxbaWzlvE_HQqqsA4PNX2PFcSYXTVE2nZlgLc7cPOgk&sid=8681edc9&spx=%2F&type=tcp#Прямой LTE | 🇷🇺
-vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.25.195:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=app25.betust.net&fp=random&pbk=Fe_144ALuRRedGs06ljDnE1f_G2B2wE4i9_diqw5LnY&sid=a16bc894&spx=%2F&type=tcp#Прямой LTE | 🇷🇺
-vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.24.201:443?type=raw&security=reality&flow=xtls-rprx-vision&fp=random&pbk=XhzNlmMTdYr2pYTqiNNP6qWe7BkAgVHU-kZWXc9u9hY&sid=91c2269c&sni=app11.betust.net#Прямой LTE | 🇷🇺
-vless://7cde4592-4758-415f-8b97-c188faa4d1c9@84.32.177.68:443?type=tcp&security=reality&fp=firefox&pbk=7dxSNJKvSZNySuiKjuv6wwddd3hYJeJy6X55OcwOPDk&sid=16fbc56c&sni=api14.betust.net&encryption=none#Прямой LTE | 🇳🇱
-vless://11f21602-47aa-42e2-9149-69120f2e6df6@130.78.191.25:443?security=reality&encryption=none&pbk=0FwNJ9HYJgVj5566tb0zwjGTPLb-42i-mlXnceB9-Tc&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=nl07.shifor01.life&sid=3ac25eef1431b799#Прямой LTE | 🇳🇱
-vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.24.201:443?security=reality&encryption=none&pbk=XhzNlmMTdYr2pYTqiNNP6qWe7BkAgVHU-kZWXc9u9hY&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=app11.betust.net&sid=91c2269c#Прямой LTE | 🇷🇺
-vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.44.89:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=Fgd7fSq-ZXnAZd3GUYGEfTyiz9wno4IWVIcs7-Narwg&security=reality&sid=f73ac93d&sni=app12.betust.net&spx=%2F&type=raw#Прямой LTE | 🇷🇺
-vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.58.238:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=laDuxd6kFSPv2nWTy9LUjMGVRZM949R82alkZpMAqlk&security=reality&sid=e84029c5&sni=app5.betust.net&type=raw#Прямой LTE | 🇷🇺
+vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.25.195:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=Fe_144ALuRRedGs06ljDnE1f_G2B2wE4i9_diqw5LnY&security=reality&sid=a16bc894&sni=app25.betust.net&type=raw#🇷🇺 Россия
+vless://dac0bd30-008f-42c9-b377-bfc0dcfa6f0b@slowkd.sadiepinki.com:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=z37XIezsPyfMgmdXyFd9qT4C4maDAs1OcRt-wfyrXVo&sid=9c2378562188c3cb&sni=slowkd.sadiepinki.com&encryption=none#🌐 Сервер
+vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.58.238:443?security=reality&encryption=none&pbk=laDuxd6kFSPv2nWTy9LUjMGVRZM949R82alkZpMAqlk&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=app5.betust.net&sid=e84029c5#🇷🇺 Россия
+vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.24.201:443?type=raw&security=reality&encryption=none&sni=app11.betust.net&fp=chrome&pbk=XhzNlmMTdYr2pYTqiNNP6qWe7BkAgVHU-kZWXc9u9hY&sid=91c2269c&flow=xtls-rprx-vision&headerType=none#🇷🇺 Россия
+vless://71091100-c6ed-41fa-84ac-acf7ff9eeb7f@212.46.33.5:443?type=tcp&security=reality&sni=slowkd.sadiepinki.com&flow=xtls-rprx-vision&pbk=z37XIezsPyfMgmdXyFd9qT4C4maDAs1OcRt-wfyrXVo&sid=9c2378562188c3cb#🇳🇱 Нидерланды
+vless://71091100-c6ed-41fa-84ac-acf7ff9eeb7f@212.46.33.90:443?security=reality&type=tcp&packetEncoding=xudp&sni=slowkd.sadiepinki.com&fp=firefox&flow=xtls-rprx-vision&sid=9c2378562188c3cb&pbk=z37XIezsPyfMgmdXyFd9qT4C4maDAs1OcRt-wfyrXVo&encryption=none#🇳🇱 Нидерланды
+vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.42.6:443?type=raw&security=reality&flow=xtls-rprx-vision&fp=random&pbk=sS3x_ZygtA9uZ5WaYm7pHjy0_lPNUUK7kOSLz0BNhCs&sid=54ac91da&sni=app6.betust.net#🇷🇺 Россия
+vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.77.241:443?type=raw&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=YczbievYAOeZIypa58aRpil6XbfdyifK_0cFJWn8-yg&sid=d6c172d3&sni=api.betust.net#🇷🇺 Россия
+vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.42.6:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=app6.betust.net&fp=random&pbk=sS3x_ZygtA9uZ5WaYm7pHjy0_lPNUUK7kOSLz0BNhCs&sid=54ac91da&type=tcp#🇷🇺 Россия
+vless://7cde4592-4758-415f-8b97-c188faa4d1c9@188.225.58.238:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=laDuxd6kFSPv2nWTy9LUjMGVRZM949R82alkZpMAqlk&security=reality&sid=e84029c5&sni=app5.betust.net&type=raw#🇷🇺 Россия
 
-# === ОБХОД БС ===
+# === ОБХОД ===
 
-vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=chrome#🇪🇺 Обход LTE | 🇷🇺
-vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=ios#🇪🇺 Обход LTE | 🇷🇺
-vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=edge#🇪🇺 Обход LTE | 🇷🇺
-vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=android#🇪🇺 Обход LTE | 🇷🇺
-vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=qq#🇪🇺 Обход LTE | 🇷🇺
+vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=ios#🇪🇺 Обход LTE
+vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=android#🇪🇺 Обход LTE
+vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=qq#🇪🇺 Обход LTE
+vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=edge#🇪🇺 Обход LTE
+vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@assets-de2.pleiades.codes:443?type=grpc&headerType=none&security=tls&encryption=none&sni=assets-de2.pleiades.codes&serviceName=cdn.v1.AssetService&fp=chrome#🇪🇺 Обход LTE
