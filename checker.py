@@ -2,9 +2,10 @@
 """
 МАРУСЯ VPN Checker
 + vpnserver (happ-keys) → 🇩🇪 Германия / Германия #2
-+ hysteria → 🇩🇪 Германия | Hysteria
 + whitelist → 🇪🇺 Обход LTE
 + auto → 🇪🇺 Авто-Обход LTE
+Hysteria временно отключён (не работал у юзера)
+Обновление: каждые 30 мин (actions)
 """
 
 import os
@@ -35,9 +36,6 @@ SOURCES = {
     "vpnserver": [
         "https://raw.githubusercontent.com/sobolevcode/happ-keys/refs/heads/main/link",
     ],
-    "hysteria": [
-        "https://raw.githubusercontent.com/anonymouskeys/Free-configs-/main/output/protocol/hysteria.txt",
-    ],
     "whitelist": [
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt",
@@ -51,8 +49,8 @@ SOURCES = {
 
 TIMEOUT = 3.0
 MAX_WORKERS = 40
-MAX_LATENCY_MS = 6000
-KEEP_TOP = {"vpnserver": 15, "hysteria": 10, "whitelist": 10, "auto": 8}
+MAX_LATENCY_MS = 5000
+KEEP_TOP = {"vpnserver": 15, "whitelist": 12, "auto": 10}
 MAX_PER_COUNTRY = 3
 
 _country_cache = {}
@@ -316,10 +314,9 @@ def process_list(name: str, urls: list) -> list:
                 working.append(res)
 
     random.shuffle(working)
-    print(f"Живых: {len(working)}")
+    print(f"Живых (tcp): {len(working)}")
 
-    # для vpn и hysteria — лимит на страну
-    if name in ("vpnserver", "hysteria"):
+    if name == "vpnserver":
         by_country = defaultdict(list)
         for item in working:
             uri, lat, host = item
@@ -339,7 +336,7 @@ def process_list(name: str, urls: list) -> list:
             random.shuffle(ru_items)
             selected.extend(ru_items[:MAX_PER_COUNTRY])
 
-        working = selected[:KEEP_TOP.get(name, 10)]
+        working = selected[:KEEP_TOP["vpnserver"]]
     else:
         working = working[:KEEP_TOP.get(name, 10)]
 
@@ -357,21 +354,19 @@ def process_list(name: str, urls: list) -> list:
             nice = "🇪🇺 Авто-Обход LTE"
             groups["__auto__"].append(f"{base}#{nice}")
         else:
-            # vpnserver / hysteria — группируем по стране
             groups[country_name].append((flag, country_name, base))
 
     result = []
-    if name in ("vpnserver", "hysteria"):
+    if name == "vpnserver":
         country_order = list(groups.keys())
         random.shuffle(country_order)
-        suffix = " | Hysteria" if name == "hysteria" else ""
         for cname in country_order:
             items = groups[cname]
             for i, (flag, country_name, base) in enumerate(items, 1):
                 if i == 1:
-                    nice = f"{flag} {country_name}{suffix}"
+                    nice = f"{flag} {country_name}"
                 else:
-                    nice = f"{flag} {country_name} #{i}{suffix}"
+                    nice = f"{flag} {country_name} #{i}"
                 result.append(f"{base}#{nice}")
     else:
         for key in groups:
@@ -407,7 +402,6 @@ def run_once():
     print(f"{'='*50}")
 
     vpn = process_list("vpnserver", SOURCES["vpnserver"])
-    hy = process_list("hysteria", SOURCES["hysteria"])
     white = process_list("whitelist", SOURCES["whitelist"])
     auto = process_list("auto", SOURCES["auto"])
 
@@ -417,8 +411,6 @@ def run_once():
         "vpn.txt": (
             f"# vpn.txt Mixed\n# updated: {now}\n\n"
             + "\n".join(vpn)
-            + "\n\n# === HYSTERIA ===\n"
-            + "\n".join(hy)
             + "\n\n# === ОБХОД ===\n"
             + "\n".join(white)
             + "\n\n# === АВТО-ОБХОД ===\n"
@@ -428,11 +420,9 @@ def run_once():
             f"# ---\n#profile-title: МАРУСЯ VPN\n"
             f"#profile-update-interval: 1\n"
             f"#support-url: https://t.me/@litiru\n"
-            f"#announce: 🏳️ {now} | Разнообразные сервера 🏳️\n\n"
+            f"#announce: 🏳️ {now} | Обновление каждые 30 мин 🏳️\n\n"
             f"# ========== VPN ==========\n"
             + "\n".join(vpn)
-            + "\n\n# ========== HYSTERIA ==========\n"
-            + "\n".join(hy)
             + "\n\n# ========== ОБХОД LTE ==========\n"
             + "\n".join(white)
             + "\n\n# ========== АВТО-ОБХОД LTE ==========\n"
@@ -442,7 +432,7 @@ def run_once():
         "whitelist.txt": f"# whitelist.txt\n# Обход LTE\n# updated: {now}\n# working: {len(white)}\n\n" + "\n".join(white),
     }
     push_to_github(files)
-    print(f"\nГотово. VPN: {len(vpn)} | Hysteria: {len(hy)} | Обход: {len(white)} | Авто: {len(auto)}")
+    print(f"\nГотово. VPN: {len(vpn)} | Обход: {len(white)} | Авто: {len(auto)}")
 
 def main():
     parser = argparse.ArgumentParser()
