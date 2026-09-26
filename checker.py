@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 МАРУСЯ VPN Checker
-+ vpnserver (happ-keys) → 🇩🇪 Германия / Германия #2
++ vpnserver → 🇩🇪 Германия / Германия #2
 + whitelist → 🇪🇺 Обход LTE
 + auto → 🇪🇺 Авто-Обход LTE
-Hysteria временно отключён (не работал у юзера)
++ если протокол hysteria/hy2 → суффикс | HYSTERIA
 Обновление: каждые 30 мин (actions)
 """
 
@@ -167,6 +167,13 @@ EMOJI_TO_COUNTRY = {
     "🇲🇾": ("Малайзия", "🇲🇾"),
     "🇵🇭": ("Филиппины", "🇵🇭"),
 }
+
+def protocol_suffix(uri: str) -> str:
+    """Если hysteria/hy2 — добавляем | HYSTERIA в название."""
+    u = uri.lower()
+    if u.startswith(("hysteria2://", "hy2://", "hysteria://")):
+        return " | HYSTERIA"
+    return ""
 
 def extract_host_port(uri: str):
     try:
@@ -346,15 +353,16 @@ def process_list(name: str, urls: list) -> list:
     for uri, lat, host in working:
         base = uri.split("#")[0] if "#" in uri else uri
         country_name, flag = get_country_info(uri, host)
+        suf = protocol_suffix(uri)
 
         if name == "whitelist":
-            nice = "🇪🇺 Обход LTE"
+            nice = f"🇪🇺 Обход LTE{suf}"
             groups["__white__"].append(f"{base}#{nice}")
         elif name == "auto":
-            nice = "🇪🇺 Авто-Обход LTE"
+            nice = f"🇪🇺 Авто-Обход LTE{suf}"
             groups["__auto__"].append(f"{base}#{nice}")
         else:
-            groups[country_name].append((flag, country_name, base))
+            groups[country_name].append((flag, country_name, base, suf))
 
     result = []
     if name == "vpnserver":
@@ -362,11 +370,11 @@ def process_list(name: str, urls: list) -> list:
         random.shuffle(country_order)
         for cname in country_order:
             items = groups[cname]
-            for i, (flag, country_name, base) in enumerate(items, 1):
+            for i, (flag, country_name, base, suf) in enumerate(items, 1):
                 if i == 1:
-                    nice = f"{flag} {country_name}"
+                    nice = f"{flag} {country_name}{suf}"
                 else:
-                    nice = f"{flag} {country_name} #{i}"
+                    nice = f"{flag} {country_name} #{i}{suf}"
                 result.append(f"{base}#{nice}")
     else:
         for key in groups:
