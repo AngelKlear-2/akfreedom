@@ -398,7 +398,7 @@ def run_once():
         "vpn.txt": f"# vpn.txt Mixed\n# updated: {now}\n\n" + "\n".join(vpn + ["", "# === ОБХОД ===", ""] + white),
         "config.txt": (
             f"# ---\n#profile-title: МАРУСЯ VPN\n"
-            f"#profile-update-interval: 15\n"
+            f"#profile-update-interval: 60\n"
             f"#support-url: https://t.me/@litiru\n"
             f"#announce: 🏳️ {now} | Разнообразные сервера 🏳️\n\n"
             f"# ========== VPN ==========\n"

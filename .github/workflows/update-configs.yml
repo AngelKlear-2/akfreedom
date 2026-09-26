@@ -1,9 +1,9 @@
 name: Update VPN Configs
 
 on:
-  # schedule отключён пока (по просьбе)
-  # schedule:
-  #   - cron: '*/30 * * * *'
+  schedule:
+    # каждый час
+    - cron: '0 * * * *'
   workflow_dispatch:  # ручной запуск
 
 permissions:
@@ -38,6 +38,5 @@ jobs:
       - name: Summary
         run: |
           echo "### Configs updated" >> $GITHUB_STEP_SUMMARY
-          echo "Blacklist lines: $(wc -l < blacklist.txt || echo 0)" >> $GITHUB_STEP_SUMMARY
           echo "Whitelist lines: $(wc -l < whitelist.txt || echo 0)" >> $GITHUB_STEP_SUMMARY
           echo "Config lines: $(wc -l < config.txt || echo 0)" >> $GITHUB_STEP_SUMMARY
