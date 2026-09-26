@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """
 МАРУСЯ VPN Checker
-+ vpnserver (happ-keys) → 🇩🇪 Германия / Германия #2 (лимит на страну, сортировка)
++ vpnserver (happ-keys) → 🇩🇪 Германия / Германия #2
+  (копии рядом, страны вразброс)
 + whitelist → 🇪🇺 Обход LTE
-+ 15 vpn (макс 3 на страну) + 10 обход
++ auto (BLACK_SS+All_RUS) → 🇪🇺 Авто-Обход LTE
++ 15 vpn (макс 3 на страну) + 10 обход + auto
 """
 
 import os
@@ -40,13 +42,17 @@ SOURCES = {
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-all.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-SNI-RU-all.txt",
     ],
+    "auto": [
+        # исходник того json (share-ссылки, безопасно для подписки)
+        "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_SS%2BAll_RUS.txt",
+    ],
 }
 
 TIMEOUT = 3.0
 MAX_WORKERS = 40
 MAX_LATENCY_MS = 6000
-KEEP_TOP = {"vpnserver": 15, "whitelist": 10}
-MAX_PER_COUNTRY = 3   # максимум одной страны в vpn
+KEEP_TOP = {"vpnserver": 15, "whitelist": 10, "auto": 8}
+MAX_PER_COUNTRY = 3
 
 _country_cache = {}
 
@@ -209,7 +215,7 @@ def fetch_source(url: str) -> list:
         r = requests.get(url, timeout=16, headers={"User-Agent": "Mozilla/5.0"})
         r.raise_for_status()
         text = r.text
-        if not any(p in text[:400] for p in ("vless://", "vmess://", "trojan://", "ss://", "hysteria2://", "hy2://")):
+        if not any(p in text[:500] for p in ("vless://", "vmess://", "trojan://", "ss://", "hysteria2://", "hy2://", "hysteria://")):
             import base64
             try:
                 text = base64.b64decode(text + "==").decode("utf-8", errors="ignore")
@@ -218,7 +224,7 @@ def fetch_source(url: str) -> list:
         lines = []
         for line in text.splitlines():
             line = line.strip()
-            if line.startswith(("vless://", "vmess://", "trojan://", "ss://", "hysteria2://", "hy2://")):
+            if line.startswith(("vless://", "vmess://", "trojan://", "ss://", "hysteria2://", "hy2://", "hysteria://")):
                 lines.append(line)
         return lines
     except Exception as e:
@@ -265,7 +271,7 @@ def get_country_info(uri: str, host: str = None):
             name, flag = "Польша", "🇵🇱"
         elif any(x in low for x in ["netherlands", "нидерланды", "nl ", "amsterdam"]):
             name, flag = "Нидерланды", "🇳🇱"
-        elif any(x in low for x in ["finland", "финляндия", "fi "]):
+        elif any(x in low for x in ["finland", "финляндия", "fi ", "helsinki"]):
             name, flag = "Финляндия", "🇫🇮"
         elif any(x in low for x in ["germany", "германия", "de ", "frankfurt"]):
             name, flag = "Германия", "🇩🇪"
@@ -273,7 +279,7 @@ def get_country_info(uri: str, host: str = None):
             name, flag = "Швеция", "🇸🇪"
         elif any(x in low for x in ["latvia", "латвия", "lv "]):
             name, flag = "Латвия", "🇱🇻"
-        elif any(x in low for x in ["france", "франция", "fr "]):
+        elif any(x in low for x in ["france", "франция", "fr ", "paris"]):
             name, flag = "Франция", "🇫🇷"
         elif any(x in low for x in ["usa", "сша", "us ", "america"]):
             name, flag = "США", "🇺🇸"
@@ -281,6 +287,12 @@ def get_country_info(uri: str, host: str = None):
             name, flag = "Канада", "🇨🇦"
         elif any(x in low for x in ["turkey", "турция", "tr "]):
             name, flag = "Турция", "🇹🇷"
+        elif any(x in low for x in ["czechia", "czech", "чехия", "prague"]):
+            name, flag = "Чехия", "🇨🇿"
+        elif any(x in low for x in ["romania", "румыния"]):
+            name, flag = "Румыния", "🇷🇴"
+        elif any(x in low for x in ["malaysia", "малайзия"]):
+            name, flag = "Малайзия", "🇲🇾"
 
     return name, flag
 
@@ -305,7 +317,6 @@ def process_list(name: str, urls: list) -> list:
     random.shuffle(working)
     print(f"Живых: {len(working)}")
 
-    # для vpn — лимит на страну + приоритет не-России
     if name == "vpnserver":
         by_country = defaultdict(list)
         for item in working:
@@ -313,53 +324,58 @@ def process_list(name: str, urls: list) -> list:
             cname, _ = get_country_info(uri, host)
             by_country[cname].append(item)
 
-        # сначала не-Россия, потом Россия (с лимитом)
         selected = []
-        # сначала все остальные страны (по  MAX_PER_COUNTRY)
-        for cname, items in by_country.items():
-            if cname == "Россия":
-                continue
+        # сначала другие страны (лимит), потом россия (лимит)
+        other_countries = [c for c in by_country.keys() if c != "Россия"]
+        random.shuffle(other_countries)  # страны вразброс
+        for cname in other_countries:
+            items = by_country[cname]
             random.shuffle(items)
             selected.extend(items[:MAX_PER_COUNTRY])
 
-        # потом Россия, но максимум 3
         if "Россия" in by_country:
             ru_items = by_country["Россия"]
             random.shuffle(ru_items)
             selected.extend(ru_items[:MAX_PER_COUNTRY])
 
-        random.shuffle(selected)
         working = selected[:KEEP_TOP["vpnserver"]]
     else:
-        # whitelist — просто берём топ, без жёсткого лимита
         working = working[:KEEP_TOP.get(name, 10)]
 
     print(f"Выбрано: {len(working)}")
 
-    # нумерация + сортировка по названию страны
-    country_count = defaultdict(int)
-    temp = []
+    # группируем по стране, чтобы копии шли рядом, а порядок стран — случайный
+    groups = defaultdict(list)
     for uri, lat, host in working:
         base = uri.split("#")[0] if "#" in uri else uri
         country_name, flag = get_country_info(uri, host)
 
         if name == "whitelist":
             nice = "🇪🇺 Обход LTE"
-            sort_key = "Обход LTE"
+            groups["__white__"].append(f"{base}#{nice}")
+        elif name == "auto":
+            nice = "🇪🇺 Авто-Обход LTE"
+            groups["__auto__"].append(f"{base}#{nice}")
         else:
-            country_count[country_name] += 1
-            cnt = country_count[country_name]
-            if cnt == 1:
-                nice = f"{flag} {country_name}"
-            else:
-                nice = f"{flag} {country_name} #{cnt}"
-            sort_key = country_name
+            groups[country_name].append((flag, country_name, base))
 
-        temp.append((sort_key, f"{base}#{nice}"))
+    result = []
+    if name == "vpnserver":
+        country_order = list(groups.keys())
+        random.shuffle(country_order)  # страны вразброс
+        for cname in country_order:
+            items = groups[cname]
+            for i, (flag, country_name, base) in enumerate(items, 1):
+                if i == 1:
+                    nice = f"{flag} {country_name}"
+                else:
+                    nice = f"{flag} {country_name} #{i}"
+                result.append(f"{base}#{nice}")
+    else:
+        # white / auto — просто список
+        for key in groups:
+            result.extend(groups[key])
 
-    # сортируем: Германия, Германия #2, Нидерланды...
-    temp.sort(key=lambda x: x[0])
-    result = [item[1] for item in temp]
     return result
 
 def push_to_github(files: dict):
@@ -391,11 +407,19 @@ def run_once():
 
     vpn = process_list("vpnserver", SOURCES["vpnserver"])
     white = process_list("whitelist", SOURCES["whitelist"])
+    auto = process_list("auto", SOURCES["auto"])
 
     now = datetime.now(EKB).strftime("%Y-%m-%d %H:%M ЕКБ")
 
     files = {
-        "vpn.txt": f"# vpn.txt Mixed\n# updated: {now}\n\n" + "\n".join(vpn + ["", "# === ОБХОД ===", ""] + white),
+        "vpn.txt": (
+            f"# vpn.txt Mixed\n# updated: {now}\n\n"
+            + "\n".join(vpn)
+            + "\n\n# === ОБХОД ===\n"
+            + "\n".join(white)
+            + "\n\n# === АВТО-ОБХОД ===\n"
+            + "\n".join(auto)
+        ),
         "config.txt": (
             f"# ---\n#profile-title: МАРУСЯ VPN\n"
             f"#profile-update-interval: 60\n"
@@ -405,12 +429,14 @@ def run_once():
             + "\n".join(vpn)
             + "\n\n# ========== ОБХОД LTE ==========\n"
             + "\n".join(white)
+            + "\n\n# ========== АВТО-ОБХОД LTE ==========\n"
+            + "\n".join(auto)
             + "\n"
         ),
         "whitelist.txt": f"# whitelist.txt\n# Обход LTE\n# updated: {now}\n# working: {len(white)}\n\n" + "\n".join(white),
     }
     push_to_github(files)
-    print(f"\nГотово. VPN: {len(vpn)} | Обход: {len(white)}")
+    print(f"\nГотово. VPN: {len(vpn)} | Обход: {len(white)} | Авто: {len(auto)}")
 
 def main():
     parser = argparse.ArgumentParser()
