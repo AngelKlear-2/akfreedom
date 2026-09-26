@@ -1,15 +1,15 @@
 # whitelist.txt
 # Обход LTE
-# updated: 2026-09-26 10:08 ЕКБ
+# updated: 2026-09-26 11:53 ЕКБ
 # working: 10
 
-vless://c40ec629-cd50-4569-8ea7-ea7c498423fd@95.133.236.241:443?security=reality&encryption=none&pbk=BzI9KKxbdc7fbgZpK0WX9p6jgJBVJo44dj6D15uW5HA&headerType=none&type=grpc&serviceName=&sni=ads.x5.ru&sid=77d4e9e5a5243324&fp=safari#🇪🇺 Обход LTE
-vless://b3c9b89b-b6b6-44d1-b46a-a0b7d99bb89d@46.17.44.194:48564?type=grpc&security=reality&sni=ai.android&pbk=MjL1qkCDkJ3mW9NCTtUcgs-Yw_mHQNweRIvLfK07c3o&sid=cd34ce1bffe1&fp=ios#🇪🇺 Обход LTE
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@176.123.167.90:9881?security=reality&encryption=none&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&type=grpc&serviceName=grpc-tunnel&sni=dl.google.com&sid=aa&fp=firefox#🇪🇺 Обход LTE
-vless://b3c9b89b-b6b6-44d1-b46a-a0b7d99bb89d@46.17.44.194:48564?encryption=none&security=reality&sni=ai.android&pbk=MjL1qkCDkJ3mW9NCTtUcgs-Yw_mHQNweRIvLfK07c3o&sid=cd34ce1bffe1&spx=%2Fd20ae0ff4029d24&type=grpc&mode=gun&authority=&serviceName=&fp=firefox#🇪🇺 Обход LTE
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@176.123.167.90:9881?encryption=none&security=reality&sni=dl.google.com&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&sid=aabb&type=grpc&serviceName=grpc-tunnel&fp=ios#🇪🇺 Обход LTE
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@176.123.167.90:9881?security=reality&encryption=none&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&type=grpc&serviceName=grpc-tunnel&sni=dl.google.com&sid=aa&fp=safari#🇪🇺 Обход LTE
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@176.123.167.90:9881?encryption=none&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&security=reality&serviceName=grpc-tunnel&sni=dl.google.com&type=grpc&fp=safari#🇪🇺 Обход LTE
-vless://b3c9b89b-b6b6-44d1-b46a-a0b7d99bb89d@46.17.44.194:48564?type=grpc&security=reality&sni=ai.android&pbk=MjL1qkCDkJ3mW9NCTtUcgs-Yw_mHQNweRIvLfK07c3o&sid=cd34ce1bffe1&fp=firefox#🇪🇺 Обход LTE
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@176.123.167.90:9881?encryption=none&security=reality&sni=dl.google.com&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&sid=aabb&type=grpc&authority=&serviceName=grpc-tunnel&mode=gun&fp=ios#🇪🇺 Обход LTE
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@176.123.167.90:9881?encryption=none&security=reality&sni=dl.google.com&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&sid=aabb&type=grpc&authority=&serviceName=grpc-tunnel&mode=gun&fp=firefox#🇪🇺 Обход LTE
+vless://57e2a48b-0cc2-4b60-aacd-b36358fcba96@31.59.143.142:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=petrovich.ru&pbk=-r5xcA3iTzAf63kkb0VIILrLHH1VUq550pFZ-M74Jlc&sid=de&type=tcp&fp=qq#🇪🇺 Обход LTE
+vless://57e2a48b-0cc2-4b60-aacd-b36358fcba96@31.59.143.142:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=petrovich.ru&pbk=-r5xcA3iTzAf63kkb0VIILrLHH1VUq550pFZ-M74Jlc&sid=de&type=tcp&fp=android#🇪🇺 Обход LTE
+vless://365de9e9-ba29-4819-af2d-766f9638e3be@dostavitos.stroymatdv.cc:443?encryption=none&security=tls&type=ws&sni=dostavitos.stroymatdv.cc&alpn=http%2F1.1&path=%2Fe9ws&fp=safari#🇪🇺 Обход LTE
+vless://Fluffy_VPN-zKZUa4Ie@72.56.4.84:443?encryption=none&flow=xtls-rprx-vision&pbk=Im1i3eUtm7uDxUOA0rNWef9bILxsBvK_ElfejZTpQW0&security=reality&sni=absolute-disaster.org&type=tcp&fp=safari#🇪🇺 Обход LTE
+vless://57e2a48b-0cc2-4b60-aacd-b36358fcba96@163.5.16.212:443?encryption=none&flow=xtls-rprx-vision&pbk=RDuGCWMUX-xA3HJ87PluTQjqpbnBD3Fi2a3nvXbUTGA&security=reality&sni=petrovich.ru&type=tcp&fp=firefox#🇪🇺 Обход LTE
+vless://Fluffy_VPN-zKZUa4Ie@72.56.4.84:443?encryption=none&flow=xtls-rprx-vision&pbk=Im1i3eUtm7uDxUOA0rNWef9bILxsBvK_ElfejZTpQW0&security=reality&sni=absolute-disaster.org&type=tcp&fp=ios#🇪🇺 Обход LTE
+vless://57e2a48b-0cc2-4b60-aacd-b36358fcba96@31.59.143.142:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=petrovich.ru&pbk=-r5xcA3iTzAf63kkb0VIILrLHH1VUq550pFZ-M74Jlc&sid=de&type=tcp&fp=random#🇪🇺 Обход LTE
+vless://cfed68c4-fc10-4638-b3ca-140e1e873797@193.200.78.183:993?encryption=none&flow=xtls-rprx-vision&security=reality&sni=yandex.ru&pbk=KoygK6qOhulsVAjaVwIAYtSiXVoryOPz_QvvjSBQMTM&sid=921caf4ba73719a0&type=tcp&fp=chrome#🇪🇺 Обход LTE
+vless://cfed68c4-fc10-4638-b3ca-140e1e873797@193.200.78.183:993?encryption=none&flow=xtls-rprx-vision&security=reality&sni=yandex.ru&pbk=KoygK6qOhulsVAjaVwIAYtSiXVoryOPz_QvvjSBQMTM&sid=921caf4ba73719a0&type=tcp&fp=random#🇪🇺 Обход LTE
+vless://57e2a48b-0cc2-4b60-aacd-b36358fcba96@31.59.143.142:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=petrovich.ru&pbk=-r5xcA3iTzAf63kkb0VIILrLHH1VUq550pFZ-M74Jlc&sid=de&type=tcp&fp=chrome#🇪🇺 Обход LTE
