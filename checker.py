@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
 МАРУСЯ VPN Checker
-+ vpnserver → 🇩🇪 Германия / Германия #2
++ BEST — всегда первые, без проверки, | Лучший
++ vpnserver → остальные (рандом, лимит стран)
 + whitelist → 🇪🇺 Обход LTE
 + auto → 🇪🇺 Авто-Обход LTE
-+ если протокол hysteria/hy2 → суффикс | HYSTERIA
-Обновление: каждые 30 мин (actions)
++ hysteria → суффикс | HYSTERIA
 """
 
 import os
@@ -31,6 +31,14 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
 REPO_NAME = "AngelKlear-2/akfreedom"
 BRANCH = "main"
 EKB = timezone(timedelta(hours=5))
+
+# Эти сервера ВСЕГДА в конфиге, без TCP-проверки, всегда сверху
+BEST_SERVERS = [
+    "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@91.108.242.126:47182?encryption=none&security=reality&sni=www.goo.gl&fp=firefox&pbk=3Qh9roHIRJtLEM-gV_hudQrY6wPK_Dc3ePVtWLGqYho&sid=ef7db38f625526f5&type=tcp&headerType=none#🇩🇪 Германия | Лучший",
+    "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@217.60.178.109:443?encryption=none&security=reality&sni=www.amazon.com&fp=firefox&pbk=GsnJz4Rh8mdgEwxB1l7XCsPT4-vwAl459pHNwCRsoyA&sid=8f2571eff71798d9&type=tcp&headerType=none#🇳🇱 Нидерланды | Лучший",
+    "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@179.198.49.84:47000?encryption=none&security=reality&sni=www.goo.gl&fp=firefox&pbk=EJrtmRT2Acb9nNj8Yc-nfPxRprxkF52zpDcnmJ0qNS0&sid=96bb9775a5&type=tcp&headerType=none#🇵🇱 Польша | Лучший",
+    "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@89.22.232.117:443?encryption=none&security=reality&sni=www.goo.gl&fp=firefox&pbk=3Qh9roHIRJtLEM-gV_hudQrY6wPK_Dc3ePVtWLGqYho&sid=ef7db38f625526f5&type=tcp&headerType=none#🇸🇪 Швеция | Лучший",
+]
 
 SOURCES = {
     "vpnserver": [
@@ -169,7 +177,6 @@ EMOJI_TO_COUNTRY = {
 }
 
 def protocol_suffix(uri: str) -> str:
-    """Если hysteria/hy2 — добавляем | HYSTERIA в название."""
     u = uri.lower()
     if u.startswith(("hysteria2://", "hy2://", "hysteria://")):
         return " | HYSTERIA"
@@ -302,6 +309,15 @@ def get_country_info(uri: str, host: str = None):
 
     return name, flag
 
+def best_hosts() -> set:
+    """Хосты лучших серверов — чтобы не дублировать их в обычном списке."""
+    hosts = set()
+    for uri in BEST_SERVERS:
+        h, _ = extract_host_port(uri)
+        if h:
+            hosts.add(h.lower())
+    return hosts
+
 def process_list(name: str, urls: list) -> list:
     print(f"\n=== {name.upper()} ===")
     all_uris = []
@@ -312,12 +328,17 @@ def process_list(name: str, urls: list) -> list:
     all_uris = list(dict.fromkeys(all_uris))
     print(f"Уникальных: {len(all_uris)}")
 
+    skip_hosts = best_hosts() if name == "vpnserver" else set()
+
     working = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
         futs = [ex.submit(check_uri, uri) for uri in all_uris]
         for fut in concurrent.futures.as_completed(futs):
             res = fut.result()
             if res:
+                uri, lat, host = res
+                if host and host.lower() in skip_hosts:
+                    continue
                 working.append(res)
 
     random.shuffle(working)
@@ -409,16 +430,22 @@ def run_once():
     print(f"Старт: {datetime.now(EKB).strftime('%Y-%m-%d %H:%M:%S ЕКБ')}")
     print(f"{'='*50}")
 
+    # BEST всегда первые, без проверки
+    best = list(BEST_SERVERS)
+    print(f"BEST (всегда): {len(best)}")
+
     vpn = process_list("vpnserver", SOURCES["vpnserver"])
     white = process_list("whitelist", SOURCES["whitelist"])
     auto = process_list("auto", SOURCES["auto"])
 
     now = datetime.now(EKB).strftime("%Y-%m-%d %H:%M ЕКБ")
 
+    all_vpn = best + vpn
+
     files = {
         "vpn.txt": (
             f"# vpn.txt Mixed\n# updated: {now}\n\n"
-            + "\n".join(vpn)
+            + "\n".join(all_vpn)
             + "\n\n# === ОБХОД ===\n"
             + "\n".join(white)
             + "\n\n# === АВТО-ОБХОД ===\n"
@@ -428,8 +455,10 @@ def run_once():
             f"# ---\n#profile-title: МАРУСЯ VPN\n"
             f"#profile-update-interval: 1\n"
             f"#support-url: https://t.me/@litiru\n"
-            f"#announce: 🏳️ {now} | Обновление каждые 30 мин 🏳️\n\n"
-            f"# ========== VPN ==========\n"
+            f"#announce: 🏳️ {now} | Лучшие + рандом 🏳️\n\n"
+            f"# ========== ЛУЧШИЕ ==========\n"
+            + "\n".join(best)
+            + "\n\n# ========== VPN ==========\n"
             + "\n".join(vpn)
             + "\n\n# ========== ОБХОД LTE ==========\n"
             + "\n".join(white)
@@ -440,7 +469,7 @@ def run_once():
         "whitelist.txt": f"# whitelist.txt\n# Обход LTE\n# updated: {now}\n# working: {len(white)}\n\n" + "\n".join(white),
     }
     push_to_github(files)
-    print(f"\nГотово. VPN: {len(vpn)} | Обход: {len(white)} | Авто: {len(auto)}")
+    print(f"\nГотово. BEST: {len(best)} | VPN: {len(vpn)} | Обход: {len(white)} | Авто: {len(auto)}")
 
 def main():
     parser = argparse.ArgumentParser()
