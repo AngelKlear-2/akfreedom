@@ -452,10 +452,10 @@ def run_once():
             + "\n".join(auto)
         ),
         "config.txt": (
-            f"# ---\n#profile-title: МАРУСЯ VPN\n"
+            f"# ---\n#profile-title: LOWTAB VPN\n"
             f"#profile-update-interval: 1\n"
             f"#support-url: https://t.me/@litiru\n"
-            f"#announce: 🏳️ {now} | Лучшие + рандом 🏳️\n\n"
+            f"#announce: 🏳️ {now} 🏳️\n\n"
             f"# ========== ЛУЧШИЕ ==========\n"
             + "\n".join(best)
             + "\n\n# ========== VPN ==========\n"
