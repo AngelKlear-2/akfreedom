@@ -6,6 +6,7 @@
 + hysteria → суффикс | HYSTERIA
 
 Проверка идёт с российских нод (Москва + Питер), не из США.
+Списки перед проверкой всегда качаются заново (github + githack, no-cache).
 """
 
 import os
@@ -30,7 +31,6 @@ REPO_NAME = "AngelKlear-2/akfreedom"
 BRANCH = "main"
 EKB = timezone(timedelta(hours=5))
 
-# Эти сервера ВСЕГДА в конфиге, всегда сверху
 BEST_SERVERS = [
     "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@91.108.242.126:47182?encryption=none&security=reality&sni=www.goo.gl&fp=firefox&pbk=3Qh9roHIRJtLEM-gV_hudQrY6wPK_Dc3ePVtWLGqYho&sid=ef7db38f625526f5&type=tcp&headerType=none#🇩🇪 Германия | Лучший",
     "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@217.60.178.109:443?encryption=none&security=reality&sni=www.amazon.com&fp=firefox&pbk=GsnJz4Rh8mdgEwxB1l7XCsPT4-vwAl459pHNwCRsoyA&sid=8f2571eff71798d9&type=tcp&headerType=none#🇳🇱 Нидерланды | Лучший",
@@ -41,21 +41,30 @@ BEST_SERVERS = [
 SOURCES = {
     "vpnserver": [
         "https://raw.githubusercontent.com/sobolevcode/happ-keys/refs/heads/main/link",
+        "https://raw.githack.com/sobolevcode/happ-keys/main/link",
     ],
     "whitelist": [
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-all.txt",
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-SNI-RU-all.txt",
+        "https://raw.githack.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
+        "https://raw.githack.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt",
+        "https://raw.githack.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-all.txt",
+        "https://raw.githack.com/igareck/vpn-configs-for-russia/main/WHITE-SNI-RU-all.txt",
     ],
     "auto": [
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_SS%2BAll_RUS.txt",
+        "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt",
+        "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS.txt",
+        "https://raw.githack.com/igareck/vpn-configs-for-russia/main/BLACK_SS%2BAll_RUS.txt",
+        "https://raw.githack.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt",
     ],
 }
 
 KEEP_TOP = {"vpnserver": 15, "whitelist": 12, "auto": 10}
 MAX_PER_COUNTRY = 3
-MAX_CHECK = 50
+MAX_CHECK = {"vpnserver": 40, "whitelist": 60, "auto": 40}
 RU_NODES = [
     "ru1.node.check-host.net",
     "ru2.node.check-host.net",
@@ -66,125 +75,52 @@ CHECK_HOST_HEADERS = {"Accept": "application/json", "User-Agent": "Mozilla/5.0"}
 _country_cache = {}
 
 COUNTRY_MAP = {
-    "NL": ("Нидерланды", "🇳🇱"),
-    "RU": ("Россия", "🇷🇺"),
-    "DE": ("Германия", "🇩🇪"),
-    "US": ("США", "🇺🇸"),
-    "PL": ("Польша", "🇵🇱"),
-    "FI": ("Финляндия", "🇫🇮"),
-    "SE": ("Швеция", "🇸🇪"),
-    "LV": ("Латвия", "🇱🇻"),
-    "FR": ("Франция", "🇫🇷"),
-    "CA": ("Канада", "🇨🇦"),
-    "GB": ("Великобритания", "🇬🇧"),
-    "UK": ("Великобритания", "🇬🇧"),
-    "TR": ("Турция", "🇹🇷"),
-    "SG": ("Сингапур", "🇸🇬"),
-    "JP": ("Япония", "🇯🇵"),
-    "KR": ("Корея", "🇰🇷"),
-    "HK": ("Гонконг", "🇭🇰"),
-    "UA": ("Украина", "🇺🇦"),
-    "KZ": ("Казахстан", "🇰🇿"),
-    "EE": ("Эстония", "🇪🇪"),
-    "LT": ("Литва", "🇱🇹"),
-    "CZ": ("Чехия", "🇨🇿"),
-    "AT": ("Австрия", "🇦🇹"),
-    "CH": ("Швейцария", "🇨🇭"),
-    "IT": ("Италия", "🇮🇹"),
-    "ES": ("Испания", "🇪🇸"),
-    "BE": ("Бельгия", "🇧🇪"),
-    "NO": ("Норвегия", "🇳🇴"),
-    "DK": ("Дания", "🇩🇰"),
-    "IE": ("Ирландия", "🇮🇪"),
-    "PT": ("Португалия", "🇵🇹"),
-    "RO": ("Румыния", "🇷🇴"),
-    "BG": ("Болгария", "🇧🇬"),
-    "MD": ("Молдова", "🇲🇩"),
-    "BY": ("Беларусь", "🇧🇾"),
-    "GE": ("Грузия", "🇬🇪"),
-    "AM": ("Армения", "🇦🇲"),
-    "AZ": ("Азербайджан", "🇦🇿"),
-    "IN": ("Индия", "🇮🇳"),
-    "CN": ("Китай", "🇨🇳"),
-    "TW": ("Тайвань", "🇹🇼"),
-    "AU": ("Австралия", "🇦🇺"),
-    "BR": ("Бразилия", "🇧🇷"),
-    "MX": ("Мексика", "🇲🇽"),
-    "AR": ("Аргентина", "🇦🇷"),
-    "ZA": ("ЮАР", "🇿🇦"),
-    "IL": ("Израиль", "🇮🇱"),
-    "AE": ("ОАЭ", "🇦🇪"),
-    "SA": ("Саудовская Аравия", "🇸🇦"),
-    "TH": ("Таиланд", "🇹🇭"),
-    "VN": ("Вьетнам", "🇻🇳"),
-    "ID": ("Индонезия", "🇮🇩"),
-    "MY": ("Малайзия", "🇲🇾"),
-    "PH": ("Филиппины", "🇵🇭"),
+    "NL": ("Нидерланды", "🇳🇱"), "RU": ("Россия", "🇷🇺"), "DE": ("Германия", "🇩🇪"),
+    "US": ("США", "🇺🇸"), "PL": ("Польша", "🇵🇱"), "FI": ("Финляндия", "🇫🇮"),
+    "SE": ("Швеция", "🇸🇪"), "LV": ("Латвия", "🇱🇻"), "FR": ("Франция", "🇫🇷"),
+    "CA": ("Канада", "🇨🇦"), "GB": ("Великобритания", "🇬🇧"), "UK": ("Великобритания", "🇬🇧"),
+    "TR": ("Турция", "🇹🇷"), "SG": ("Сингапур", "🇸🇬"), "JP": ("Япония", "🇯🇵"),
+    "KR": ("Корея", "🇰🇷"), "HK": ("Гонконг", "🇭🇰"), "UA": ("Украина", "🇺🇦"),
+    "KZ": ("Казахстан", "🇰🇿"), "EE": ("Эстония", "🇪🇪"), "LT": ("Литва", "🇱🇹"),
+    "CZ": ("Чехия", "🇨🇿"), "AT": ("Австрия", "🇦🇹"), "CH": ("Швейцария", "🇨🇭"),
+    "IT": ("Италия", "🇮🇹"), "ES": ("Испания", "🇪🇸"), "BE": ("Бельгия", "🇧🇪"),
+    "NO": ("Норвегия", "🇳🇴"), "DK": ("Дания", "🇩🇰"), "IE": ("Ирландия", "🇮🇪"),
+    "PT": ("Португалия", "🇵🇹"), "RO": ("Румыния", "🇷🇴"), "BG": ("Болгария", "🇧🇬"),
+    "MD": ("Молдова", "🇲🇩"), "BY": ("Беларусь", "🇧🇾"), "GE": ("Грузия", "🇬🇪"),
+    "AM": ("Армения", "🇦🇲"), "AZ": ("Азербайджан", "🇦🇿"), "IN": ("Индия", "🇮🇳"),
+    "CN": ("Китай", "🇨🇳"), "TW": ("Тайвань", "🇹🇼"), "AU": ("Австралия", "🇦🇺"),
+    "BR": ("Бразилия", "🇧🇷"), "MX": ("Мексика", "🇲🇽"), "AR": ("Аргентина", "🇦🇷"),
+    "ZA": ("ЮАР", "🇿🇦"), "IL": ("Израиль", "🇮🇱"), "AE": ("ОАЭ", "🇦🇪"),
+    "SA": ("Саудовская Аравия", "🇸🇦"), "TH": ("Таиланд", "🇹🇭"), "VN": ("Вьетнам", "🇻🇳"),
+    "ID": ("Индонезия", "🇮🇩"), "MY": ("Малайзия", "🇲🇾"), "PH": ("Филиппины", "🇵🇭"),
 }
 
-EMOJI_TO_COUNTRY = {
-    "🇳🇱": ("Нидерланды", "🇳🇱"),
-    "🇷🇺": ("Россия", "🇷🇺"),
-    "🇩🇪": ("Германия", "🇩🇪"),
-    "🇺🇸": ("США", "🇺🇸"),
-    "🇵🇱": ("Польша", "🇵🇱"),
-    "🇫🇮": ("Финляндия", "🇫🇮"),
-    "🇸🇪": ("Швеция", "🇸🇪"),
-    "🇱🇻": ("Латвия", "🇱🇻"),
-    "🇫🇷": ("Франция", "🇫🇷"),
-    "🇨🇦": ("Канада", "🇨🇦"),
-    "🇬🇧": ("Великобритания", "🇬🇧"),
-    "🇹🇷": ("Турция", "🇹🇷"),
-    "🇸🇬": ("Сингапур", "🇸🇬"),
-    "🇯🇵": ("Япония", "🇯🇵"),
-    "🇰🇷": ("Корея", "🇰🇷"),
-    "🇭🇰": ("Гонконг", "🇭🇰"),
-    "🇺🇦": ("Украина", "🇺🇦"),
-    "🇰🇿": ("Казахстан", "🇰🇿"),
-    "🇪🇪": ("Эстония", "🇪🇪"),
-    "🇱🇹": ("Литва", "🇱🇹"),
-    "🇨🇿": ("Чехия", "🇨🇿"),
-    "🇦🇹": ("Австрия", "🇦🇹"),
-    "🇨🇭": ("Швейцария", "🇨🇭"),
-    "🇮🇹": ("Италия", "🇮🇹"),
-    "🇪🇸": ("Испания", "🇪🇸"),
-    "🇧🇪": ("Бельгия", "🇧🇪"),
-    "🇳🇴": ("Норвегия", "🇳🇴"),
-    "🇩🇰": ("Дания", "🇩🇰"),
-    "🇮🇪": ("Ирландия", "🇮🇪"),
-    "🇵🇹": ("Португалия", "🇵🇹"),
-    "🇷🇴": ("Румыния", "🇷🇴"),
-    "🇧🇬": ("Болгария", "🇧🇬"),
-    "🇲🇩": ("Молдова", "🇲🇩"),
-    "🇧🇾": ("Беларусь", "🇧🇾"),
-    "🇬🇪": ("Грузия", "🇬🇪"),
-    "🇦🇲": ("Армения", "🇦🇲"),
-    "🇦🇿": ("Азербайджан", "🇦🇿"),
-    "🇮🇳": ("Индия", "🇮🇳"),
-    "🇨🇳": ("Китай", "🇨🇳"),
-    "🇹🇼": ("Тайвань", "🇹🇼"),
-    "🇦🇺": ("Австралия", "🇦🇺"),
-    "🇧🇷": ("Бразилия", "🇧🇷"),
-    "🇲🇽": ("Мексика", "🇲🇽"),
-    "🇦🇷": ("Аргентина", "🇦🇷"),
-    "🇿🇦": ("ЮАР", "🇿🇦"),
-    "🇮🇱": ("Израиль", "🇮🇱"),
-    "🇦🇪": ("ОАЭ", "🇦🇪"),
-    "🇸🇦": ("Саудовская Аравия", "🇸🇦"),
-    "🇹🇭": ("Таиланд", "🇹🇭"),
-    "🇻🇳": ("Вьетнам", "🇻🇳"),
-    "🇮🇩": ("Индонезия", "🇮🇩"),
-    "🇲🇾": ("Малайзия", "🇲🇾"),
-    "🇵🇭": ("Филиппины", "🇵🇭"),
-}
-
+EMOJI_TO_COUNTRY = {k: v for k, v in [
+    ("🇳🇱", ("Нидерланды", "🇳🇱")), ("🇷🇺", ("Россия", "🇷🇺")), ("🇩🇪", ("Германия", "🇩🇪")),
+    ("🇺🇸", ("США", "🇺🇸")), ("🇵🇱", ("Польша", "🇵🇱")), ("🇫🇮", ("Финляндия", "🇫🇮")),
+    ("🇸🇪", ("Швеция", "🇸🇪")), ("🇱🇻", ("Латвия", "🇱🇻")), ("🇫🇷", ("Франция", "🇫🇷")),
+    ("🇨🇦", ("Канада", "🇨🇦")), ("🇬🇧", ("Великобритания", "🇬🇧")), ("🇹🇷", ("Турция", "🇹🇷")),
+    ("🇸🇬", ("Сингапур", "🇸🇬")), ("🇯🇵", ("Япония", "🇯🇵")), ("🇰🇷", ("Корея", "🇰🇷")),
+    ("🇭🇰", ("Гонконг", "🇭🇰")), ("🇺🇦", ("Украина", "🇺🇦")), ("🇰🇿", ("Казахстан", "🇰🇿")),
+    ("🇪🇪", ("Эстония", "🇪🇪")), ("🇱🇹", ("Литва", "🇱🇹")), ("🇨🇿", ("Чехия", "🇨🇿")),
+    ("🇦🇹", ("Австрия", "🇦🇹")), ("🇨🇭", ("Швейцария", "🇨🇭")), ("🇮🇹", ("Италия", "🇮🇹")),
+    ("🇪🇸", ("Испания", "🇪🇸")), ("🇧🇪", ("Бельгия", "🇧🇪")), ("🇳🇴", ("Норвегия", "🇳🇴")),
+    ("🇩🇰", ("Дания", "🇩🇰")), ("🇮🇪", ("Ирландия", "🇮🇪")), ("🇵🇹", ("Португалия", "🇵🇹")),
+    ("🇷🇴", ("Румыния", "🇷🇴")), ("🇧🇬", ("Болгария", "🇧🇬")), ("🇲🇩", ("Молдова", "🇲🇩")),
+    ("🇧🇾", ("Беларусь", "🇧🇾")), ("🇬🇪", ("Грузия", "🇬🇪")), ("🇦🇲", ("Армения", "🇦🇲")),
+    ("🇦🇿", ("Азербайджан", "🇦🇿")), ("🇮🇳", ("Индия", "🇮🇳")), ("🇨🇳", ("Китай", "🇨🇳")),
+    ("🇹🇼", ("Тайвань", "🇹🇼")), ("🇦🇺", ("Австралия", "🇦🇺")), ("🇧🇷", ("Бразилия", "🇧🇷")),
+    ("🇲🇽", ("Мексика", "🇲🇽")), ("🇦🇷", ("Аргентина", "🇦🇷")), ("🇿🇦", ("ЮАР", "🇿🇦")),
+    ("🇮🇱", ("Израиль", "🇮🇱")), ("🇦🇪", ("ОАЭ", "🇦🇪")), ("🇸🇦", ("Саудовская Аравия", "🇸🇦")),
+    ("🇹🇭", ("Таиланд", "🇹🇭")), ("🇻🇳", ("Вьетнам", "🇻🇳")), ("🇮🇩", ("Индонезия", "🇮🇩")),
+    ("🇲🇾", ("Малайзия", "🇲🇾")), ("🇵🇭", ("Филиппины", "🇵🇭")),
+]}
 
 def protocol_suffix(uri: str) -> str:
     u = uri.lower()
     if u.startswith(("hysteria2://", "hy2://", "hysteria://")):
         return " | HYSTERIA"
     return ""
-
 
 def extract_host_port(uri: str):
     try:
@@ -198,18 +134,13 @@ def extract_host_port(uri: str):
         pass
     return None, None
 
-
 def get_country_code(host: str) -> str:
     if not host:
         return ""
     if host in _country_cache:
         return _country_cache[host]
     try:
-        r = requests.get(
-            f"https://ipinfo.io/{host}/country",
-            timeout=6,
-            headers={"User-Agent": "Mozilla/5.0"},
-        )
+        r = requests.get(f"https://ipinfo.io/{host}/country", timeout=6, headers={"User-Agent": "Mozilla/5.0"})
         if r.status_code == 200:
             code = r.text.strip().upper()
             if code and len(code) == 2 and code.isalpha():
@@ -220,10 +151,16 @@ def get_country_code(host: str) -> str:
     _country_cache[host] = ""
     return ""
 
-
 def fetch_source(url: str) -> list:
+    """Свежая загрузка списка (без кэша CDN)."""
     try:
-        r = requests.get(url, timeout=16, headers={"User-Agent": "Mozilla/5.0"})
+        sep = "&" if "?" in url else "?"
+        bust = f"{url}{sep}_t={int(time.time())}"
+        r = requests.get(
+            bust,
+            timeout=20,
+            headers={"User-Agent": "Mozilla/5.0", "Cache-Control": "no-cache", "Pragma": "no-cache"},
+        )
         r.raise_for_status()
         text = r.text
         if not any(p in text[:500] for p in ("vless://", "vmess://", "trojan://", "ss://", "hysteria2://", "hy2://", "hysteria://")):
@@ -239,12 +176,10 @@ def fetch_source(url: str) -> list:
                 lines.append(line)
         return lines
     except Exception as e:
-        print(f"  [!] {url.split('/')[-1]} → {e}")
+        print(f"  [!] {url.split('/')[-1][:40]} → {e}")
         return []
 
-
 def check_tcp_from_ru(host: str, port: int) -> bool:
-    """TCP-проверка с российских нод check-host.net. True = хотя бы 1 нода ОК."""
     target = f"{host}:{port}"
     nodes_q = "&".join(f"node={n}" for n in RU_NODES)
     try:
@@ -296,63 +231,45 @@ def check_tcp_from_ru(host: str, port: int) -> bool:
 
     return False
 
-
 def get_country_info(uri: str, host: str = None):
     name = "Сервер"
     flag = "🌐"
-
     if host:
         code = get_country_code(host)
         if code and code in COUNTRY_MAP:
             name, flag = COUNTRY_MAP[code]
         elif code:
             name, flag = code, "🌐"
-
     if name == "Сервер":
-        remark = ""
-        if "#" in uri:
-            remark = unquote(uri.rsplit("#", 1)[1])
+        remark = unquote(uri.rsplit("#", 1)[1]) if "#" in uri else ""
         for emo, (n, f) in EMOJI_TO_COUNTRY.items():
             if emo in remark:
                 name, flag = n, f
                 break
-
     if name == "Сервер":
-        remark = ""
-        if "#" in uri:
-            remark = unquote(uri.rsplit("#", 1)[1]).strip()
+        remark = unquote(uri.rsplit("#", 1)[1]).strip() if "#" in uri else ""
         low = (remark + " " + uri).lower()
-        if any(x in low for x in ["russia", "россия", "ru ", "msk", "moscow", "frkn", "яя", "yandex"]):
-            name, flag = "Россия", "🇷🇺"
-        elif any(x in low for x in ["poland", "польша", "pl "]):
-            name, flag = "Польша", "🇵🇱"
-        elif any(x in low for x in ["netherlands", "нидерланды", "nl ", "amsterdam"]):
-            name, flag = "Нидерланды", "🇳🇱"
-        elif any(x in low for x in ["finland", "финляндия", "fi ", "helsinki"]):
-            name, flag = "Финляндия", "🇫🇮"
-        elif any(x in low for x in ["germany", "германия", "de ", "frankfurt"]):
-            name, flag = "Германия", "🇩🇪"
-        elif any(x in low for x in ["sweden", "швеция", "se "]):
-            name, flag = "Швеция", "🇸🇪"
-        elif any(x in low for x in ["latvia", "латвия", "lv "]):
-            name, flag = "Латвия", "🇱🇻"
-        elif any(x in low for x in ["france", "франция", "fr ", "paris"]):
-            name, flag = "Франция", "🇫🇷"
-        elif any(x in low for x in ["usa", "сша", "us ", "america"]):
-            name, flag = "США", "🇺🇸"
-        elif any(x in low for x in ["canada", "канада", "ca "]):
-            name, flag = "Канада", "🇨🇦"
-        elif any(x in low for x in ["turkey", "турция", "tr "]):
-            name, flag = "Турция", "🇹🇷"
-        elif any(x in low for x in ["czechia", "czech", "чехия", "prague"]):
-            name, flag = "Чехия", "🇨🇿"
-        elif any(x in low for x in ["romania", "румыния"]):
-            name, flag = "Румыния", "🇷🇴"
-        elif any(x in low for x in ["malaysia", "малайзия"]):
-            name, flag = "Малайзия", "🇲🇾"
-
+        mapping = [
+            (["russia", "россия", "ru ", "msk", "moscow", "frkn"], ("Россия", "🇷🇺")),
+            (["poland", "польша", "pl "], ("Польша", "🇵🇱")),
+            (["netherlands", "нидерланды", "nl ", "amsterdam"], ("Нидерланды", "🇳🇱")),
+            (["finland", "финляндия", "fi ", "helsinki"], ("Финляндия", "🇫🇮")),
+            (["germany", "германия", "de ", "frankfurt"], ("Германия", "🇩🇪")),
+            (["sweden", "швеция", "se "], ("Швеция", "🇸🇪")),
+            (["latvia", "латвия", "lv "], ("Латвия", "🇱🇻")),
+            (["france", "франция", "fr ", "paris"], ("Франция", "🇫🇷")),
+            (["usa", "сша", "us ", "america"], ("США", "🇺🇸")),
+            (["canada", "канада", "ca "], ("Канада", "🇨🇦")),
+            (["turkey", "турция", "tr "], ("Турция", "🇹🇷")),
+            (["czechia", "czech", "чехия", "prague"], ("Чехия", "🇨🇿")),
+            (["romania", "румыния"], ("Румыния", "🇷🇴")),
+            (["malaysia", "малайзия"], ("Малайзия", "🇲🇾")),
+        ]
+        for keys, val in mapping:
+            if any(x in low for x in keys):
+                name, flag = val
+                break
     return name, flag
-
 
 def best_hosts() -> set:
     hosts = set()
@@ -362,14 +279,14 @@ def best_hosts() -> set:
             hosts.add(h.lower())
     return hosts
 
-
 def process_list(name: str, urls: list) -> list:
     print(f"\n=== {name.upper()} ===")
+    print("  обновляю списки конфигов (no-cache)...")
     all_uris = []
     for u in urls:
         fetched = fetch_source(u)
         all_uris.extend(fetched)
-        print(f"  +{len(fetched):4d}  {u.split('/')[-1]}")
+        print(f"  +{len(fetched):4d}  {u.split('/')[-1][:50]}")
     all_uris = list(dict.fromkeys(all_uris))
     print(f"Уникальных: {len(all_uris)}")
 
@@ -385,7 +302,8 @@ def process_list(name: str, urls: list) -> list:
         candidates.append(uri)
 
     random.shuffle(candidates)
-    to_check = candidates[:MAX_CHECK]
+    limit = MAX_CHECK.get(name, 40) if isinstance(MAX_CHECK, dict) else MAX_CHECK
+    to_check = candidates[:limit]
     print(f"К проверке (check-host РФ): {len(to_check)}")
 
     working = []
@@ -435,11 +353,9 @@ def process_list(name: str, urls: list) -> list:
         suf = protocol_suffix(uri)
 
         if name == "whitelist":
-            nice = f"🇪🇺 Обход LTE{suf}"
-            groups["__white__"].append(f"{base}#{nice}")
+            groups["__white__"].append(f"{base}#🇪🇺 Обход LTE{suf}")
         elif name == "auto":
-            nice = f"🇪🇺 Авто-Обход LTE{suf}"
-            groups["__auto__"].append(f"{base}#{nice}")
+            groups["__auto__"].append(f"{base}#🇪🇺 Авто-Обход LTE{suf}")
         else:
             groups[country_name].append((flag, country_name, base, suf))
 
@@ -450,17 +366,13 @@ def process_list(name: str, urls: list) -> list:
         for cname in country_order:
             items = groups[cname]
             for i, (flag, country_name, base, suf) in enumerate(items, 1):
-                if i == 1:
-                    nice = f"{flag} {country_name}{suf}"
-                else:
-                    nice = f"{flag} {country_name} #{i}{suf}"
+                nice = f"{flag} {country_name}{suf}" if i == 1 else f"{flag} {country_name} #{i}{suf}"
                 result.append(f"{base}#{nice}")
     else:
         for key in groups:
             result.extend(groups[key])
 
     return result
-
 
 def push_to_github(files: dict):
     if not GITHUB_TOKEN:
@@ -484,7 +396,6 @@ def push_to_github(files: dict):
             repo.create_file(path, f"create {path}", content, branch=BRANCH)
             print(f"[+] created {path}")
 
-
 def run_once():
     print(f"\n{'='*50}")
     print(f"Старт: {datetime.now(EKB).strftime('%Y-%m-%d %H:%M:%S ЕКБ')}")
@@ -498,12 +409,11 @@ def run_once():
     auto = process_list("auto", SOURCES["auto"])
 
     now = datetime.now(EKB).strftime("%Y-%m-%d %H:%M ЕКБ")
-
     all_vpn = best + vpn
 
     files = {
         "vpn.txt": (
-            f"# vpn.txt Mixed\n# updated: {now}\n# check: check-host.net RU nodes\n\n"
+            f"# vpn.txt Mixed\n# updated: {now}\n# check: check-host.net RU + fresh sources\n\n"
             + "\n".join(all_vpn)
             + "\n\n# === ОБХОД ===\n"
             + "\n".join(white)
@@ -530,7 +440,6 @@ def run_once():
     push_to_github(files)
     print(f"\nГотово. BEST: {len(best)} | VPN: {len(vpn)} | Обход: {len(white)} | Авто: {len(auto)}")
 
-
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--loop", type=int, default=0)
@@ -547,7 +456,6 @@ def main():
         except Exception as e:
             print(f"[ERROR] {e}")
         time.sleep(args.loop * 60)
-
 
 if __name__ == "__main__":
     main()
