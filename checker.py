@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 """
-МАРУСЯ VPN Checker
-+ BEST — всегда первые, без проверки, | Лучший
-+ vpnserver → остальные (рандом, лимит стран)
+МАРУСЯ VPN
++ BEST — всегда первые, | Лучший
++ vpnserver → рандом (лимит стран)
 + whitelist → 🇪🇺 Обход LTE
 + auto → 🇪🇺 Авто-Обход LTE
 + hysteria → суффикс | HYSTERIA
+
+БЕЗ TCP-проверки: раннер в США, сервера для РФ — пинг врёт.
+Просто берём рандом из источников.
 """
 
 import os
 import re
 import sys
-import socket
-import time
 import random
-import concurrent.futures
 import argparse
 from datetime import datetime, timezone, timedelta
 from urllib.parse import unquote
@@ -32,7 +32,7 @@ REPO_NAME = "AngelKlear-2/akfreedom"
 BRANCH = "main"
 EKB = timezone(timedelta(hours=5))
 
-# Эти сервера ВСЕГДА в конфиге, без TCP-проверки, всегда сверху
+# Эти сервера ВСЕГДА в конфиге, всегда сверху
 BEST_SERVERS = [
     "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@91.108.242.126:47182?encryption=none&security=reality&sni=www.goo.gl&fp=firefox&pbk=3Qh9roHIRJtLEM-gV_hudQrY6wPK_Dc3ePVtWLGqYho&sid=ef7db38f625526f5&type=tcp&headerType=none#🇩🇪 Германия | Лучший",
     "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@217.60.178.109:443?encryption=none&security=reality&sni=www.amazon.com&fp=firefox&pbk=GsnJz4Rh8mdgEwxB1l7XCsPT4-vwAl459pHNwCRsoyA&sid=8f2571eff71798d9&type=tcp&headerType=none#🇳🇱 Нидерланды | Лучший",
@@ -55,9 +55,6 @@ SOURCES = {
     ],
 }
 
-TIMEOUT = 3.0
-MAX_WORKERS = 40
-MAX_LATENCY_MS = 5000
 KEEP_TOP = {"vpnserver": 15, "whitelist": 12, "auto": 10}
 MAX_PER_COUNTRY = 3
 
@@ -194,14 +191,6 @@ def extract_host_port(uri: str):
         pass
     return None, None
 
-def tcp_ping(host: str, port: int, timeout: float = TIMEOUT):
-    try:
-        start = time.perf_counter()
-        with socket.create_connection((host, port), timeout=timeout):
-            return round((time.perf_counter() - start) * 1000, 1)
-    except Exception:
-        return None
-
 def get_country_code(host: str) -> str:
     if not host:
         return ""
@@ -243,15 +232,6 @@ def fetch_source(url: str) -> list:
     except Exception as e:
         print(f"  [!] {url.split('/')[-1]} → {e}")
         return []
-
-def check_uri(uri: str):
-    host, port = extract_host_port(uri)
-    if not host or not port:
-        return None
-    lat = tcp_ping(host, port)
-    if lat is None or lat > MAX_LATENCY_MS:
-        return None
-    return (uri, lat, host)
 
 def get_country_info(uri: str, host: str = None):
     name = "Сервер"
@@ -330,26 +310,23 @@ def process_list(name: str, urls: list) -> list:
 
     skip_hosts = best_hosts() if name == "vpnserver" else set()
 
-    working = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
-        futs = [ex.submit(check_uri, uri) for uri in all_uris]
-        for fut in concurrent.futures.as_completed(futs):
-            res = fut.result()
-            if res:
-                uri, lat, host = res
-                if host and host.lower() in skip_hosts:
-                    continue
-                working.append(res)
+    # без tcp — просто фильтруем дубли best и берём рандом
+    candidates = []
+    for uri in all_uris:
+        host, _ = extract_host_port(uri)
+        if host and host.lower() in skip_hosts:
+            continue
+        candidates.append(uri)
 
-    random.shuffle(working)
-    print(f"Живых (tcp): {len(working)}")
+    random.shuffle(candidates)
+    print(f"Кандидатов (рандом): {len(candidates)}")
 
     if name == "vpnserver":
         by_country = defaultdict(list)
-        for item in working:
-            uri, lat, host = item
+        for uri in candidates:
+            host, _ = extract_host_port(uri)
             cname, _ = get_country_info(uri, host)
-            by_country[cname].append(item)
+            by_country[cname].append(uri)
 
         selected = []
         other_countries = [c for c in by_country.keys() if c != "Россия"]
@@ -364,15 +341,16 @@ def process_list(name: str, urls: list) -> list:
             random.shuffle(ru_items)
             selected.extend(ru_items[:MAX_PER_COUNTRY])
 
-        working = selected[:KEEP_TOP["vpnserver"]]
+        selected = selected[:KEEP_TOP["vpnserver"]]
     else:
-        working = working[:KEEP_TOP.get(name, 10)]
+        selected = candidates[:KEEP_TOP.get(name, 10)]
 
-    print(f"Выбрано: {len(working)}")
+    print(f"Выбрано: {len(selected)}")
 
     groups = defaultdict(list)
-    for uri, lat, host in working:
+    for uri in selected:
         base = uri.split("#")[0] if "#" in uri else uri
+        host, _ = extract_host_port(uri)
         country_name, flag = get_country_info(uri, host)
         suf = protocol_suffix(uri)
 
@@ -430,7 +408,7 @@ def run_once():
     print(f"Старт: {datetime.now(EKB).strftime('%Y-%m-%d %H:%M:%S ЕКБ')}")
     print(f"{'='*50}")
 
-    # BEST всегда первые, без проверки
+    # BEST всегда первые
     best = list(BEST_SERVERS)
     print(f"BEST (всегда): {len(best)}")
 
@@ -466,7 +444,7 @@ def run_once():
             + "\n".join(auto)
             + "\n"
         ),
-        "whitelist.txt": f"# whitelist.txt\n# Обход LTE\n# updated: {now}\n# working: {len(white)}\n\n" + "\n".join(white),
+        "whitelist.txt": f"# whitelist.txt\n# Обход LTE\n# updated: {now}\n# selected: {len(white)}\n\n" + "\n".join(white),
     }
     push_to_github(files)
     print(f"\nГотово. BEST: {len(best)} | VPN: {len(vpn)} | Обход: {len(white)} | Авто: {len(auto)}")
@@ -486,6 +464,7 @@ def main():
             break
         except Exception as e:
             print(f"[ERROR] {e}")
+        import time
         time.sleep(args.loop * 60)
 
 if __name__ == "__main__":
