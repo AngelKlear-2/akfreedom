@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
 МАРУСЯ VPN
-+ BEST — всегда первые, | Лучший
-+ vpnserver / whitelist / auto — проверка TCP через check-host.net (ноды РФ)
-+ hysteria → суффикс | HYSTERIA
-
-Проверка идёт с российских нод (Москва + Питер), не из США.
-Списки перед проверкой всегда качаются заново (github + githack, no-cache).
++ BEST — всегда первые, | Лучшие / | Лучшие [HYSTERIA]
++ vpnserver: 6 живых (итого 10 с best)
++ whitelist: 8 обходов
++ проверка TCP через check-host.net (ноды РФ)
++ списки перед проверкой всегда свежие (github + githack, no-cache)
 """
 
 import os
@@ -32,10 +31,10 @@ BRANCH = "main"
 EKB = timezone(timedelta(hours=5))
 
 BEST_SERVERS = [
-    "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@91.108.242.126:47182?encryption=none&security=reality&sni=www.goo.gl&fp=firefox&pbk=3Qh9roHIRJtLEM-gV_hudQrY6wPK_Dc3ePVtWLGqYho&sid=ef7db38f625526f5&type=tcp&headerType=none#🇩🇪 Германия | Лучший",
-    "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@217.60.178.109:443?encryption=none&security=reality&sni=www.amazon.com&fp=firefox&pbk=GsnJz4Rh8mdgEwxB1l7XCsPT4-vwAl459pHNwCRsoyA&sid=8f2571eff71798d9&type=tcp&headerType=none#🇳🇱 Нидерланды | Лучший",
-    "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@179.198.49.84:47000?encryption=none&security=reality&sni=www.goo.gl&fp=firefox&pbk=EJrtmRT2Acb9nNj8Yc-nfPxRprxkF52zpDcnmJ0qNS0&sid=96bb9775a5&type=tcp&headerType=none#🇵🇱 Польша | Лучший",
-    "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@89.22.232.117:443?encryption=none&security=reality&sni=www.goo.gl&fp=firefox&pbk=3Qh9roHIRJtLEM-gV_hudQrY6wPK_Dc3ePVtWLGqYho&sid=ef7db38f625526f5&type=tcp&headerType=none#🇸🇪 Швеция | Лучший",
+    "hysteria2://b9e1971f-ba19-4c33-808f-7bc9d2eab835@89.125.48.138:443?security=tls&fm=%7B%7D&sni=nl2.nextgencloud.tech#🇳🇱 Нидерланды | Лучшие [HYSTERIA]",
+    "hysteria2://b9e1971f-ba19-4c33-808f-7bc9d2eab835@179.198.49.84:443?security=tls&fm=%7B%7D&sni=pl.nextgencloud.tech#🇵🇱 Польша | Лучшие [HYSTERIA]",
+    "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@89.22.232.117:443?encryption=none&security=reality&sni=www.goo.gl&fp=firefox&pbk=3Qh9roHIRJtLEM-gV_hudQrY6wPK_Dc3ePVtWLGqYho&sid=ef7db38f625526f5&type=tcp&headerType=none#🇸🇪 Швеция | Лучшие",
+    "vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@179.198.49.84:47000?encryption=none&security=reality&sni=www.goo.gl&fp=firefox&pbk=EJrtmRT2Acb9nNj8Yc-nfPxRprxkF52zpDcnmJ0qNS0&sid=96bb9775a5&type=tcp&headerType=none#🇵🇱 Польша | Лучшие",
 ]
 
 SOURCES = {
@@ -62,8 +61,9 @@ SOURCES = {
     ],
 }
 
-KEEP_TOP = {"vpnserver": 15, "whitelist": 12, "auto": 10}
-MAX_PER_COUNTRY = 3
+# 4 best + 6 vpn = 10 vpn всего; 8 обходов
+KEEP_TOP = {"vpnserver": 6, "whitelist": 8, "auto": 8}
+MAX_PER_COUNTRY = 2
 MAX_CHECK = {"vpnserver": 40, "whitelist": 60, "auto": 40}
 RU_NODES = [
     "ru1.node.check-host.net",
@@ -152,7 +152,6 @@ def get_country_code(host: str) -> str:
     return ""
 
 def fetch_source(url: str) -> list:
-    """Свежая загрузка списка (без кэша CDN)."""
     try:
         sep = "&" if "?" in url else "?"
         bust = f"{url}{sep}_t={int(time.time())}"
