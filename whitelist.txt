@@ -1,13 +1,12 @@
 # whitelist.txt
 # Обход LTE
-# updated: 2026-09-29 11:10 ЕКБ
-# working(RU): 8
+# updated: 2026-09-29 14:15 ЕКБ
+# working(RU): 7
 
-vless://c4f5d29c-9eec-4451-861e-3b13d0549f85@s1b2w5zn.dendiboss.org:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=s1b2w5zn.dendiboss.org&pbk=uIzdlp-LZNt9VPhNdoKlQQ_m7jiRmS4uz0odXe2oGmk&sid=53dbb497&fp=chrome#🇪🇺 Обход LTE
-vless://c4f5d29c-9eec-4451-861e-3b13d0549f85@94.139.255.72:8450?encryption=none&mode=gun&pbk=ZgSVwP_wlM4-oG8E03W3cMqK_VrS8oHXF4wzyBkISWo&security=reality&serviceName=media.ingest.v2.ChunkUploadService&sid=a1b2c3d4&sni=86v99n-08.p.portshaper.com&type=grpc&fp=edge#🇪🇺 Обход LTE
-vless://a545e637-ca12-477f-9f91-f80e15cb51b0@158.160.206.62:443?encryption=none&security=tls&sni=usa1s.xn--ghqu5fm27b67w.com&type=ws&path=%2Fpq%2Fus1&host=usa1s.xn--ghqu5fm27b67w.com&fp=ios#🇪🇺 Обход LTE
-vless://3e628fe4-2cbf-4740-9e49-d8b5d9b61916@cdn1.pandaonline.org:443?alpn=h3&encryption=none&host=cdn1.pandaonline.org&path=%2Fstream%2F119857546%2Fchat&security=tls&sni=cdn1.pandaonline.org&type=ws&fp=edge#🇪🇺 Обход LTE
-vless://3e628fe4-2cbf-4740-9e49-d8b5d9b61916@185.178.208.176:443?encryption=none&host=cdn1.pandaonline.org&path=%2Fstream%2F119857546%2Fchat&security=tls&sni=cdn1.pandaonline.org&type=ws&fp=firefox#🇪🇺 Обход LTE
-vless://c4f5d29c-9eec-4451-861e-3b13d0549f85@147.45.154.174:443?encryption=none&flow=xtls-rprx-vision&pbk=uIzdlp-LZNt9VPhNdoKlQQ_m7jiRmS4uz0odXe2oGmk&security=reality&sid=53dbb497&sni=s1b2w5zn.dendiboss.org&type=tcp&fp=safari#🇪🇺 Обход LTE
-vless://c4f5d29c-9eec-4451-861e-3b13d0549f85@82.97.249.207:443?encryption=none&flow=xtls-rprx-vision&pbk=uIzdlp-LZNt9VPhNdoKlQQ_m7jiRmS4uz0odXe2oGmk&security=reality&sid=53dbb497&sni=s1b2w5zn.dendiboss.org&type=tcp&fp=qq#🇪🇺 Обход LTE
-vless://c4f5d29c-9eec-4451-861e-3b13d0549f85@86v99n-08.p.portshaper.com:8450?encryption=none&type=grpc&security=reality&sni=86v99n-08.p.portshaper.com&pbk=ZgSVwP_wlM4-oG8E03W3cMqK_VrS8oHXF4wzyBkISWo&sid=a1b2c3d4&serviceName=media.ingest.v2.ChunkUploadService&fp=safari#🇪🇺 Обход LTE
+vless://4871e898-0980-402f-882f-e1983ffc851b@193.33.133.195:443?encryption=none&security=reality&sni=ozon.ru&pbk=5f_7knvdTuK5bek16zI3cgP5sjDAPJaeFKjd-NALfwQ&type=grpc&serviceName=grpc&mode=gun&fp=ios#🇪🇺 Обход LTE
+vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@109.120.181.153:443?sni=eh.vk.ru&flow=xtls-rprx-vision&security=reality&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&sid=db04ce8bdb8900f1&fp=firefox#🇪🇺 Обход LTE
+vless://4871e898-0980-402f-882f-e1983ffc851b@193.33.133.195:443?encryption=none&security=reality&sni=ozon.ru&pbk=5f_7knvdTuK5bek16zI3cgP5sjDAPJaeFKjd-NALfwQ&type=grpc&serviceName=grpc&mode=gun&fp=firefox#🇪🇺 Обход LTE
+vless://4871e898-0980-402f-882f-e1983ffc851b@193.33.133.195:443?encryption=none&security=reality&sni=ozon.ru&pbk=5f_7knvdTuK5bek16zI3cgP5sjDAPJaeFKjd-NALfwQ&type=grpc&serviceName=grpc&mode=gun&fp=edge#🇪🇺 Обход LTE
+vless://4871e898-0980-402f-882f-e1983ffc851b@193.33.133.195:443?encryption=none&security=reality&sni=ozon.ru&pbk=5f_7knvdTuK5bek16zI3cgP5sjDAPJaeFKjd-NALfwQ&type=grpc&serviceName=grpc&mode=gun&fp=chrome#🇪🇺 Обход LTE
+hysteria2://19f72087-4591-4d72-930b-2697078ec2be@ru.xiaoliyu.cyou:18333?insecure=1&sni=ru.xiaoliyu.cyou#🇪🇺 Обход LTE | HYSTERIA
+vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@109.120.181.153:443?sni=eh.vk.ru&flow=xtls-rprx-vision&security=reality&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&sid=db04ce8bdb8900f1&fp=chrome#🇪🇺 Обход LTE
