@@ -1,13 +1,13 @@
 # whitelist.txt
 # Обход LTE
-# updated: 2026-09-29 01:16 ЕКБ
+# updated: 2026-09-29 05:33 ЕКБ
 # working(RU): 8
 
-vless://8d2341a3-13b8-4e5e-84e1-da1c4923149a@185.86.145.78:8443?encryption=none&mode=gun&pbk=Qf5kMbpi0sUGV4ZB_2wVGdi-iACSFv47quZT-z-ymEo&security=reality&sid=a1b2c3d4&sni=idlecore.me&type=grpc&fp=chrome#🇪🇺 Обход LTE
-vless://8d2341a3-13b8-4e5e-84e1-da1c4923149a@86v99n-06.p.portshaper.com:8443?encryption=none&type=grpc&security=reality&sni=86v99n-06.p.portshaper.com&pbk=PwTWopKMpDawru-Y7AllJMSAORInNOBKuA28h0r9DXE&sid=ba35e449b9e0&serviceName=media.ingest.v2.ChunkUploadService&fp=chrome#🇪🇺 Обход LTE
-vless://a0ba8b74-4845-4197-8526-c02f1c27ab28@194.48.250.69:8443?encryption=none&type=xhttp&security=reality&host=yandex.ru&path=%2Fupd8svpn-xhttp&sni=yandex.ru&pbk=dBvFkg2zny545Ws6H_LXKEohOYV2MW_zACRrRQE1IUg&sid=f9d89d4a&allowInsecure=1&fp=chrome#🇪🇺 Обход LTE
-vless://c16fd1ee-7581-4fe9-aac7-ef7c89a1ddad@37.139.42.138:443?encryption=none&host=dostavitos.stroymatdv.cc&path=%2Fe5ws&security=tls&sni=dostavitos.stroymatdv.cc&type=ws&fp=qq#🇪🇺 Обход LTE
-vless://8d2341a3-13b8-4e5e-84e1-da1c4923149a@shprcdn.homes:8443?encryption=none&type=grpc&security=reality&sni=shprcdn.homes&pbk=PwTWopKMpDawru-Y7AllJMSAORInNOBKuA28h0r9DXE&sid=ba35e449b9e0&serviceName=media.ingest.v2.ChunkUploadService&fp=firefox#🇪🇺 Обход LTE
-vless://c16fd1ee-7581-4fe9-aac7-ef7c89a1ddad@37.139.42.138:443?encryption=none&host=dostavitos.stroymatdv.cc&path=%2Fe5ws&security=tls&sni=dostavitos.stroymatdv.cc&type=ws&fp=random#🇪🇺 Обход LTE
-vless://8d2341a3-13b8-4e5e-84e1-da1c4923149a@37.139.42.235:14443?encryption=none&path=%2Fn2ws&security=tls&sni=katering.coteite.pro&type=ws&fp=chrome#🇪🇺 Обход LTE
-vless://8d2341a3-13b8-4e5e-84e1-da1c4923149a@86v99n-06.p.portshaper.com:8443?encryption=none&type=grpc&security=reality&sni=86v99n-06.p.portshaper.com&pbk=PwTWopKMpDawru-Y7AllJMSAORInNOBKuA28h0r9DXE&sid=ba35e449b9e0&serviceName=media.ingest.v2.ChunkUploadService&fp=firefox#🇪🇺 Обход LTE
+vless://a1705606-715d-485d-b311-43538f2b11a6@46.17.248.207:52443?encryption=none&flow=xtls-rprx-vision&pbk=8yvZcJaBbi42WLDx4Tyj5zR1F0kYoD6K4Z92AGX_q3U&security=reality&sid=96ef80&sni=21.stepanofff.ru&spx=%2F29b5a7dbcf4167e&type=tcp&fp=firefox#🇪🇺 Обход LTE
+vless://5413edfb-08d6-4fba-b51c-809c04feb127@193.233.247.60:443?type=grpc&security=reality&encryption=none&pbk=c5VEuaQj6ClJwRZvXbXwb2vMBxdye2O-0jHi2Q3NEGU&sid=7e93843097e0c549&sni=www.chitai-gorod.ru&serviceName=astracat&fp=qq#🇪🇺 Обход LTE
+vless://a1705606-715d-485d-b311-43538f2b11a6@46.17.248.207:443?encryption=none&flow=xtls-rprx-vision&pbk=8yvZcJaBbi42WLDx4Tyj5zR1F0kYoD6K4Z92AGX_q3U&security=reality&sid=96ef80&sni=21.stepanofff.ru&spx=%2F29b5a7dbcf4167e&type=tcp&fp=android#🇪🇺 Обход LTE
+vless://5413edfb-08d6-4fba-b51c-809c04feb127@193.233.247.60:443?type=grpc&security=reality&encryption=none&pbk=c5VEuaQj6ClJwRZvXbXwb2vMBxdye2O-0jHi2Q3NEGU&sid=7e93843097e0c549&sni=www.chitai-gorod.ru&serviceName=astracat&fp=safari#🇪🇺 Обход LTE
+vless://3e628fe4-2cbf-4740-9e49-d8b5d9b61916@185.178.208.176:443?encryption=none&host=cdn1.pandaonline.org&path=%2Fstream%2F119857546%2Fchat&security=tls&sni=cdn1.pandaonline.org&type=ws&fp=safari#🇪🇺 Обход LTE
+vless://365de9e9-ba29-4819-af2d-766f9638e3be@37.139.42.179:443?encryption=none&host=vyvoz-musora.cc&path=%2Fe8ws&security=tls&sni=vyvoz-musora.cc&type=ws&fp=chrome#🇪🇺 Обход LTE
+vless://365de9e9-ba29-4819-af2d-766f9638e3be@37.139.42.179:443?encryption=none&host=vyvoz-musora.cc&path=%2Fe8ws&security=tls&sni=vyvoz-musora.cc&type=ws&fp=safari#🇪🇺 Обход LTE
+vless://3e628fe4-2cbf-4740-9e49-d8b5d9b61916@185.178.208.176:443?encryption=none&host=cdn1.pandaonline.org&path=%2Fstream%2F119857546%2Fchat&security=tls&sni=cdn1.pandaonline.org&type=ws&fp=chrome#🇪🇺 Обход LTE
