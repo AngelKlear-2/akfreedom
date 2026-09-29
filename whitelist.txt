@@ -1,12 +1,13 @@
 # whitelist.txt
 # Обход LTE
-# updated: 2026-09-29 14:15 ЕКБ
-# working(RU): 7
+# updated: 2026-09-29 18:17 ЕКБ
+# working(RU): 8
 
-vless://4871e898-0980-402f-882f-e1983ffc851b@193.33.133.195:443?encryption=none&security=reality&sni=ozon.ru&pbk=5f_7knvdTuK5bek16zI3cgP5sjDAPJaeFKjd-NALfwQ&type=grpc&serviceName=grpc&mode=gun&fp=ios#🇪🇺 Обход LTE
-vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@109.120.181.153:443?sni=eh.vk.ru&flow=xtls-rprx-vision&security=reality&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&sid=db04ce8bdb8900f1&fp=firefox#🇪🇺 Обход LTE
-vless://4871e898-0980-402f-882f-e1983ffc851b@193.33.133.195:443?encryption=none&security=reality&sni=ozon.ru&pbk=5f_7knvdTuK5bek16zI3cgP5sjDAPJaeFKjd-NALfwQ&type=grpc&serviceName=grpc&mode=gun&fp=firefox#🇪🇺 Обход LTE
-vless://4871e898-0980-402f-882f-e1983ffc851b@193.33.133.195:443?encryption=none&security=reality&sni=ozon.ru&pbk=5f_7knvdTuK5bek16zI3cgP5sjDAPJaeFKjd-NALfwQ&type=grpc&serviceName=grpc&mode=gun&fp=edge#🇪🇺 Обход LTE
-vless://4871e898-0980-402f-882f-e1983ffc851b@193.33.133.195:443?encryption=none&security=reality&sni=ozon.ru&pbk=5f_7knvdTuK5bek16zI3cgP5sjDAPJaeFKjd-NALfwQ&type=grpc&serviceName=grpc&mode=gun&fp=chrome#🇪🇺 Обход LTE
-hysteria2://19f72087-4591-4d72-930b-2697078ec2be@ru.xiaoliyu.cyou:18333?insecure=1&sni=ru.xiaoliyu.cyou#🇪🇺 Обход LTE | HYSTERIA
-vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@109.120.181.153:443?sni=eh.vk.ru&flow=xtls-rprx-vision&security=reality&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&sid=db04ce8bdb8900f1&fp=chrome#🇪🇺 Обход LTE
+vless://9737cc16-7266-45ce-94d9-6e05a45e0b9c@84.38.181.249:443?encryption=none&extra=null&path=%2F&pbk=pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w&security=reality&sid=6bc02f1c474260c3&sni=open.spotify.com&type=xhttp&fp=firefox#🇪🇺 Обход LTE
+vless://e9844617-e393-4876-afa7-11859695f4ee@edge-cdn.gazladder.work:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=edge-cdn.gazladder.work&pbk=j97RCvxVfMu5XWcXuAc4s8TnBTdl8PQrNFrZDQpAkng&sid=f5781bd8af7dbaf6&fp=android#🇪🇺 Обход LTE
+vless://e9844617-e393-4876-afa7-11859695f4ee@edge-cdn.gazladder.work:8443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=edge-cdn.gazladder.work&pbk=j97RCvxVfMu5XWcXuAc4s8TnBTdl8PQrNFrZDQpAkng&sid=f5781bd8af7dbaf6&fp=firefox#🇪🇺 Обход LTE
+vless://e9844617-e393-4876-afa7-11859695f4ee@edge-cdn.gazladder.work:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=edge-cdn.gazladder.work&pbk=j97RCvxVfMu5XWcXuAc4s8TnBTdl8PQrNFrZDQpAkng&sid=f5781bd8af7dbaf6&fp=randomized#🇪🇺 Обход LTE
+vless://9737cc16-7266-45ce-94d9-6e05a45e0b9c@84.38.181.249:443?encryption=none&extra=null&path=%2F&pbk=pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w&security=reality&sid=6bc02f1c474260c3&sni=open.spotify.com&type=xhttp&fp=qq#🇪🇺 Обход LTE
+vless://e9844617-e393-4876-afa7-11859695f4ee@edge-cdn.gazladder.work:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=edge-cdn.gazladder.work&pbk=j97RCvxVfMu5XWcXuAc4s8TnBTdl8PQrNFrZDQpAkng&sid=f5781bd8af7dbaf6&fp=firefox#🇪🇺 Обход LTE
+vless://e9844617-e393-4876-afa7-11859695f4ee@edge-cdn.gazladder.work:8443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=edge-cdn.gazladder.work&pbk=j97RCvxVfMu5XWcXuAc4s8TnBTdl8PQrNFrZDQpAkng&sid=f5781bd8af7dbaf6&fp=android#🇪🇺 Обход LTE
+vless://550a69ec-fec1-4eca-b939-4ee076875fa8@113.30.154.65:443?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=sellflow.org&fp=qq#🇪🇺 Обход LTE
