@@ -1,13 +1,13 @@
 # whitelist.txt
 # Обход LTE
-# updated: 2026-10-03 15:18 ЕКБ
+# updated: 2026-10-03 19:52 ЕКБ
 # working(RU): 8
 
-vless://0dca2cfe-98eb-4f9d-9a47-cf87510c558b@159.194.202.196:443?type=grpc&security=tls&sni=us1.avroraservice.online&serviceName=cdn.v1.AssetService&allowInsecure=0&insecure=0&fp=android#🇪🇺 Обход LTE
-vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@90.156.218.163:443?security=reality&encryption=none&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&host=%2F%3FTELEGRAM--MARAMBASHI--MARAMBASHI&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=eh.vk.ru&sid=db04ce8bdb8900f1&fp=chrome#🇪🇺 Обход LTE
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@45.132.176.161:9891?encryption=none&mode=gun&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&security=reality&serviceName=grpc-tunnel&sid=aa&sni=dl.google.com&type=grpc&fp=qq#🇪🇺 Обход LTE
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@176.123.165.25:9881?mode=gun&security=reality&encryption=none&authority=%2F%3Ftelegram--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&type=grpc&serviceName=grpc-tunnel&sni=dl.google.com&sid=aabbccdd&fp=chrome#🇪🇺 Обход LTE
-vless://27fca5d5-e918-437b-9955-cb96bd544e34@ytnoads.applepie-recipe.ru:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&security=tls&sni=kings.applepie-recipe.ru&fp=android#🇪🇺 Обход LTE
-vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@90.156.218.163:443?security=reality&encryption=none&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&host=%2F%3FTELEGRAM--MARAMBASHI--MARAMBASHI&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=eh.vk.ru&sid=db04ce8bdb8900f1&fp=ios#🇪🇺 Обход LTE
-vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@90.156.218.163:443?security=reality&encryption=none&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&host=%2F%3FTELEGRAM--MARAMBASHI--MARAMBASHI&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=eh.vk.ru&sid=db04ce8bdb8900f1&fp=edge#🇪🇺 Обход LTE
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@176.123.165.25:9881?encryption=none&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&security=reality&serviceName=grpc-tunnel&sid=aabbccdd&sni=dl.google.com&type=grpc&fp=qq#🇪🇺 Обход LTE
+vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@90.156.218.163:443?type=tcp&security=reality&host=%3FTELEGRAM--MARAMBASHI--MARAMBASHI&sni=eh.vk.ru&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&sid=db04ce8bdb8900f1&flow=xtls-rprx-vision&fp=qq#🇪🇺 Обход LTE
+vless://35dab1a4-512d-42f7-8d03-36a3d7593687@about.almatydev.college:443?security=tls&encryption=none&type=grpc&serviceName=edu.campus.v1.StudentService&sni=about.almatydev.college&allowInsecure=0&insecure=0&fp=firefox#🇪🇺 Обход LTE
+vless://35dab1a4-512d-42f7-8d03-36a3d7593687@about.almatydev.college:443?security=tls&encryption=none&type=grpc&serviceName=edu.campus.v1.StudentService&sni=about.almatydev.college&allowInsecure=0&insecure=0&fp=qq#🇪🇺 Обход LTE
+vless://35dab1a4-512d-42f7-8d03-36a3d7593687@info.moscowtour.world:443?security=tls&encryption=none&type=grpc&serviceName=travel.tours.v1.BookingService&sni=info.moscowtour.world&allowInsecure=0&insecure=0&fp=ios#🇪🇺 Обход LTE
+vless://ffac6b3c-d79c-4543-ab4a-3bd3019edbc1@94.198.54.132:8443?security=reality&type=grpc&serviceName=grpc&sni=reels.frkn.org&pbk=ZXvgBIvhN87thoELQot4o6b6Fe9n_wATxfobHRAwgys&sid=0498897564df&fp=edge#🇪🇺 Обход LTE
+vless://35dab1a4-512d-42f7-8d03-36a3d7593687@info.moscowtour.world:443?security=tls&encryption=none&type=grpc&serviceName=travel.tours.v1.BookingService&sni=info.moscowtour.world&allowInsecure=0&insecure=0&fp=android#🇪🇺 Обход LTE
+vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@90.156.218.163:443?security=reality&flow=xtls-rprx-vision&sni=eh.vk.ru&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&sid=db04ce8bdb8900f1&fp=firefox#🇪🇺 Обход LTE
+vless://7c86240f-ac0c-4cfe-87c8-fa0dd69b2d25@46.8.208.70:443?encryption=none&type=xhttp&security=tls&sni=m-vnltw-e.mvpstr.com&path=%2Fapi%2Forders%2Ftrack&host=m-vnltw-e.mvpstr.com&fp=qq#🇪🇺 Обход LTE
