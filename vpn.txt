@@ -1,34 +1,34 @@
 # vpn.txt Mixed
-# updated: 2026-10-05 01:27 ЕКБ
+# updated: 2026-10-05 04:33 ЕКБ
 # check: check-host.net RU + fresh sources
 
 hysteria2://b9e1971f-ba19-4c33-808f-7bc9d2eab835@89.125.48.138:443?security=tls&fm=%7B%7D&sni=nl2.nextgencloud.tech#🇳🇱 Нидерланды | Лучшие [HYSTERIA]
 hysteria2://b9e1971f-ba19-4c33-808f-7bc9d2eab835@179.198.49.84:443?security=tls&fm=%7B%7D&sni=pl.nextgencloud.tech#🇵🇱 Польша | Лучшие [HYSTERIA]
 vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@89.22.232.117:443?encryption=none&security=reality&sni=www.goo.gl&fp=firefox&pbk=3Qh9roHIRJtLEM-gV_hudQrY6wPK_Dc3ePVtWLGqYho&sid=ef7db38f625526f5&type=tcp&headerType=none#🇸🇪 Швеция | Лучшие
 vless://b9e1971f-ba19-4c33-808f-7bc9d2eab835@179.198.49.84:47000?encryption=none&security=reality&sni=www.goo.gl&fp=firefox&pbk=EJrtmRT2Acb9nNj8Yc-nfPxRprxkF52zpDcnmJ0qNS0&sid=96bb9775a5&type=tcp&headerType=none#🇵🇱 Польша | Лучшие
-vless://bc659d88-a1e0-4c65-a49a-7b51b26a7a7f@87.192.47.10:52006?security=tls&alpn=h2,http/1.1&encryption=none&insecure=0&host=/?TELEGRAM--app_bedal--app_bedal&headerType=none&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=grok.setlisting.ru#🇱🇻 Латвия
-vless://bc659d88-a1e0-4c65-a49a-7b51b26a7a7f@87.192.47.10:52006?flow=xtls-rprx-vision&encryption=none&security=tls&sni=grok.setlisting.ru&alpn=h2, http/1.1&fp=chrome&type=tcp&headerType=none#🇱🇻 Латвия #2
-vless://6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8@milo.rubinaz.xyz:8080?security=none&type=tcp&packetEncoding=xudp#🇨🇦 Канада
-vless://8f6e49e6-7f03-4f10-9da9-1716158d80ed@85.90.197.146:443?encryption=none&flow=xtls-rprx-vision&pbk=lza1anie-lqVSKrFdfSzq4XLd8Ge2qyCDkgZb1xr1k0&security=reality&sid=9fa5c0092361b848&sni=greeeeeek.pumpkinpie.study&type=tcp&fp=safari#🌐 GR
-vless://8f6e49e6-7f03-4f10-9da9-1716158d80ed@85.90.197.146:443?encryption=none&flow=xtls-rprx-vision&pbk=lza1anie-lqVSKrFdfSzq4XLd8Ge2qyCDkgZb1xr1k0&security=reality&sid=9fa5c0092361b848&sni=greeeeeek.pumpkinpie.study&type=tcp&fp=firefox#🌐 GR #2
-vless://8f6e49e6-7f03-4f10-9da9-1716158d80ed@greeeeeek.pumpkinpie.study:443?type=tcp&headerType=none&security=reality&encryption=none&sni=greeeeeek.pumpkinpie.study&pbk=lza1anie-lqVSKrFdfSzq4XLd8Ge2qyCDkgZb1xr1k0&sid=9fa5c0092361b848&flow=xtls-rprx-vision&fp=edge#🌐 Сервер
+vless://24f9d11d-ceca-4f75-93ca-ad143ca18b28@84.32.108.8:443?encryption=none&extra=%7B%22xmux%22%3A%7B%22maxConnections%22%3A3%2C%22hMaxReusableSecs%22%3A%221140-1260%22%7D%7D&host=api.ferrin.uk&path=%2Ffr&security=tls&sni=24f9d11d.ferrin.uk&type=xhttp&fp=ios#🇳🇱 Нидерланды
+vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@66.90.105.211:2083?security=none&type=grpc&mode=gun&serviceName=vless&packetEncoding=xudp&sni=66.90.105.211#🇬🇧 Великобритания
+vless://e3f0c894-0f76-4683-a751-6a93da8fd14d@206.206.78.36:443?flow=xtls-rprx-vision&fp=&pbk=UOLfRKeEoVxkp-APTF2OlvFkKSoiR2mWzUuhSWxcVmQ&security=reality&sid=133a3f10a1581047&sni=www.cloudflare.com&type=tcp#🇸🇬 Сингапур
+vless://8f6e49e6-7f03-4f10-9da9-1716158d80ed@85.90.197.146:443?encryption=none&flow=xtls-rprx-vision&pbk=lza1anie-lqVSKrFdfSzq4XLd8Ge2qyCDkgZb1xr1k0&security=reality&sid=9fa5c0092361b848&sni=greeeeeek.pumpkinpie.study&type=tcp&fp=chrome#🌐 GR
+vless://a5dd2dd9-0995-449e-be67-4a409890dc42@31.77.15.221:443?security=reality&type=tcp&packetEncoding=xudp&sni=drhvv.huinaduok.fans&fp=chrome&flow=xtls-rprx-vision&sid=da4d87fa&pbk=XNDo_IssePPu4qVW3xiLE_87CEqoS6F1iLj0g3Q89G0&encryption=none#🇩🇪 Германия
+vless://a5dd2dd9-0995-449e-be67-4a409890dc42@177.3.209.165:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=owkd.pashalloh.org&pbk=mYtQrGiR9EkOpUsvsI7E18AWnFZZqfOPXUdpzE3luz8&sid=da4d87fa&type=tcp&fp=qq#🇩🇪 Германия #2
 
 # === ОБХОД ===
-vless://d7b4d5b3-2c2d-493c-9b83-f25e3f6771b2@45.129.176.34:6443?encryption=none&pbk=sgFFdQvfeujBKh6g7N7klU_u0mKYlr800MFbko5FzUg&security=reality&sid=844352756c1fabba&sni=avatars.mds.yandex.net&type=xhttp&fp=qq#🇪🇺 Обход LTE
-vless://d7b4d5b3-2c2d-493c-9b83-f25e3f6771b2@45.129.176.34:6443?encryption=none&pbk=sgFFdQvfeujBKh6g7N7klU_u0mKYlr800MFbko5FzUg&security=reality&sid=844352756c1fabba&sni=avatars.mds.yandex.net&type=xhttp&fp=android#🇪🇺 Обход LTE
-hysteria2://19f72087-4591-4d72-930b-2697078ec2be@ru.xiaoliyu.cyou:18333?insecure=1#🇪🇺 Обход LTE | HYSTERIA
-vless://65616081-1772-49d7-a793-42bc13d22f69@185.104.114.92:443?encryption=none&pbk=gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg&security=reality&sni=ru-1-5.imnotgay.party&type=tcp&fp=edge#🇪🇺 Обход LTE
-vless://d7b4d5b3-2c2d-493c-9b83-f25e3f6771b2@45.129.176.34:6443?encryption=none&pbk=sgFFdQvfeujBKh6g7N7klU_u0mKYlr800MFbko5FzUg&security=reality&sid=844352756c1fabba&sni=avatars.mds.yandex.net&type=xhttp&fp=chrome#🇪🇺 Обход LTE
-vless://1bb2af63-4472-44ed-9c70-8f316258b68b@62.152.58.90:443?security=reality&encryption=none&pbk=JBKJlzuJH1YzDHAoz28wEKbzWTGpDpKjgtSq0oT0a0k&type=grpc&sni=360.yandex.ru&sid=27e53bbcab7593d7&fp=qq#🇪🇺 Обход LTE
-vless://20009a4d-ecd0-4fb3-ba2d-71a431210ba6@9micenasralnakover.net:8443?encryption=none&type=xhttp&security=tls&sni=9micenasralnakover.net&alpn=http%2F1.1%2Ch2&path=%2Fapi%2Fv1%2Fupload&host=9micenasralnakover.net&mode=auto&extra=%7B%22xmux%22%3A%7B%22cMaxReuseTimes%22%3A%2264-128%22%2C%22maxConcurrency%22%3A%2216-32%22%2C%22maxConnections%22%3A0%7D%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22scMaxEachPostBytes%22%3A1000000%2C%22scMinPostsIntervalMs%22%3A30%7D&fp=qq#🇪🇺 Обход LTE
-vless://d7b4d5b3-2c2d-493c-9b83-f25e3f6771b2@45.129.176.34:6443?encryption=none&pbk=sgFFdQvfeujBKh6g7N7klU_u0mKYlr800MFbko5FzUg&security=reality&sid=844352756c1fabba&sni=avatars.mds.yandex.net&type=xhttp&fp=firefox#🇪🇺 Обход LTE
+vless://65616081-1772-49d7-a793-42bc13d22f69@109.68.214.220:443?encryption=none&pbk=gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg&security=reality&sni=ru-1-7.imnotgay.party&type=tcp&fp=random#🇪🇺 Обход LTE
+vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@90.156.218.163:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=eh.vk.ru&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&sid=db04ce8bdb8900f1&type=tcp&headerType=none&host=%3FTELEGRAM--MARAMBASHI--MARAMBASHI&fp=chrome#🇪🇺 Обход LTE
+vless://65616081-1772-49d7-a793-42bc13d22f69@185.104.114.92:443?encryption=none&pbk=gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg&security=reality&sni=ru-1-5.imnotgay.party&type=tcp&fp=qq#🇪🇺 Обход LTE
+vless://65616081-1772-49d7-a793-42bc13d22f69@109.68.214.220:443?encryption=none&pbk=gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg&security=reality&sni=ru-1-7.imnotgay.party&type=tcp&fp=firefox#🇪🇺 Обход LTE
+vless://f9a2e475-0c03-4eb4-8680-0c69f90af8ae@by-msq-2.blook.network:443?alpn=h3&extra=%7B%22noGRPCHeader%22%3Atrue%2C%22scMaxEachPostBytes%22%3A1000000%2C%22scMinPostsIntervalMs%22%3A30%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22xmux%22%3A%7B%22cMaxReuseTimes%22%3A%2216-32%22%2C%22hMaxRequestTimes%22%3A%22600-900%22%2C%22hMaxReusableSecs%22%3A%22300-900%22%2C%22maxConnections%22%3A%223-6%22%7D%7D&headerType=&mode=stream-one&path=%2FVLSpdG9k&security=tls&sni=by-msq-2.blook.network&type=xhttp&fp=edge#🇪🇺 Обход LTE
+vless://0ab2bb4f-c8ad-4c52-a94f-7a69c71d76f5@e7q.internet-booster.online:2443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=ads.x5.ru&pbk=AuLWE8R3WD4DwnDxVHgqEcNjyge1btt5PdaUUArdCVk&sid=2b03d7853fc8faa6&type=tcp&fp=firefox#🇪🇺 Обход LTE
+vless://65616081-1772-49d7-a793-42bc13d22f69@ru-1-7.imnotgay.party:443?encryption=none&type=tcp&security=reality&sni=ru-1-7.imnotgay.party&pbk=gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg&fp=firefox#🇪🇺 Обход LTE
+vless://65616081-1772-49d7-a793-42bc13d22f69@ru-1-7.imnotgay.party:443?encryption=none&type=tcp&security=reality&sni=ru-1-7.imnotgay.party&pbk=gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg&fp=edge#🇪🇺 Обход LTE
 
 # === АВТО-ОБХОД ===
-vless://27407f1d-fe61-469b-a5a9-0aef7ee7476d@177.3.214.52:443?encryption=none&type=tcp&flow=xtls-rprx-vision&security=reality&sni=uehr.pashalloh.org&pbk=6bQ-L8tEd3guits_RHgfkXXArmnkB2GxFx23BgWC63c&sid=da4d87fa&allowInsecure=1&fp=safari#🇪🇺 Авто-Обход LTE
-vless://57beeeb0-03fc-4fc9-94da-7604488a7134@43.255.157.118:21263?security=reality&encryption=none&pbk=YinI5MijeZpRatg6QNDvP0qXEif-6VHC6gV5yoji4i4&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=us1p1.xn--ghq880n3na965a.com&sid=3d31326f95#🇪🇺 Авто-Обход LTE
-vless://d666e16b-2b64-4499-bb32-896c26dc2e3d@pl-2070d4dca0.shamanapp.online:33740?encryption=none&type=xhttp&security=tls&sni=pl-2070d4dca0.shamanapp.online&fp=chrome&alpn=h2%2Chttp/1.1&path=/ShamanXHTTP2026&host=pl-2070d4dca0.shamanapp.online&mode=stream-up#🇪🇺 Авто-Обход LTE
-vless://9d672694-c146-422e-b3b5-3717a38a0fcc@8.47.69.0:2053?security=tls&type=ws&sni=fr.api-music-fa.com&path=%2Fapi%2Fvoip%2Fupdates%2Fstatic%2Ffr2035&host=fr.api-music-fa.com&fp=chrome#🇪🇺 Авто-Обход LTE
-vless://9d672694-c146-422e-b3b5-3717a38a0fcc@8.47.69.0:2053/?type=ws&encryption=none&flow=&host=fr.api-music-fa.com&path=%2Fapi%2Fvoip%2Fupdates%2Fstatic%2Ffr2035&security=tls&sni=fr.api-music-fa.com&allowInsecure=0&insecure=0#🇪🇺 Авто-Обход LTE
-vless://3aef55f1-4824-432e-82ce-6f8a9e8b2700@95.85.226.66:443?type=tcp&encryption=none&security=reality&flow=xtls-rprx-vision&sni=ne55.sonicsonic.icu&pbk=z-TKWOWgZLfzQ-wNdwXQqVwaUgCmbchM2Xtrk1NGynU&fp=qq&spx=%2F#🇪🇺 Авто-Обход LTE
-vless://635ac0f9-5e30-4f1d-a74b-604cbbfcf05c@45.95.96.176:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=chat.rtnode.site&fp=random&pbk=fpYQ3Ml1YhTM0tbf4Ixxx03gxMtOno3iGaq3uoxIszs&sid=a7268acdcfef5862&type=tcp#🇪🇺 Авто-Обход LTE
-vless://9fc8f028-06ed-3a03-9ace-da78b660583f@104.245.243.9:443?path=%2F&security=reality&encryption=none&pbk=sbBzEDf7UllUslF6LTfsM1qiOW322QKM343zhJD0Lng&fp=chrome&type=xhttp&sni=cdn.steamstatic.com#🇪🇺 Авто-Обход LTE
+vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@polkadotnewone.failspace.top:443?type=tcp&security=tls&sni=polkadotnewone.failspace.top&flow=xtls-rprx-vision&fp=qq#🇪🇺 Авто-Обход LTE
+vless://57beeeb0-03fc-4fc9-94da-7604488a7134@103.30.76.71:21263?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=YinI5MijeZpRatg6QNDvP0qXEif-6VHC6gV5yoji4i4&security=reality&sid=3d31326f95&sni=us1p1.xn--ghq880n3na965a.com&type=tcp#🇪🇺 Авто-Обход LTE
+trojan://f8b-U5TxjNRYKLvU0Js_6YeMCdj_82km@cz-musicc.moritech.net:443/?type=grpc&serviceName=grpcbeast&security=tls&alpn=h2&fp=ios#🇪🇺 Авто-Обход LTE
+vless://65616081-1772-49d7-a793-42bc13d22f69@212.232.18.134:443?encryption=none&security=reality&sni=de-1-2.imnotgay.party&fp=random&pbk=gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg&type=tcp#🇪🇺 Авто-Обход LTE
+vless://57beeeb0-03fc-4fc9-94da-7604488a7134@43.255.157.118:31094?flow=xtls-rprx-vision&fp=firefox&pbk=BTVKTYNHnuv3850vXEU15GVgfp5S0Dz20jueg-FSgAQ&security=reality&sid=c761f990d786f2&sni=www.lamer.com.sg&type=tcp#🇪🇺 Авто-Обход LTE
+trojan://f8b-U5TxjNRYKLvU0Js_6YeMCdj_82km@cz-musicc.moritech.net:443?type=grpc&serviceName=grpcbeast&security=tls&alpn=h2&fp=chrome#🇪🇺 Авто-Обход LTE
+vless://6e631ab5-9666-43c0-849a-5c8a364dc83a@217.60.182.138:8343?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=BoY1RSZGWp5mMsc-ug09i7N3jqlc628qYsk_ZJw18lE&security=reality&sid=3e3535e340e5ea81&sni=myschoolonline.cvedcmimikal.space&type=tcp#🇪🇺 Авто-Обход LTE
+vless://24f9d11d-ceca-4f75-93ca-ad143ca18b28@50.7.87.250:443?encryption=none&extra={"xmux":{"maxConnections":3,"hMaxReusableSecs":"1140-1260"}}&fp=firefox&host=api.ferrin.uk&path=/uk&security=tls&sni=24f9d11d.ferrin.uk&type=xhttp#🇪🇺 Авто-Обход LTE
