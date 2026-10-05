@@ -1,13 +1,13 @@
 # whitelist.txt
 # Обход LTE
-# updated: 2026-10-05 14:33 ЕКБ
+# updated: 2026-10-05 23:50 ЕКБ
 # working(RU): 8
 
-vless://5117ad77-cd9a-46e9-995b-b601b0b5e435@176.53.162.90:443?encryption=none&security=tls&serviceName=3d7f80c943d676f3&sni=trust-shell-qe1.cdn.cachefleet.com&type=grpc&fp=firefox#🇪🇺 Обход LTE
-vless://5117ad77-cd9a-46e9-995b-b601b0b5e435@176.53.162.90:443?encryption=none&security=tls&sni=trust-shell-qe1.cdn.cachefleet.com&alpn=h2&type=grpc&serviceName=3d7f80c943d676f3&fp=chrome#🇪🇺 Обход LTE
-vless://2345a3ee-1712-4b37-bc51-1e833fa117a0@185.137.234.124:8443?encryption=none&flow=xtls-rprx-vision&pbk=uWffyYV5PSa38qThOfFUG_9aHyV4ZbKJ0xc1UK79NUg&security=reality&sid=44&sni=api.bitrix24.ru&type=tcp&fp=ios#🇪🇺 Обход LTE
-vless://51f43f39-bb49-4be2-9ab1-9dd1ef9968e6@196.240.125.253:8443?encryption=none&type=tcp&flow=xtls-rprx-vision&security=tls&sni=file-6ac2ac24.adhil.uk&alpn=h2&fp=safari#🇪🇺 Обход LTE
-vless://51f43f39-bb49-4be2-9ab1-9dd1ef9968e6@196.240.125.253:8443?encryption=none&type=tcp&flow=xtls-rprx-vision&security=tls&sni=file-6ac2ac24.adhil.uk&alpn=h2&fp=chrome#🇪🇺 Обход LTE
-vless://5117ad77-cd9a-46e9-995b-b601b0b5e435@176.53.162.90:443?encryption=none&security=tls&sni=trust-shell-qe1.cdn.cachefleet.com&alpn=h2&type=grpc&serviceName=3d7f80c943d676f3&fp=ios#🇪🇺 Обход LTE
-vless://2345a3ee-1712-4b37-bc51-1e833fa117a0@185.137.234.124:8443?encryption=none&flow=xtls-rprx-vision&pbk=uWffyYV5PSa38qThOfFUG_9aHyV4ZbKJ0xc1UK79NUg&security=reality&sid=44&sni=api.bitrix24.ru&type=tcp&fp=chrome#🇪🇺 Обход LTE
-vless://5117ad77-cd9a-46e9-995b-b601b0b5e435@176.53.162.90:443?encryption=none&security=tls&serviceName=3d7f80c943d676f3&sni=trust-shell-qe1.cdn.cachefleet.com&type=grpc&fp=qq#🇪🇺 Обход LTE
+vless://444623e9-f27d-487c-b7cc-436931967e79@188.130.209.216:443?encryption=none&type=tcp&flow=xtls-rprx-vision&security=reality&sni=emaar.ru&pbk=M7yPV6xLi9h6EevpqZfXLZBuxoey8kz1c6Bh0pK5fho&sid=170ab9ced015571f&spx=%2F&allowInsecure=1&fp=firefox#🇪🇺 Обход LTE
+vless://444623e9-f27d-487c-b7cc-436931967e79@188.130.209.216:443?encryption=none&type=tcp&flow=xtls-rprx-vision&security=reality&sni=emaar.ru&pbk=M7yPV6xLi9h6EevpqZfXLZBuxoey8kz1c6Bh0pK5fho&sid=170ab9ced015571f&spx=%2F&allowInsecure=1&fp=android#🇪🇺 Обход LTE
+vless://44730b65-24d5-45f2-8b45-8be24015d1b9@45.9.118.101:443?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=sellflow.org&fp=android#🇪🇺 Обход LTE
+vless://444623e9-f27d-487c-b7cc-436931967e79@188.130.209.216:443?encryption=none&type=tcp&flow=xtls-rprx-vision&security=reality&sni=emaar.ru&pbk=M7yPV6xLi9h6EevpqZfXLZBuxoey8kz1c6Bh0pK5fho&sid=170ab9ced015571f&spx=%2F&allowInsecure=1&fp=ios#🇪🇺 Обход LTE
+hysteria2://QFO6ZOwTxjvD8ITXouHLh_Rrp-QC3rXnZRTnShz_GcJPRsPXQ4QV456o1TN6ISbN@45.151.101.97:2443/?sni=hy2.78.141.219.189.nip.io#🇪🇺 Обход LTE | HYSTERIA
+vless://5413edfb-08d6-4fba-b51c-809c04feb127@31.59.210.26:2088?encryption=none&pbk=Eq3c19Y0WGB1APWMADQB-oxCvZFSVFAQxG5L6b8EkUg&security=reality&serviceName=astracat&sid=b1ad165f903c62fe&sni=www.yandex.ru&type=grpc&fp=qq#🇪🇺 Обход LTE
+vless://44730b65-24d5-45f2-8b45-8be24015d1b9@45.9.118.101:443?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=sellflow.org&fp=firefox#🇪🇺 Обход LTE
+vless://444623e9-f27d-487c-b7cc-436931967e79@188.130.209.216:443?encryption=none&type=tcp&flow=xtls-rprx-vision&security=reality&sni=emaar.ru&pbk=M7yPV6xLi9h6EevpqZfXLZBuxoey8kz1c6Bh0pK5fho&sid=170ab9ced015571f&spx=%2F&allowInsecure=1&fp=chrome#🇪🇺 Обход LTE
