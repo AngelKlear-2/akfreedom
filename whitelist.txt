@@ -1,13 +1,13 @@
 # whitelist.txt
 # Обход LTE
-# updated: 2026-10-07 09:48 ЕКБ
+# updated: 2026-10-07 16:37 ЕКБ
 # working(RU): 8
 
-vless://9737cc16-7266-45ce-94d9-6e05a45e0b9c@84.38.183.237:443?encryption=none&security=tls&sni=ws.nightproducts.ru&type=ws&path=%2Fvless&fp=safari#🇪🇺 Обход LTE
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@45.132.176.225:9881?encryption=none&pbk=ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU&security=reality&serviceName=grpc-tunnel&sid=aa&sni=dl.google.com&type=grpc&fp=firefox#🇪🇺 Обход LTE
-vless://20ef7310-0b50-4943-98a6-3d0856b383b1@nl.alpheratzz.org:8443?type=tcp&security=tls&flow=xtls-rprx-vision&sni=vusr-6ac431f4.adhil.uk&fp=chrome#🇪🇺 Обход LTE
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@45.132.176.225:9881?encryption=none&security=reality&sni=dl.google.com&pbk=ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU&sid=aa&type=grpc&authority=&serviceName=grpc-tunnel&mode=gun&fp=firefox#🇪🇺 Обход LTE
-vless://20ef7310-0b50-4943-98a6-3d0856b383b1@fi.alpheratzz.org:443?type=xhttp&headerType=none&security=tls&encryption=none&sni=20ef7310.ferrin.uk&path=%2F&host=fi.alpheratzz.org&fp=chrome#🇪🇺 Обход LTE
+vless://9a0e84f8-4b58-477f-99da-5fac5a2e58e8@45.133.151.188:443?encryption=none&pbk=1D_o1pqfVoReg9zLPKNy1wCL7aGWytbmbYPbbJGaozY&security=reality&sid=023a1e6ffc32be10&sni=3f8efdt.fi1.h1clayd.click&type=tcp&fp=edge#🇪🇺 Обход LTE
+vless://5d16ac22-6eea-426f-b778-6f4c2961faef@45.132.176.225:9881?encryption=none&security=reality&sni=dl.google.com&pbk=ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU&sid=aabb&type=grpc&serviceName=grpc-tunnel&fp=ios#🇪🇺 Обход LTE
+vless://9a0e84f8-4b58-477f-99da-5fac5a2e58e8@45.133.151.188:443?encryption=none&pbk=1D_o1pqfVoReg9zLPKNy1wCL7aGWytbmbYPbbJGaozY&security=reality&sid=023a1e6ffc32be10&sni=3f8efdt.fi1.h1clayd.click&type=tcp&fp=safari#🇪🇺 Обход LTE
+vless://9ea8b000-58ce-0050-b108-989dd4f248f1@31.131.251.17:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=quatro.lmstream.org&type=tcp&fp=firefox#🇪🇺 Обход LTE
+vless://9a0e84f8-4b58-477f-99da-5fac5a2e58e8@9f3018x.fi1.h1clayd.click:443?encryption=none&security=reality&sni=9f3018x.fi1.h1clayd.click&pbk=mhXpcSYVdKTvPSLrJt7Qvdg02sqfuA13DTb_jH6sz14&sid=f5598a6e9366ca6a&spx=%2F&type=xhttp&path=%2F6c559af5da91&mode=auto&fp=safari#🇪🇺 Обход LTE
 vless://5d16ac22-6eea-426f-b778-6f4c2961faef@45.132.176.169:9882?encryption=none&security=reality&sni=amd.com&pbk=bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU&sid=aa&type=grpc&serviceName=grpc-tunnel&fp=ios#🇪🇺 Обход LTE
-vless://20ef7310-0b50-4943-98a6-3d0856b383b1@nl.alpheratzz.org:8443?type=tcp&security=tls&flow=xtls-rprx-vision&sni=vusr-6ac431f4.adhil.uk&fp=edge#🇪🇺 Обход LTE
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@45.132.176.225:9881?encryption=none&pbk=ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU&security=reality&serviceName=grpc-tunnel&sid=aa&sni=dl.google.com&type=grpc&fp=ios#🇪🇺 Обход LTE
+vless://57a6de33-cb7e-4ac3-96b3-8ed01915c354@84.201.135.77:443?encryption=none&extra=null&host=ads.x5.ru&mode=auto&path=%2F&pbk=z4ZddzhbeCYDng09RnRL7lEqFGdc-Sb5mQJNHn-2USA&security=reality&sni=ads.x5.ru&type=xhttp&fp=ios#🇪🇺 Обход LTE
+hysteria2://19f72087-4591-4d72-930b-2697078ec2be@ru.xiaoliyu.cyou:18333?insecure=1#🇪🇺 Обход LTE | HYSTERIA
