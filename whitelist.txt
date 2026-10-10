@@ -1,13 +1,13 @@
 # whitelist.txt
 # Обход LTE
-# updated: 2026-10-10 02:54 ЕКБ
+# updated: 2026-10-10 06:37 ЕКБ
 # working(RU): 8
 
-vless://8de76932-518a-4ac8-ac92-be6b1f17ddd8@196.240.125.251:8443?alpn=h2&flow=xtls-rprx-vision&security=tls&sni=api-v1-6ac7858f.vmagnum.win&type=tcp&fp=ios#🇪🇺 Обход LTE
+vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@90.156.218.163:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=eh.vk.ru&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&sid=db04ce8bdb8900f1&type=tcp&headerType=none&host=%3FTELEGRAM--MARAMBASHI--MARAMBASHI&fp=chrome#🇪🇺 Обход LTE
+vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@90.156.218.163:443?encryption=none&flow=xtls-rprx-vision&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&security=reality&sid=db04ce8bdb8900f1&sni=eh.vk.ru&type=raw&fp=safari#🇪🇺 Обход LTE
+vless://8de76932-518a-4ac8-ac92-be6b1f17ddd8@nl.alpheratzz.org:8443?alpn=h2&encryption=none&flow=xtls-rprx-vision&security=tls&sni=api-v1-6ac7858f.vmagnum.win&type=tcp&fp=safari#🇪🇺 Обход LTE
+vless://5d16ac22-6eea-426f-b778-6f4c2961faef@45.132.176.172:9889?encryption=none&type=grpc&security=reality&sni=dl.google.com&pbk=ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU&sid=aa&serviceName=grpc-tunnel&fp=random#🇪🇺 Обход LTE
+vless://7ec9f26a-edec-4bf1-addd-700626df27c1@185.86.145.183:443?alpn=http%2F1.1&encryption=none&host=cosmo-pulse.ru&path=%2Fnl7ws&security=tls&sni=cosmo-pulse.ru&type=ws&fp=ios#🇪🇺 Обход LTE
+vless://2f9107cb-9af0-4c94-a89d-50437218e5fa@ap2.directly.chat:443?encryption=none&security=tls&sni=ap2.directly.chat&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=ws&host=ap2.directly.chat&path=%2Fmd%2F1&fp=qq#🇪🇺 Обход LTE
+vless://a5893c8b-28a2-4947-9a1c-708db25506c3@91.215.43.248:443?type=ws&security=tls&encryption=none&path=%2Fgateway%2Fv1%2Fws%2Fa64eb463966ba9c4bfd628f1de0362ae&host=my.kempekl.online&sni=my.kempekl.online&headerType=none&fp=chrome#🇪🇺 Обход LTE
 vless://8de76932-518a-4ac8-ac92-be6b1f17ddd8@nl.alpheratzz.org:8443?type=tcp&security=tls&sni=api-v1-6ac9122f.vmagnum.win&alpn=h2&encryption=none&flow=xtls-rprx-vision&fp=qq#🇪🇺 Обход LTE
-vless://3906af68-311d-4319-9e24-4a83569c20d8@194.55.239.183:443?security=tls&sni=cdn-network.cloudgamings.org&alpn=h2%2Chttp%2F1.1&flow=xtls-rprx-vision&type=tcp&encryption=none&fp=android#🇪🇺 Обход LTE
-vless://8de76932-518a-4ac8-ac92-be6b1f17ddd8@196.240.125.251:8443?type=raw&security=tls&encryption=none&sni=api-v1-6ac7858f.vmagnum.win&alpn=h2&flow=xtls-rprx-vision&headerType=none&fp=edge#🇪🇺 Обход LTE
-vless://8de76932-518a-4ac8-ac92-be6b1f17ddd8@196.240.125.5:8443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=api-v1-6ac7858f.vmagnum.win&type=tcp&fp=ios#🇪🇺 Обход LTE
-vless://a5893c8b-28a2-4947-9a1c-708db25506c3@91.215.43.248:443?type=ws&security=tls&encryption=none&path=%2Fgateway%2Fv1%2Fws%2Fa64eb463966ba9c4bfd628f1de0362ae&host=my.kempekl.online&sni=my.kempekl.online&headerType=none&fp=ios#🇪🇺 Обход LTE
-vless://741809be-e44e-0008-b411-bf66f0ae3860@147.45.213.54:443?security=reality&sni=diffoscope.com&pbk=6VMgXXhZdJCiOG05EyK_zTHh00kpFGrZJeZIEPgqhjY&sid=1c3e8241a8743df9&flow=xtls-rprx-vision&type=tcp&encryption=none&fp=chrome#🇪🇺 Обход LTE
-vless://ee18d188-14cc-417e-beb1-70e4add6d023@217.149.30.73:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=time.nztvpn.com&pbk=p87u9cOh91BaXsKS-HoCoOUXxHcOwkM6ByTWmz_6b2Y&sid=0da7e14db353e7d0&flow=xtls-rprx-vision&fp=qq#🇪🇺 Обход LTE
