@@ -3,7 +3,7 @@
 МАРУСЯ VPN
 + BEST — всегда первые, | Лучшие / | Лучшие [HYSTERIA]
 + vpnserver: 6 живых (итого 10 с best)
-+ whitelist: 8 обходов
++ whitelist: до 30 обходов (igareck + Hidashimora)
 + проверка TCP через check-host.net (ноды РФ)
 + списки перед проверкой всегда свежие (github + githack, no-cache)
 """
@@ -51,6 +51,12 @@ SOURCES = {
         "https://raw.githack.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt",
         "https://raw.githack.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-all.txt",
         "https://raw.githack.com/igareck/vpn-configs-for-russia/main/WHITE-SNI-RU-all.txt",
+        "https://raw.githubusercontent.com/Hidashimora/free-vpn-anti-rkn/main/configs/26.1.txt",
+        "https://raw.githubusercontent.com/Hidashimora/free-vpn-anti-rkn/main/configs/30.txt",
+        "https://raw.githubusercontent.com/Hidashimora/free-vpn-anti-rkn/main/configs/31.txt",
+        "https://raw.githack.com/Hidashimora/free-vpn-anti-rkn/main/configs/26.1.txt",
+        "https://raw.githack.com/Hidashimora/free-vpn-anti-rkn/main/configs/30.txt",
+        "https://raw.githack.com/Hidashimora/free-vpn-anti-rkn/main/configs/31.txt",
     ],
     "auto": [
         "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_SS%2BAll_RUS.txt",
@@ -61,10 +67,10 @@ SOURCES = {
     ],
 }
 
-# 4 best + 6 vpn = 10 vpn всего; 8 обходов
-KEEP_TOP = {"vpnserver": 6, "whitelist": 8, "auto": 8}
+# 4 best + 6 vpn = 10 vpn всего; 30 обходов белых списков
+KEEP_TOP = {"vpnserver": 6, "whitelist": 30, "auto": 8}
 MAX_PER_COUNTRY = 2
-MAX_CHECK = {"vpnserver": 40, "whitelist": 60, "auto": 40}
+MAX_CHECK = {"vpnserver": 40, "whitelist": 120, "auto": 40}
 RU_NODES = [
     "ru1.node.check-host.net",
     "ru2.node.check-host.net",
