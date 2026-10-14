@@ -440,7 +440,14 @@ def run_once():
             + "\n".join(auto)
             + "\n"
         ),
-        "whitelist.txt": f"# whitelist.txt\n# Обход LTE\n# updated: {now}\n# working(RU): {len(white)}\n\n" + "\n".join(white),
+        "whitelist.txt": (
+            f"#profile-title: Con1xxWhite\n"
+            f"#profile-update-interval: 1\n"
+            f"#profile-description: Последнее обновление конфигов: {now}\n"
+            f"#announce: 🏳️ Обновлено {now} 🏳️\n\n"
+            f"# whitelist.txt\n# Обход LTE\n# updated: {now}\n# working(RU): {len(white)}\n\n"
+            + "\n".join(white)
+        ),
     }
     push_to_github(files)
     print(f"\nГотово. BEST: {len(best)} | VPN: {len(vpn)} | Обход: {len(white)} | Авто: {len(auto)}")
