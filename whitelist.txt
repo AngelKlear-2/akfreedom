@@ -1,37 +1,10 @@
 #profile-title: Con1xxWhite
 #profile-update-interval: 1
-#profile-description: Последнее обновление конфигов: 2026-10-23 11:29 ЕКБ
-#announce: 🏳️ Обновлено 2026-10-23 11:29 ЕКБ 🏳️
+#profile-description: Последнее обновление конфигов: 2026-10-23 17:21 ЕКБ
+#announce: 🏳️ Обновлено 2026-10-23 17:21 ЕКБ 🏳️
 
 # whitelist.txt
 # Обход LTE
-# updated: 2026-10-23 11:29 ЕКБ
-# working(RU): 27
+# updated: 2026-10-23 17:21 ЕКБ
+# working(RU): 0
 
-vless://917a186b-ffa1-4af4-a473-1a8d95f2e37c@cdnhaven.com:1443?security=reality&sni=sun6-21.userapi.com&pbk=_yfkAlX_g-2LBB3CpNqI9sDKz-1OyqwyvbDwD7F8gRo&sid=c2d3e4f5a6b7c8d9&flow=xtls-rprx-vision&type=tcp&encryption=none&fp=chrome#🇪🇺 Обход LTE
-vless://9a0e84f8-4b58-477f-99da-5fac5a2e58e8@3f8efdt.fi1.h1clayd.click:443?security=reality&type=tcp&packetEncoding=xudp&sni=3f8efdt.fi1.h1clayd.click&sid=023a1e6ffc32be10&pbk=1D_o1pqfVoReg9zLPKNy1wCL7aGWytbmbYPbbJGaozY&fp=firefox#🇪🇺 Обход LTE
-vless://056405e8-de9f-4d0d-8145-956f13cc34da@a0688bt.us4.h1clayd.click:443?encryption=none&pbk=5-9YzvyXcZ4J5Z4OaVTUbxUU2InvnwT17m0XY-Jse1E&security=reality&sid=257420d9d430152a&sni=a0688bt.us4.h1clayd.click&type=tcp&fp=firefox#🇪🇺 Обход LTE
-vless://056405e8-de9f-4d0d-8145-956f13cc34da@9bc578g.us4.h1clayd.click:443?encryption=none&type=grpc&security=reality&sni=9bc578g.us4.h1clayd.click&pbk=uUWYLl2Fdhr74k9o5WacesJjvsCwLiOHccgfR23TIk4&sid=29b29106d4769e3a&spx=%2F&serviceName=aa7f1b042f73&fp=qq#🇪🇺 Обход LTE
-vless://917a186b-ffa1-4af4-a473-1a8d95f2e37c@edge.cdnhaven.com:443?security=reality&sni=www.intel.com&pbk=Q1Fjb64H0fakerSZHytJ7WQkuKeMs13l9kQJ0nywoFo&sid=d3e4f5a6b7c8d9e0&flow=xtls-rprx-vision&type=tcp&encryption=none&fp=firefox#🇪🇺 Обход LTE
-vless://9a0e84f8-4b58-477f-99da-5fac5a2e58e8@36a466g.fi1.h1clayd.click:443?encryption=none&pbk=pAgrBKJCmuSJHIzYkEJTqsOBOVBK_DMtEqFPo-PaTkg&security=reality&serviceName=0adb9638509b&sid=b3c9d0c6bdd114a6&sni=36a466g.fi1.h1clayd.click&type=grpc&fp=qq#🇪🇺 Обход LTE
-vless://917a186b-ffa1-4af4-a473-1a8d95f2e37c@edge.cdnhaven.com:2443?security=reality&sni=www.lenovo.com&pbk=Q1Fjb64H0fakerSZHytJ7WQkuKeMs13l9kQJ0nywoFo&sid=d3e4f5a6b7c8d9e0&flow=xtls-rprx-vision&type=tcp&encryption=none&fp=chrome#🇪🇺 Обход LTE
-vless://056405e8-de9f-4d0d-8145-956f13cc34da@a0688bt.us4.h1clayd.click:443?security=reality&type=tcp&sni=a0688bt.us4.h1clayd.click&host=a0688bt.us4.h1clayd.click&pbk=5-9YzvyXcZ4J5Z4OaVTUbxUU2InvnwT17m0XY-Jse1E&sid=257420d9d430152a&fp=safari#🇪🇺 Обход LTE
-vless://917a186b-ffa1-4af4-a473-1a8d95f2e37c@edge.cdnhaven.com:1443?security=reality&sni=sun6-21.userapi.com&pbk=_yfkAlX_g-2LBB3CpNqI9sDKz-1OyqwyvbDwD7F8gRo&sid=c2d3e4f5a6b7c8d9&flow=xtls-rprx-vision&type=tcp&encryption=none&fp=chrome#🇪🇺 Обход LTE
-vless://056405e8-de9f-4d0d-8145-956f13cc34da@a0688bt.us4.h1clayd.click:443?security=reality&pbk=5-9YzvyXcZ4J5Z4OaVTUbxUU2InvnwT17m0XY-Jse1E&sid=257420d9d430152a&sni=a0688bt.us4.h1clayd.click&type=tcp&headerType=none&host=a0688bt.us4.h1clayd.click&path=%2F&fp=safari#🇪🇺 Обход LTE
-vless://521b29e7-8ce0-0012-a210-79069f701464@82.40.62.92:443?type=tcp&security=reality&sni=auto.api-yandex.net&fp=qq&flow=xtls-rprx-vision&pbk=NBjOloEUgyAHoLqvcGo_t3jTY8Jya77j5dsNB1VJ8Bo&sid=0f4dacffd272e65f#🇪🇺 Обход LTE
-vless://056405e8-de9f-4d0d-8145-956f13cc34da@faf318x.fi3.h1clayd.click:443?encryption=none&mode=auto&path=%2F30ed746037ba&pbk=iZD9niaCQZpjG_ndVq8N2pY4hLNg0n7_oT7qJUMkDEI&security=reality&sid=248965340b604f9c&sni=faf318x.fi3.h1clayd.click&spx=%2F&type=xhttp&fp=qq#🇪🇺 Обход LTE
-vless://1bb2af63-4472-44ed-9c70-8f316258b68b@62.152.58.90:443?type=grpc&security=reality&encryption=none&sni=360.yandex.ru&pbk=JBKJlzuJH1YzDHAoz28wEKbzWTGpDpKjgtSq0oT0a0k&sid=27e53bbcab7593d7&headerType=none&mode=gun&fp=chrome#🇪🇺 Обход LTE
-vless://f85af535-d0ff-437f-ad79-4be0e7c1f350@fast_s78.slopllex.app:443?security=tls&sni=fast_s78.slopllex.app&type=tcp&flow=xtls-rprx-vision&packetEncoding=xudp&encryption=none&fp=firefox#🇪🇺 Обход LTE
-vless://1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200@84.201.146.8:443?encryption=none&security=reality&sni=max.ru&pbk=biyXF3Egpu0ul4Jyf04Vh1Zl6u3JGXJ2k5y5y7pDjgo&type=xhttp&host=max.ru&path=%2F&fp=edge#🇪🇺 Обход LTE
-vless://9a0e84f8-4b58-477f-99da-5fac5a2e58e8@3f8efdt.fi1.h1clayd.click:443?security=reality&type=tcp&packetEncoding=xudp&sni=3f8efdt.fi1.h1clayd.click&sid=023a1e6ffc32be10&pbk=1D_o1pqfVoReg9zLPKNy1wCL7aGWytbmbYPbbJGaozY&fp=chrome#🇪🇺 Обход LTE
-vless://056405e8-de9f-4d0d-8145-956f13cc34da@9bc578g.us4.h1clayd.click:443?encryption=none&type=grpc&security=reality&sni=9bc578g.us4.h1clayd.click&pbk=uUWYLl2Fdhr74k9o5WacesJjvsCwLiOHccgfR23TIk4&sid=29b29106d4769e3a&spx=%2F&serviceName=aa7f1b042f73&fp=ios#🇪🇺 Обход LTE
-vless://1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200@84.201.180.13:443?encryption=none&extra=null&host=api-maps.yandex.ru&pbk=DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ&security=reality&sni=api-maps.yandex.ru&type=xhttp&fp=safari#🇪🇺 Обход LTE
-vless://21ffcccd-8fbe-43fb-9dd1-24452fdfa8ad@188.225.38.216:443/?type=grpc&encryption=none&flow=&serviceName=lalibobi.orbit.v3.Connect&security=tls&sni=lalibobi.online&fp=ios#🇪🇺 Обход LTE
-vless://1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200@84.201.180.13:443?type=xhttp&security=reality&encryption=none&sni=api-maps.yandex.ru&pbk=DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ&headerType=none&fp=edge#🇪🇺 Обход LTE
-vless://056405e8-de9f-4d0d-8145-956f13cc34da@9bc578g.us4.h1clayd.click:443?encryption=none&type=grpc&security=reality&sni=9bc578g.us4.h1clayd.click&pbk=uUWYLl2Fdhr74k9o5WacesJjvsCwLiOHccgfR23TIk4&sid=29b29106d4769e3a&spx=%2F&serviceName=aa7f1b042f73&fp=random#🇪🇺 Обход LTE
-vless://9a0e84f8-4b58-477f-99da-5fac5a2e58e8@3f8efdt.fi1.h1clayd.click:443?security=reality&type=tcp&packetEncoding=xudp&sni=3f8efdt.fi1.h1clayd.click&sid=023a1e6ffc32be10&pbk=1D_o1pqfVoReg9zLPKNy1wCL7aGWytbmbYPbbJGaozY&fp=ios#🇪🇺 Обход LTE
-vless://f85af535-d0ff-437f-ad79-4be0e7c1f350@fast_s78.slopllex.app:443?security=tls&sni=fast_s78.slopllex.app&type=tcp&flow=xtls-rprx-vision&packetEncoding=xudp&encryption=none&fp=qq#🇪🇺 Обход LTE
-vless://056405e8-de9f-4d0d-8145-956f13cc34da@263651t.fi3.h1clayd.click:443?type=tcp&security=reality&pbk=nNe5Y8_G7L0_VO5lqlee3h5UmRH4RXjaRYGCDUkbQz4&sid=2892e611785bafd1&sni=263651t.fi3.h1clayd.click&fp=edge#🇪🇺 Обход LTE
-vless://917a186b-ffa1-4af4-a473-1a8d95f2e37c@edge.cdnhaven.com:443?security=reality&sni=eh.vk.com&pbk=N8FJu1pfVv7wRY1AqkCUT_XOcaxFaH4oXh1tzuVNcB0&sid=a77377d70de13390&flow=xtls-rprx-vision&type=tcp&encryption=none&fp=chrome#🇪🇺 Обход LTE
-vless://21ffcccd-8fbe-43fb-9dd1-24452fdfa8ad@lalibobi.online:443/?encryption=none&flow=&security=tls&serviceName=lalibobi.orbit.v3.Connect&sni=lalibobi.online&type=grpc&fp=qq#🇪🇺 Обход LTE
-vless://917a186b-ffa1-4af4-a473-1a8d95f2e37c@edge.cdnhaven.com:3553?security=reality&sni=www.epson.com&pbk=Q1Fjb64H0fakerSZHytJ7WQkuKeMs13l9kQJ0nywoFo&sid=d3e4f5a6b7c8d9e0&flow=xtls-rprx-vision&type=tcp&encryption=none&fp=chrome#🇪🇺 Обход LTE
