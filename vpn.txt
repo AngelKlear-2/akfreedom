@@ -1,5 +1,5 @@
 # vpn.txt Mixed
-# updated: 2026-10-23 17:21 ЕКБ
+# updated: 2026-10-24 01:38 ЕКБ
 # check: check-host.net RU + fresh sources
 
 hysteria2://b9e1971f-ba19-4c33-808f-7bc9d2eab835@89.125.48.138:443?security=tls&fm=%7B%7D&sni=nl2.nextgencloud.tech#🇳🇱 Нидерланды | Лучшие [HYSTERIA]
