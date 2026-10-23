@@ -1,10 +1,10 @@
 #profile-title: Con1xxWhite
 #profile-update-interval: 1
-#profile-description: Последнее обновление конфигов: 2026-10-23 17:21 ЕКБ
-#announce: 🏳️ Обновлено 2026-10-23 17:21 ЕКБ 🏳️
+#profile-description: Последнее обновление конфигов: 2026-10-24 01:38 ЕКБ
+#announce: 🏳️ Обновлено 2026-10-24 01:38 ЕКБ 🏳️
 
 # whitelist.txt
 # Обход LTE
-# updated: 2026-10-23 17:21 ЕКБ
+# updated: 2026-10-24 01:38 ЕКБ
 # working(RU): 0
 
