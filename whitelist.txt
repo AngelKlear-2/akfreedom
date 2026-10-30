@@ -1,34 +1,10 @@
 #profile-title: Con1xxWhite
 #profile-update-interval: 1
-#profile-description: Последнее обновление конфигов: 2026-10-30 01:39 ЕКБ
-#announce: 🏳️ Обновлено 2026-10-30 01:39 ЕКБ 🏳️
+#profile-description: Последнее обновление конфигов: 2026-10-30 05:12 ЕКБ
+#announce: 🏳️ Обновлено 2026-10-30 05:12 ЕКБ 🏳️
 
 # whitelist.txt
 # Обход LTE
-# updated: 2026-10-30 01:39 ЕКБ
-# working(RU): 24
+# updated: 2026-10-30 05:12 ЕКБ
+# working(RU): 0
 
-vless://9db29659-b68e-466e-988a-6627572c2478@217.13.104.128:443?security=reality&encryption=none&pbk=-cDQPpiRCwOtfQ22cdCd3NkDlqpubdklZXaFGhwUfS8&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=sun6-22.userapi.com&sid=a20d3ed244c76426#🇪🇺 Обход LTE
-trojan://UAKWGor-h0woFsxKSWK92HptcM0g2k2h@176.114.95.242:443/?type=tcp&security=tls&sni=lt-1.1984.love&fp=safari#🇪🇺 Обход LTE
-vless://30e52776-55ac-3cb4-8d36-e2910f07e2c3@s2360.kukuss.top:443?type=tcp&encryption=none&security=tls&path=%2F&flow=xtls-rprx-vision&sni=u695098u14c5ddd4s2358.gogocs.xyz&fp=firefox#🇪🇺 Обход LTE
-vless://3961c4a7-75dc-4ae1-8e4d-020bb3eff6e3@103.111.114.147:8443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=retn.net&fp=chrome&security=reality&pbk=qBcUlVqkzWxGORpDCj_FcNHACi3mrAYTCZeJyVQa5yU&sid=6b374e33af12fd1e#🇪🇺 Обход LTE
-vless://2dfc872e-5c3d-466e-944b-bdf0840a4a9d@138.124.254.141:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=crt.onecloudstream.com&fp=chrome#🇪🇺 Обход LTE
-vless://30e52776-55ac-3cb4-8d36-e2910f07e2c3@193.53.126.91:443?security=tls&type=tcp&sni=u695098u14c5ddd4s2358.gogocs.xyz&path=%2F&host=u695098u14c5ddd4s2358.gogocs.xyz&flow=xtls-rprx-vision&fp=ios#🇪🇺 Обход LTE
-trojan://UAKWGor-h0woFsxKSWK92HptcM0g2k2h@176.114.95.242:443?security=tls&sni=lt-1.1984.love&fp=qq#🇪🇺 Обход LTE
-vless://6ee3ddd9-3509-4651-8e77-e17c7291c76f@185.63.191.156:8443?flow=xtls-rprx-vision&security=reality&sni=vk.com&pbk=5VQfk4ROS42JYvLdnd_Y6dKKfc5nH6aaW1j02lFrzxM&fp=qq#🇪🇺 Обход LTE
-vless://f90b7d43-69e2-4b46-a672-8029bc6796a2@ee.h1cloud.net:25895?encryption=none&security=reality&sni=www.samsung.com&pbk=jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k&sid=a73f0410d728c823&type=tcp&headerType=none&fp=ios#🇪🇺 Обход LTE
-vless://f90b7d43-69e2-4b46-a672-8029bc6796a2@ee.h1cloud.net:25895?type=tcp&security=reality&path=%2F&host=www.samsung.com&sni=www.samsung.com&pbk=jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k&sid=a73f0410d728c823&fp=random#🇪🇺 Обход LTE
-vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@flatcrest.net:2053?encryption=none&type=xhttp&security=tls&sni=flatcrest.net&alpn=http%2F1.1%2Ch2&path=%2Fapi%2Fv1%2Fupload&host=flatcrest.net&mode=auto&extra=%7B%22xmux%22%3A%7B%22cMaxReuseTimes%22%3A%2264-128%22%2C%22maxConcurrency%22%3A%2216-32%22%2C%22maxConnections%22%3A0%7D%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22scMaxEachPostBytes%22%3A1000000%2C%22scMinPostsIntervalMs%22%3A30%7D&fp=safari#🇪🇺 Обход LTE
-vless://04b7c62b-762e-4a8c-ba37-8328d25c8d74@185.86.145.37:443?encryption=none&host=ararat.rtkdvbr.cc&path=%2Famws&security=tls&sni=ararat.rtkdvbr.cc&type=ws&fp=qq#🇪🇺 Обход LTE
-vless://30e52776-55ac-3cb4-8d36-e2910f07e2c3@193.53.126.91:443?security=tls&type=tcp&sni=u695098u14c5ddd4s2358.gogocs.xyz&path=%2F&host=u695098u14c5ddd4s2358.gogocs.xyz&flow=xtls-rprx-vision&fp=chrome#🇪🇺 Обход LTE
-vless://f90b7d43-69e2-4b46-a672-8029bc6796a2@ee.h1cloud.net:25895?encryption=none&security=reality&sni=www.samsung.com&pbk=jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k&sid=a73f0410d728c823&type=tcp&headerType=none&host=ee.h1cloud.net&path=%2F&fp=qq#🇪🇺 Обход LTE
-vless://9e27f64b-7ae9-461b-b4c4-99696276633b@de3.voronvpn.com:443?security=reality&encryption=none&pbk=UR-ELTbCCTAAvg_y8vIznWFkGkCKFFaEAVgTtPYNCCk&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=storage.yandexcloud.net&sid=54861d36#🇪🇺 Обход LTE
-vless://16b3793b-3335-4832-b1fd-877b2c5e15d6@45.90.162.226:24443?&security=reality&flow=xtls-rprx-vision&pbk=pCIyfmbMRts0miZB4KFKNNm0zvJr0JEx8_XykIllwUo&sid=4d83d822573492aa&fp=firefox&sni=www.vk.com&type=tcp&headerType=none&host=www.vk.com&path=%2F#🇪🇺 Обход LTE
-vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@37.18.14.43:8443?type=xhttp&security=tls&encryption=none&path=%2Fapi%2Fv1%2Fupload&sni=flatcrest.net&headerType=none&fp=edge#🇪🇺 Обход LTE
-vless://379998c5-2a71-4202-9c74-522e0c3c5404@185.147.27.183:8443?security=tls&type=tcp&sni=user-6a917f32.noooo.win&host=user-6a917f32.noooo.win&flow=xtls-rprx-vision&allowInsecure=0&insecure=0&fp=chrome#🇪🇺 Обход LTE
-vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@37.18.14.43:2053?alpn=http%2F1.1%2Ch2&encryption=none&extra=%7B%22host%22%3A%22%22%2C%22path%22%3A%22%22%2C%22mode%22%3A%22%22%2C%22headers%22%3Anull%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22xPaddingObfsMode%22%3Afalse%2C%22xPaddingKey%22%3A%22%22%2C%22xPaddingHeader%22%3A%22%22%2C%22xPaddingPlacement%22%3A%22%22%2C%22xPaddingMethod%22%3A%22%22%2C%22uplinkHTTPMethod%22%3A%22%22%2C%22sessionIDPlacement%22%3A%22%22%2C%22sessionIDKey%22%3A%22%22%2C%22sessionIDTable%22%3A%22%22%2C%22sessionIDLength%22%3A%220%22%2C%22seqPlacement%22%3A%22%22%2C%22seqKey%22%3A%22%22%2C%22uplinkDataPlacement%22%3A%22%22%2C%22uplinkDataKey%22%3A%22%22%2C%22uplinkChunkSize%22%3A%220%22%2C%22noGRPCHeader%22%3Afalse%2C%22noSSEHeader%22%3Afalse%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22scMinPostsIntervalMs%22%3A%2230%22%2C%22scMaxBufferedPosts%22%3A0%2C%22scStreamUpServerSecs%22%3A%220%22%2C%22serverMaxHeaderBytes%22%3A0%2C%22xmux%22%3A%7B%22maxConcurrency%22%3A%2216-32%22%2C%22maxConnections%22%3A%220%22%2C%22cMaxReuseTimes%22%3A%2264-128%22%2C%22hMaxRequestTimes%22%3A%220%22%2C%22hMaxReusableSecs%22%3A%220%22%2C%22hKeepAlivePeriod%22%3A0%7D%2C%22downloadSettings%22%3Anull%2C%22extra%22%3Anull%7D&host=flatcrest.net&mode=auto&path=%2Fapi%2Fv1%2Fupload&security=tls&sni=flatcrest.net&type=xhttp&fp=chrome#🇪🇺 Обход LTE
-vless://1fe01c8a-ab37-4e95-bbfc-95d4a608931e@77.110.113.17:443?security=reality&encryption=none&pbk=rfehgktZ-XuOYnHhfpPonWMrw9JoQCZawFI-WZ-2KBw&headerType=&type=tcp&flow=xtls-rprx-vision&sni=xpc3.waspnest.space&sid=ae97223a8f799871&fp=qq#🇪🇺 Обход LTE
-vless://521b29e7-8ce0-0012-a210-79069f701464@82.40.62.92:443?type=tcp&security=reality&sni=auto.api-yandex.net&fp=qq&flow=xtls-rprx-vision&pbk=NBjOloEUgyAHoLqvcGo_t3jTY8Jya77j5dsNB1VJ8Bo&sid=0f4dacffd272e65f#🇪🇺 Обход LTE
-vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@37.18.14.43:8443?type=xhttp&security=tls&encryption=none&path=%2Fapi%2Fv1%2Fupload&host=flatcrest.net&sni=flatcrest.net&headerType=none&mode=auto&fp=firefox#🇪🇺 Обход LTE
-vless://1fe01c8a-ab37-4e95-bbfc-95d4a608931e@213.165.60.187:443?security=reality&encryption=none&pbk=3yddqUiJeYh6absBxMNR6OSMRjvi_-wVXy1GGS5K-y0&headerType=&type=tcp&flow=xtls-rprx-vision&sni=xpc2.waspnest.space&sid=ae97223a8f799872&fp=firefox#🇪🇺 Обход LTE
-vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@37.18.14.43:8443?type=xhttp&security=tls&encryption=none&path=%2Fapi%2Fv1%2Fupload&host=flatcrest.net&sni=flatcrest.net&alpn=http%2F1.1%2Ch2&headerType=none&mode=auto&fp=firefox#🇪🇺 Обход LTE
