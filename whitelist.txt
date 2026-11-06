@@ -1,16 +1,28 @@
 #profile-title: Con1xxWhite
 #profile-update-interval: 1
-#profile-description: Последнее обновление конфигов: 2026-11-07 00:08 ЕКБ
-#announce: 🏳️ Обновлено 2026-11-07 00:08 ЕКБ 🏳️
+#profile-description: Последнее обновление конфигов: 2026-11-07 04:49 ЕКБ
+#announce: 🏳️ Обновлено 2026-11-07 04:49 ЕКБ 🏳️
 
 # whitelist.txt
 # Обход LTE
-# updated: 2026-11-07 00:08 ЕКБ
-# working(RU): 6
+# updated: 2026-11-07 04:49 ЕКБ
+# working(RU): 18
 
-vless://90157e25-cee1-4217-921e-91f300bc1a24@novonl.subv.ru:443?type=tcp&security=reality&sni=golos.mail.ru&pbk=1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs&sid=428ef87fd47a3a32&spx=%2F&encryption=none&flow=xtls-rprx-vision&fp=firefox#🇪🇺 Обход LTE
-vless://3961c4a7-75dc-4ae1-8e4d-020bb3eff6e3@103.111.114.147:8443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=retn.net&fp=chrome&security=reality&pbk=qBcUlVqkzWxGORpDCj_FcNHACi3mrAYTCZeJyVQa5yU&sid=6b374e33af12fd1e#🇪🇺 Обход LTE
 vless://2232d904-8e6a-4202-8240-6efd8aec02e9@lorettmay.top:443?security=tls&type=ws&sni=lorettmay.top&path=%2Fblog%2Fposts&alpn=http%2525252F1.1&fp=chrome#🇪🇺 Обход LTE
-vless://9aff658c-1f80-4c82-9213-48ca26996142@168.113.128.70:20105?type=tcp&security=tls&flow=xtls-rprx-vision&sni=ripelever.net&fp=edge#🇪🇺 Обход LTE
-vless://0da6c591-f986-4264-a57a-b967e7029ffe@serv21.strettenvpn.com:443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&pbk=yhUfTGgu5PYRlFqMnRZkxffH_aU05AFUToGI8_EKF28&sid=8248954896&sni=firefoxusercontent.com&spx=/o7Aaf6fjwgbitolAe#🇪🇺 Обход LTE
-vless://af9d0c6e-0c74-0037-8275-05b4aa0f2ebe@135.106.143.121:443?encryption=none&type=xhttp&security=reality&sni=alfastat.ru&pbk=fz_xpZfQks3oa9c_d1OSokmTgmJuGbvFMkyK0Qt8w3I&sid=0066a7326f06d426&path=%2Fassets&mode=packet-up&extra=%7B%22xmux%22%3A%7B%22maxConnections%22%3A%221-2%22%2C%22cMaxReuseTimes%22%3A0%2C%22hMaxRequestTimes%22%3A%22900-1400%22%2C%22hMaxReusableSecs%22%3A%223600-5400%22%2C%22hKeepAlivePeriod%22%3A0%7D%2C%22downloadSettings%22%3A%7B%22address%22%3A%22135.106.143.121%22%2C%22port%22%3A443%2C%22network%22%3A%22xhttp%22%2C%22security%22%3A%22reality%22%2C%22realitySettings%22%3A%7B%22fingerprint%22%3A%22firefox%22%2C%22serverName%22%3A%22seo.alfastat.ru%22%2C%22publicKey%22%3A%22fz_xpZfQks3oa9c_d1OSokmTgmJuGbvFMkyK0Qt8w3I%22%2C%22shortId%22%3A%2275a0c0e236b0a436%22%7D%2C%22xhttpSettings%22%3A%7B%22path%22%3A%22%2Fassets%22%2C%22xmux%22%3A%7B%22maxConnections%22%3A%222-3%22%2C%22cMaxReuseTimes%22%3A0%2C%22hMaxRequestTimes%22%3A%22700-1100%22%2C%22hMaxReusableSecs%22%3A%222700-4200%22%2C%22hKeepAlivePeriod%22%3A0%7D%7D%7D%7D&fp=firefox#🇪🇺 Обход LTE
+vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?type=xhttp&security=tls&encryption=none&path=%2Fapi%2Fv2%2Fevents&sni=static.bakarova-top.ru&headerType=none&fp=chrome#🇪🇺 Обход LTE
+vless://747db87a-0cf6-4ea7-ae6b-3293afe2cef6@9900edx.msk2.h1clayd.click:443?encryption=none&type=xhttp&security=reality&sni=9900edx.msk2.h1clayd.click&pbk=yMB1YpMhoF4j800rMjlWy97QAwvNwHwjuH1qKNSGfCA&sid=0b10c773673c6438&spx=%2F&path=%2Fee321f6e0f15&mode=auto&fp=firefox#🇪🇺 Обход LTE
+vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?encryption=none&extra=null&mode=packet-up&path=%2Fapi%2Fv2%2Fevents&security=tls&sni=static.bakarova-top.ru&type=xhttp&fp=ios#🇪🇺 Обход LTE
+vless://7955bf18-35c4-412d-aabd-c0b36c793063@185.86.147.175:443?security=tls&sni=bhjolq0d0l.flowersgood.top&type=ws&path=%2Fservice%2Ftelemetry%2F045d381f1166%2F&host=bhjolq0d0l.flowersgood.top&fp=qq#🇪🇺 Обход LTE
+vless://2232d904-8e6a-4202-8240-6efd8aec02e9@lorettmay.top:443?security=tls&type=ws&sni=lorettmay.top&path=%2Fblog%2Fposts&alpn=http%25252525252525252F1.1&fp=safari#🇪🇺 Обход LTE
+vless://747db87a-0cf6-4ea7-ae6b-3293afe2cef6@9e72bbg.msk2.h1clayd.click:443?encryption=none&type=grpc&security=reality&sni=9e72bbg.msk2.h1clayd.click&pbk=0R5QIf2DFXNgISIYDQdoWIdbNoImaJHrwOkc2tzRPyQ&sid=cc07501e28b18687&spx=%2F&serviceName=93013a569b78&fp=android#🇪🇺 Обход LTE
+vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?type=xhttp&security=tls&encryption=none&path=%2Fapi%2Fv2%2Fevents&sni=static.bakarova-top.ru&alpn=h2&headerType=none&mode=packet-up&fp=firefox#🇪🇺 Обход LTE
+vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?type=xhttp&security=tls&encryption=none&path=%2Fapi%2Fv2%2Fevents&host=static.bakarova-top.ru&sni=static.bakarova-top.ru&headerType=none&mode=packet-up&fp=chrome#🇪🇺 Обход LTE
+vless://8fb19a9e-ca2b-433a-8469-e4c7796033b2@falmero.store:443?alpn=h2&encryption=none&mode=gun&security=tls&serviceName=glush.de1.v1&sni=falmero.store&type=grpc&fp=chrome#🇪🇺 Обход LTE
+vless://27653b37-603c-4c90-b1f5-25c4d23f8932@renderer-bridge-2-133.mirra.now:443?type=grpc&encryption=none&serviceName=VideoRenderer&path=VideoRenderer&sni=renderer-bridge-2-133.mirra.now&security=tls&alpn=h2&fp=ios#🇪🇺 Обход LTE
+vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?encryption=none&host=api.bakarova-top.ru&mode=packet-up&path=%2Fapi%2Fv2%2Fevents&security=tls&sni=api.bakarova-top.ru&type=xhttp&fp=safari#🇪🇺 Обход LTE
+vless://2232d904-8e6a-4202-8240-6efd8aec02e9@lorettmay.top:443?security=tls&type=ws&sni=lorettmay.top&path=%2Fblog%2Fposts&alpn=http%252F1.1&fp=qq#🇪🇺 Обход LTE
+vless://2232d904-8e6a-4202-8240-6efd8aec02e9@lorettmay.top:443?path=%2Fblog%2Fposts&security=tls&sni=lorettmay.top&type=ws&fp=chrome#🇪🇺 Обход LTE
+vless://3ea2d8f2-12c1-4189-8cc5-91d0ee9f5ca0@185.228.232.150:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=C1hW1bTA9WOacIK-fHHg-HLkDZ3FY7FhEhAyldMSUEA&security=reality&sid=a1b2c3d4e5f6&sni=queuev4.vk.com&type=tcp#🇪🇺 Обход LTE
+vless://9e27f64b-7ae9-461b-b4c4-99696276633b@de3.voronvpn.com:443?security=reality&encryption=none&pbk=UR-ELTbCCTAAvg_y8vIznWFkGkCKFFaEAVgTtPYNCCk&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=storage.yandexcloud.net&sid=54861d36#🇪🇺 Обход LTE
+vless://2232d904-8e6a-4202-8240-6efd8aec02e9@lorettmay.top:443?security=tls&type=ws&sni=lorettmay.top&path=%2Fblog%2Fposts&alpn=http%2F1.1&fp=safari#🇪🇺 Обход LTE
+vless://2232d904-8e6a-4202-8240-6efd8aec02e9@lorettmay.top:443?security=tls&type=ws&sni=lorettmay.top&path=%2Fblog%2Fposts&alpn=http%2525252525252F1.1&fp=firefox#🇪🇺 Обход LTE
